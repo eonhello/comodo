@@ -33,7 +33,7 @@ COMMENT ON COLUMN SLEEP_TAB.S_Confirm IS '승인여부';
 
 COMMENT ON COLUMN SLEEP_TAB.S_Confirm_Date IS '승인시간';
 
-/* 기본키 설정하는 부분입니다. 애매하면 지우고 실행하세요. 나중에 추가가능! */
+/* 기본키 설정하는 부분입니다. 애매하면 지우고 실행하세요. 나중에 추가가능!! */
 ALTER TABLE SLEEP_TAB
 	ADD
 		CONSTRAINT PK_TABLE
