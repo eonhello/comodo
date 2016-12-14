@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<input type="button">공지사항
+	<input type="button">공지사항!
 </body>
 </html>
