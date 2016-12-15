@@ -8,5 +8,8 @@
 </head>
 <body>
 	COMODO JSP TEST
+	
+	<a href = "Free/FBoard_List.jsp">자유게시판으로 이동</a>
+
 </body>
 </html>
