@@ -37,9 +37,6 @@ public class Sleep_Controller extends javax.servlet.http.HttpServlet
 			forward.setRedirect(false);
 			forward.setPath("./C_Board/Comodo_Main.jsp");
 		} else if (command.equals("/Sleep/Sleep_Action.main")) {
-			//서브 컨트롤러로 보내기위한 부분
-			StringTokenizer uri_Token=new StringTokenizer(command, "/");
-			System.out.println(uri_Token.nextToken());
 			action = new Sleep_Action();
 			try {
 				forward = ((Sleep_Action) action).execute(request, response);
