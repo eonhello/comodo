@@ -3,8 +3,6 @@ package board.sleep;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import main.action.Action;
-import main.action.ActionForward;
 import main.db.BoardBean;
 import main.db.BoardDAOImpl;
 
