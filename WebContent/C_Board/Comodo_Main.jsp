@@ -9,7 +9,8 @@
 <body>
 	COMODO JSP TEST
 	
-	<a href = "Free/FBoard_List.jsp">자유게시판으로 이동</a>
+	<a href = "Free/FBoard_List.jsp">자유게시판으로 이동</a><br><br>
+	<a href = "Sleep/sleep_design.jsp">외박게시판으로 이동</a>
 
 </body>
 </html>
