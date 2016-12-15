@@ -6,12 +6,14 @@ import java.util.StringTokenizer;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import board.sleep.Sleep_Action;
 import sun.util.locale.StringTokenIterator;
 
+@WebServlet("*.co")
 public class MainController extends javax.servlet.http.HttpServlet
 		implements javax.servlet.Servlet {
 
