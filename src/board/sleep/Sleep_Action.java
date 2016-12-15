@@ -14,7 +14,7 @@ public class Sleep_Action implements Action {
 		 	request.setCharacterEncoding("utf-8");
 		 	ActionForward forward = new ActionForward();
 		 	
-//			BoardDAO1 boarddao=new BoardDAO1();
+//			BoardDAO1 boarddao=new BoardDAO1()
 		 	BoardDAOImpl boarddao=new BoardDAOImpl();
 	   		BoardBean boarddata=new BoardBean();
 	   		int result=0;
