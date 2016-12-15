@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import main.action.Action;
 import main.action.ActionForward;
+import main.db.BoardBean;
+import main.db.BoardDAOImpl;
 
 public class Sleep_Action implements Action {
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) 

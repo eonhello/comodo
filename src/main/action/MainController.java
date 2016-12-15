@@ -40,7 +40,7 @@ public class MainController extends javax.servlet.http.HttpServlet
 			System.out.println(uri_Token.nextToken());
 			action = new Sleep_Action();
 			try {
-				forward = action.execute(request, response);
+				forward = ((Sleep_Action) action).execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
