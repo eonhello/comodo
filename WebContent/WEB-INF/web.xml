@@ -7,7 +7,7 @@ xmlns="http://java.sun.com/xml/ns/javaee"
   
   <servlet>
 		<servlet-name>DormitoryFrontController</servlet-name>
-		<servlet-class>net.comodo.action.DormitoryFrontController</servlet-class>
+		<servlet-class>main.action.DormitoryFrontController</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>DormitoryFrontController</servlet-name>

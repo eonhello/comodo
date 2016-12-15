@@ -27,7 +27,7 @@ public class DormitoryFrontController extends javax.servlet.http.HttpServlet
 		if (command.equals("/ComodoMain.co")) {
 			forward = new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("./Dormitory/Comodo_Main.jsp");
+			forward.setPath("./Dormitory/sleep_design.jsp");
 		}/* else if (command.equals("/BoardReplyAction.bo")) {
 			action = new BoardReplyAction();
 			try {
