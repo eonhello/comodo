@@ -8,5 +8,8 @@
 </head>
 <body>
 	COMODO JSP TEST
+	<!-- 실제 메인페이지는 ./Dormitory/Comodo_Main
+			web.xml에 welcome page가 index.jsp 이기 때문에
+			임시 메인페이지로 활용. 나중에 삭제하고 접속 uri를 Comodo_Main으로 수정하면 OK-->
 </body>
 </html>
