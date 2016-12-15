@@ -1,4 +1,4 @@
-package net.comodo.action;
+package main.action;
 
 public interface Action {
 

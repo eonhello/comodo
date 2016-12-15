@@ -1,4 +1,4 @@
-package net.comodo.action;
+package main.action;
 
 public class ActionForward {
 	private boolean isRedirect=false;
