@@ -15,7 +15,7 @@ public class Sleep_Action implements Action {
 		 	ActionForward forward = new ActionForward();
 		 	
 //			BoardDAO1 boarddao=new BoardDAO1();
-		 	//나와라!!!!!!!!!!!!!!!
+		 	//나와라!!!!!!!!!!!!!!!!
 		 	BoardDAOImpl boarddao=new BoardDAOImpl();
 	   		BoardBean boarddata=new BoardBean();
 	   		int result=0;
