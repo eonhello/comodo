@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import board.sleep.Sleep_Action;
 import sun.util.locale.StringTokenIterator;
 
-@WebServlet("*.co")
+//@WebServlet("*.co")
 public class MainController extends javax.servlet.http.HttpServlet
 		implements javax.servlet.Servlet {
 
@@ -31,6 +31,8 @@ public class MainController extends javax.servlet.http.HttpServlet
 		System.out.println("command=" + command);
 //
 		if (command.equals("/ComodoMain.co")) {
+//			StringTokenizer uri_Token=new StringTokenizer(command, "/");
+//			System.out.println(uri_Token.nextToken());
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./C_Board/Comodo_Main.jsp");
