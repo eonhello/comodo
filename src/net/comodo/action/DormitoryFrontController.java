@@ -23,7 +23,7 @@ public class DormitoryFrontController extends javax.servlet.http.HttpServlet
 		System.out.println("RequestURI=" + RequestURI);
 		System.out.println("contextPath=" + contextPath);
 		System.out.println("command=" + command);
-
+//
 		if (command.equals("/ComodoMain.co")) {
 			forward = new ActionForward();
 			forward.setRedirect(false);
