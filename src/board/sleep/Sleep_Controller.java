@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import board.sleep.Sleep_Action;
 import sun.util.locale.StringTokenIterator;
 
-@WebServlet("*.main")
+@WebServlet("*.sl")
 public class Sleep_Controller extends javax.servlet.http.HttpServlet
 		implements javax.servlet.Servlet {
 
@@ -30,13 +30,7 @@ public class Sleep_Controller extends javax.servlet.http.HttpServlet
 		System.out.println("contextPath=" + contextPath);
 		System.out.println("command=" + command);
 //
-		if (command.equals("/ComodoMain.main")) {
-//			StringTokenizer uri_Token=new StringTokenizer(command, "/");
-//			System.out.println(uri_Token.nextToken());
-			forward = new ActionForward();
-			forward.setRedirect(false);
-			forward.setPath("./C_Board/Comodo_Main.jsp");
-		} else if (command.equals("/Sleep/Sleep_Action.main")) {
+		if (command.equals("/Sleep/Sleep_Action.sl")) {
 			action = new Sleep_Action();
 			try {
 				forward = ((Sleep_Action) action).execute(request, response);
