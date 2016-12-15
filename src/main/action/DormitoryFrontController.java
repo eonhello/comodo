@@ -28,14 +28,14 @@ public class DormitoryFrontController extends javax.servlet.http.HttpServlet
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./C_Board/Comodo_Main.jsp");
-		}/* else if (command.equals("/BoardReplyAction.bo")) {
-			action = new BoardReplyAction();
+		} else if (command.equals("/Sleep_Action.co")) {
+			action = new Sleep_Action();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/BoardDelete.bo")) {
+		} /* else if (command.equals("/BoardDelete.bo")) {
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./board/qna_board_delete.jsp");
