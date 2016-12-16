@@ -20,6 +20,7 @@
 	</environments>
 
 	<mappers>
+		<mapper resource="./db.board.sleep/sleep_board.xml" />
 		<mapper resource="board.xml" />
 	</mappers>
 
