@@ -52,7 +52,7 @@ import db.board.sleep.BoardDAOImpl;
 		
 		ActionForward forward= new ActionForward();
 	 	forward.setRedirect(false);
- 		forward.setPath("./board/qna_board_list.jsp");
+ 		forward.setPath("./C_Board/Sleep_List.jsp");
  		return forward;
 	 }
  }
