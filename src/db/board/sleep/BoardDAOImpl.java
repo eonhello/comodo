@@ -48,17 +48,17 @@ public class BoardDAOImpl {
 			System.out.println(e.getMessage());
 		}		
 	}	
-	
+	*/
 	// 게시판 총 게시물 수 
 	public int getListCount() throws SQLException {
 		int count = 0;
 		SqlSession session=null;
 		session = getSession();
-		count = ((Integer) session.selectOne("board.board_count")).intValue();	
+		count = ((Integer) session.selectOne("sleep_board.board_count")).intValue();	
 		 
 		return count;
 	}
-	
+	/*
 	// 게시물 목록 
 	public List<BoardBean> getBoardList(int  page)	throws SQLException {
 		SqlSession session=null;

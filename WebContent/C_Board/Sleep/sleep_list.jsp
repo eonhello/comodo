@@ -57,6 +57,7 @@
 			<td>표표표표표</td>
 		</tr>
 	</table>	<input type="button" value="승인" style="display:inline">	<input type="button" value="불허"></div>
+	count = ${listcount }
 	
 </body>
 </html>
