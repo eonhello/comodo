@@ -1,51 +1,58 @@
 package board.sleep;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import main.db.BoardBean;
-import main.db.BoardDAOImpl;
+import action.Action;
+import action.ActionForward;
+//import net.board.db.BoardDAO1;
+import db.board.sleep.BoardDAOImpl;
 
-public class Sleep_Action implements Action {
-	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) 
-	 throws Exception{
-		 	request.setCharacterEncoding("utf-8");
-		 	ActionForward forward = new ActionForward();
-		 	
-//			BoardDAO1 boarddao=new BoardDAO1();
-		 	//나와라!!!!!!!!!!!!!!!!
-		 	BoardDAOImpl boarddao=new BoardDAOImpl();
-	   		BoardBean boarddata=new BoardBean();
-//	   		int result=0;
-//	   		String page = request.getParameter("page");
-//	   		
-//	   		boarddata.setBoard_re_ref(Integer.parseInt(request.getParameter("BOARD_RE_REF")));
-//	   		boarddata.setBoard_re_seq(Integer.parseInt(request.getParameter("BOARD_RE_SEQ")));
-//	   		
-//	   		//기존 댓글의 board_re_seq값을 1증가 시킴
-//	   		boarddao.refEdit(boarddata);
-//	   		
-//	   		//새로운 댓글의 board_re_lev값과 board_re_seq값을 부모보다 1증가된 값을 다시할당
-//	   		boarddata.setBoard_re_lev(Integer.parseInt(request.getParameter("BOARD_RE_LEV"))+1);
-//	   		boarddata.setBoard_re_seq(Integer.parseInt(request.getParameter("BOARD_RE_SEQ"))+1);
-//	   		
-//	   		boarddata.setBoard_num(Integer.parseInt(request.getParameter("BOARD_NUM")));
-//	   		boarddata.setBoard_name(request.getParameter("BOARD_NAME"));
-//	   		boarddata.setBoard_pass(request.getParameter("BOARD_PASS"));
-//	   		boarddata.setBoard_subject(request.getParameter("BOARD_SUBJECT"));
-//	   		boarddata.setBoard_content(request.getParameter("BOARD_CONTENT"));	   		
-//	   		
-////	   		result=boarddao.boardReply(boarddata);
-//	   		boarddao.boardReplyOk(boarddata);
-////	   		if(result==0){
-////	   			System.out.println("답장 실패");
-////	   			return null;
-////	   		}
-//	   		System.out.println("답장 완료");
-//	   		
-//	   		forward.setRedirect(true);
-//	   		forward.setPath("./BoardDetailAction.bo?num="+boarddata.getBoard_num()+"&page="+page);
-////	   		forward.setPath("./BoardDetailAction.bo?num="+result+"&page="+page);
-	   		return forward;
-	}  	
-}
+
+ public class Sleep_Action implements Action {
+	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
+
+//		BoardDAO boarddao=new BoardDAO();
+		BoardDAOImpl boarddao=new BoardDAOImpl();
+		List boardlist=new ArrayList();
+		
+		int page=1; // 현재 페이지 번호
+		int limit=10; // 한 화면에 출력할 레코드 갯수
+		
+		if(request.getParameter("page") != null){
+			page=Integer.parseInt(request.getParameter("page"));
+		}
+		
+		int listcount=boarddao.getListCount(); //총 리스트 수를 받아옴
+//		boardlist = boarddao.getBoardList(page,limit); //리스트를 받아옴
+//		boardlist = boarddao.getBoardList(page);
+		/*
+		//총 페이지 수
+ 		int maxpage=(int)((double)listcount/limit+0.95); //0.95를 더해서 올림 처리
+ 		
+ 		//현재 페이지에 보여줄 시작 페이지 수(1, 11, 21 등...)
+ 		int startpage = (((int) ((double)page / 10 + 0.9)) - 1) * 10 + 1;
+ 		
+ 		//현재 페이지에 보여줄 마지막 페이지 수(10, 20, 30 등...)
+		int endpage = startpage+10-1;
+
+ 		if(endpage> maxpage) endpage= maxpage;
+ 		
+ 		int number = listcount-(page-1)*10; 		
+ 		
+ 		request.setAttribute("page", page); //현재 페이지 수
+ 		request.setAttribute("maxpage", maxpage); //최대 페이지 수
+ 		request.setAttribute("startpage", startpage); //현재 페이지에 표시할 첫 페이지 수
+ 		request.setAttribute("endpage", endpage); //현재 페이지에 표시할 끝 페이지 수
+		request.setAttribute("listcount",listcount); //글 수
+		request.setAttribute("boardlist", boardlist);		
+		*/
+		ActionForward forward= new ActionForward();
+	 	forward.setRedirect(false);
+ 		forward.setPath("./C_Board/Sleep/sleep_list.jsp");
+ 		return forward;
+	 }
+ }

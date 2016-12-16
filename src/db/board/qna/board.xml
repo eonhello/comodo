@@ -6,7 +6,7 @@
 <mapper namespace="board">
 
 	<!-- 게시판 저장 -->
-	<insert id="board_insert" parameterType="db.board.sleep.BoardBean">
+	<insert id="board_insert" parameterType="net.board.db.BoardBean">
 		insert into	board222(BOARD_NUM,BOARD_NAME,BOARD_PASS,board_subject,BOARD_CONTENT,BOARD_FILE,
 		BOARD_RE_REF,BOARD_RE_LEV,BOARD_RE_SEQ,BOARD_READCOUNT,BOARD_DATE)
 		 values(board222_seq.nextval,#{board_name},#{board_pass},#{board_subject},
@@ -15,7 +15,7 @@
 
 	<!-- 게시판 총게시물 수 -->
 	<select id="board_count" resultType="int">
-		select count(board_num) from board222
+		select count(board_num) from board2
 	</select>	
 	
 	<!-- 게시판 목록 (page번호를 전달받아서 startRow와 endRow를 구함)-->

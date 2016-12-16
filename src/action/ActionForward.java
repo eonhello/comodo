@@ -1,4 +1,4 @@
-package board.sleep;
+package action;
 
 public class ActionForward {
 	private boolean isRedirect=false;

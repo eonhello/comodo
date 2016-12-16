@@ -2,7 +2,6 @@ package board.sleep;
 
 
 import java.io.IOException;
-import java.util.StringTokenizer;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,8 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import board.sleep.Sleep_Action;
-import sun.util.locale.StringTokenIterator;
+import action.Action;
+import action.ActionForward;
 
 @WebServlet("*.sl")
 public class Sleep_Controller extends javax.servlet.http.HttpServlet
@@ -30,10 +29,14 @@ public class Sleep_Controller extends javax.servlet.http.HttpServlet
 		System.out.println("contextPath=" + contextPath);
 		System.out.println("command=" + command);
 //
-		if (command.equals("/Sleep/Sleep_Action.sl")) {
-			forward = new ActionForward();
-			forward.setRedirect(false);
-			forward.setPath("../C_Board/Sleep/sleep_design.jsp");
+		if (command.equals("/Sleep_Action.sl")) {
+			action = new Sleep_Action();
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			//forward.setPath("../C_Board/Sleep/sleep_design.jsp");
 		} /*else if (command.equals("/BoardDelete.b")) {
 			forward = new ActionForward();
 			forward.setRedirect(false);
