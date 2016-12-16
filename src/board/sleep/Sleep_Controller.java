@@ -29,7 +29,7 @@ public class Sleep_Controller extends javax.servlet.http.HttpServlet
 		System.out.println("contextPath=" + contextPath);
 		System.out.println("command=" + command);
 //
-		if (command.equals("/Sleep/Sleep_Action.sl")) {
+		if (command.equals("/Sleep_Action.sl")) {
 			action = new Sleep_Action();
 			try {
 				forward = action.execute(request, response);

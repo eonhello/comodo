@@ -25,7 +25,7 @@ import db.board.sleep.BoardDAOImpl;
 		if(request.getParameter("page") != null){
 			page=Integer.parseInt(request.getParameter("page"));
 		}
-		
+		/*
 		int listcount=boarddao.getListCount(); //총 리스트 수를 받아옴
 //		boardlist = boarddao.getBoardList(page,limit); //리스트를 받아옴
 		boardlist = boarddao.getBoardList(page);
@@ -49,10 +49,10 @@ import db.board.sleep.BoardDAOImpl;
  		request.setAttribute("endpage", endpage); //현재 페이지에 표시할 끝 페이지 수
 		request.setAttribute("listcount",listcount); //글 수
 		request.setAttribute("boardlist", boardlist);		
-		
+		*/
 		ActionForward forward= new ActionForward();
 	 	forward.setRedirect(false);
- 		forward.setPath("./C_Board/Sleep_List.jsp");
+ 		forward.setPath("./C_Board/Sleep/sleep_list.jsp");
  		return forward;
 	 }
  }

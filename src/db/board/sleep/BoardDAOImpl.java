@@ -27,7 +27,7 @@ public class BoardDAOImpl {
 	}	
 	
 	
-	/* 게시판 저장 */
+	/* 게시판 저장 
 	public void boardInsert(BoardBean board) {
 		SqlSession session=null;
 		int result = 0;		
@@ -49,7 +49,7 @@ public class BoardDAOImpl {
 		}		
 	}	
 	
-	/* 게시판 총 게시물 수 */
+	// 게시판 총 게시물 수 
 	public int getListCount() throws SQLException {
 		int count = 0;
 		SqlSession session=null;
@@ -59,7 +59,7 @@ public class BoardDAOImpl {
 		return count;
 	}
 	
-	/* 게시물 목록 */
+	// 게시물 목록 
 	public List<BoardBean> getBoardList(int  page)	throws SQLException {
 		SqlSession session=null;
 		session = getSession();
@@ -67,7 +67,7 @@ public class BoardDAOImpl {
 	    return list;
 	}	
 
-	/* 게시판 조회수 증가 */
+	// 게시판 조회수 증가 
 	public void boardHit(int board_num) throws SQLException {
 		SqlSession session=null;
 		session = getSession();
@@ -75,39 +75,39 @@ public class BoardDAOImpl {
 	}
 	
 	
-	/* 게시판 글내용보기 */
+	// 게시판 글내용보기 
 	public BoardBean getBoardCont(int board_num) throws SQLException {
 		SqlSession session=null;
 		session = getSession();
 		return (BoardBean) session.selectOne("board.board_cont", board_num);
 	}	
 
-	/* 게시물 수정 */
+	// 게시물 수정 
 	public void boardEdit(BoardBean board) throws SQLException {
 		SqlSession session=null;
 		session = getSession();
 		session.update("board.board_edit", board);
 	}
 
-	/* 게시물 삭제 */
+	// 게시물 삭제 
 	public void boardDelete(int board_num) throws SQLException {
 		SqlSession session=null;
 		session = getSession();
 		session.delete("board.board_del", board_num);
 	}
 
-	/* 답변글 레벨 증가 */
+	// 답변글 레벨 증가 
 	public void refEdit(BoardBean board) throws SQLException {
 		SqlSession session=null;
 		session = getSession();
 		session.update("board.board_Level", board);
 	}
 
-	/* 답변글 저장 */
+	// 답변글 저장 
 	public void boardReplyOk(BoardBean board) throws SQLException {
 		SqlSession session=null;
 		session = getSession();
 		session.insert("board_reply", board);
-	}
+	}	*/
 	
 }
