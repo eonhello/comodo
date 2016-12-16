@@ -3,83 +3,69 @@ package db.board.sleep;
 import java.sql.Date;
 
 public class BoardBean {
-	private int board_num;
-	private String board_name;
-	private String board_pass;
-	private String board_subject;
-	private String board_content;
-	private String board_file;
-	private int board_re_ref;
-	private int board_re_lev;
-	private int board_re_seq;
-	private int board_readcount;
-	private Date board_date;
+	private int s_board_num;
+	private int s_haknum;
+	private String s_name;
+	private String s_subject;
+	private String s_content;
+	private Date s_date;
+	private int s_confirm;
+	private Date s_confirm_date;
+	private int s_cancel;
 	
-	public int getBoard_num() {
-		return board_num;
+	public int getS_board_num() {
+		return s_board_num;
 	}
-	public void setBoard_num(int board_num) {
-		this.board_num = board_num;
+	public void setS_board_num(int s_board_num) {
+		this.s_board_num = s_board_num;
 	}
-	public String getBoard_name() {
-		return board_name;
+	public int getS_haknum() {
+		return s_haknum;
 	}
-	public void setBoard_name(String board_name) {
-		this.board_name = board_name;
+	public void setS_haknum(int s_haknum) {
+		this.s_haknum = s_haknum;
 	}
-	public String getBoard_pass() {
-		return board_pass;
+	public String getS_name() {
+		return s_name;
 	}
-	public void setBoard_pass(String board_pass) {
-		this.board_pass = board_pass;
+	public void setS_name(String s_name) {
+		this.s_name = s_name;
 	}
-	public String getBoard_subject() {
-		return board_subject;
+	public String getS_subject() {
+		return s_subject;
 	}
-	public void setBoard_subject(String board_subject) {
-		this.board_subject = board_subject;
+	public void setS_subject(String s_subject) {
+		this.s_subject = s_subject;
 	}
-	public String getBoard_content() {
-		return board_content;
+	public String getS_content() {
+		return s_content;
 	}
-	public void setBoard_content(String board_content) {
-		this.board_content = board_content;
+	public void setS_content(String s_content) {
+		this.s_content = s_content;
 	}
-	public String getBoard_file() {
-		return board_file;
+	public Date getS_date() {
+		return s_date;
 	}
-	public void setBoard_file(String board_file) {
-		this.board_file = board_file;
+	public void setS_date(Date s_date) {
+		this.s_date = s_date;
 	}
-	public int getBoard_re_ref() {
-		return board_re_ref;
+	public int getS_confirm() {
+		return s_confirm;
 	}
-	public void setBoard_re_ref(int board_re_ref) {
-		this.board_re_ref = board_re_ref;
+	public void setS_confirm(int s_confirm) {
+		this.s_confirm = s_confirm;
 	}
-	public int getBoard_re_lev() {
-		return board_re_lev;
+	public Date getS_confirm_date() {
+		return s_confirm_date;
 	}
-	public void setBoard_re_lev(int board_re_lev) {
-		this.board_re_lev = board_re_lev;
+	public void setS_confirm_date(Date s_confirm_date) {
+		this.s_confirm_date = s_confirm_date;
 	}
-	public int getBoard_re_seq() {
-		return board_re_seq;
+	public int getS_cancel() {
+		return s_cancel;
 	}
-	public void setBoard_re_seq(int board_re_seq) {
-		this.board_re_seq = board_re_seq;
+	public void setS_cancel(int s_cancel) {
+		this.s_cancel = s_cancel;
 	}
-	public int getBoard_readcount() {
-		return board_readcount;
-	}
-	public void setBoard_readcount(int board_readcount) {
-		this.board_readcount = board_readcount;
-	}
-	public Date getBoard_date() {
-		return board_date;
-	}
-	public void setBoard_date(Date board_date) {
-		this.board_date = board_date;
-	}
-
+	
 }

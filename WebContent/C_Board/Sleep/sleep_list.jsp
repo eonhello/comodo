@@ -32,5 +32,31 @@
 			<td>표표표표표</td>
 		</tr>
 	</table>
+	<div>
+	<table border="1">
+		<tr>
+			<td>신청 번호</td>
+			<td>학번</td>
+			<td>이름</td>
+			<td>학과</td>
+			<td>신청 구분</td>
+			<td>내용(행선지)</td>
+			<td>외박 일정</td>
+			<td>승인 여부</td>
+			<td>승인 일정</td>
+		</tr>
+		<tr>
+			<td>표표표표표</td>
+			<td>표표표표표</td>
+			<td>표표표표표</td>
+			<td>표표표표표</td>
+			<td>표표표표표</td>
+			<td>표표표표표</td>
+			<td>표표표표표</td>
+			<td>표표표표표</td>
+			<td>표표표표표</td>
+		</tr>
+	</table>	<input type="button" value="승인" style="display:inline">	<input type="button" value="불허"></div>
+	
 </body>
 </html>
