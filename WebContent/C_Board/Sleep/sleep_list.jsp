@@ -9,7 +9,7 @@
 </head>
 <body>
 	<table border="3">
-		<tr>
+		<tr border="3">
 			<td>신청 번호</td>
 			<td>학번</td>
 			<td>이름</td>
