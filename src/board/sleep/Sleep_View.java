@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServletResponse;
 import action.Action;
 import action.ActionForward;
 //import net.board.db.BoardDAO1;
-import main.db.BoardBean;
-import main.db.BoardDAOImpl;
+import db.board.sleep.BoardBean;
+import db.board.sleep.BoardDAOImpl;
 
 //sleep로 수정하자. modify view
 public class Sleep_View implements Action {
