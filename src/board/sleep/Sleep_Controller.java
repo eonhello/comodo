@@ -31,13 +31,10 @@ public class Sleep_Controller extends javax.servlet.http.HttpServlet
 		System.out.println("command=" + command);
 //
 		if (command.equals("/Sleep/Sleep_Action.sl")) {
-			action = new Sleep_Action();
-			try {
-				forward = ((Sleep_Action) action).execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		} /*else if (command.equals("/BoardDelete.bo")) {
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("../C_Board/Sleep/sleep_design.jsp");
+		} /*else if (command.equals("/BoardDelete.b")) {
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("./board/qna_board_delete.jsp");
