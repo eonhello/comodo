@@ -27,7 +27,7 @@ body {
 <body>
 
 	<table summary="글수정 전체 테이블">
-<form action="/Free_Board2/FModify_action.fr" method="post" name="modifyform">
+<form action="/free/FModify_action.fr" method="post" name="modifyform">
 <input type="hidden" name="BOARD_NUM" value="${boarddata.board_num}">
 <input type="hidden" name=page value="${page}">
 		

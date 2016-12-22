@@ -30,10 +30,10 @@ public class FDelete_action implements Action {
 	   	
 	   	BoardDAOImpl boarddao=new BoardDAOImpl();
 
-	   	BoardBean board = boarddao.getBoardCont(num);	// »èÁ¦½Ã ºñ¹Ð¹øÈ£ À¯È¿¼º °Ë»ç ½ÇÇà
+	   	BoardBean board = boarddao.getBoardCont(num);	// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ð¹ï¿½È£ ï¿½ï¿½È¿ï¿½ï¿½ ï¿½Ë»ï¿½ ï¿½ï¿½ï¿½ï¿½
 	   	if(!board.getBoard_pass().equals(pass)){ 
 	   		out.println("<script>");
-			out.println("alert('ºñ¹Ð¹øÈ£°¡ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù.')");
+			out.println("alert('ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë ¸ìŠµë‹ˆë‹¤.')");
 			out.println("history.go(-1)");
 			out.println("</script>");
 	   		out.close();
@@ -46,7 +46,7 @@ public class FDelete_action implements Action {
 	   	}
 	   	
 	   	forward.setRedirect(true);
-	   	forward.setPath("./FList.fr?page="+page);
+	   	forward.setPath("/free/FList.fr?page="+page);
 	   	return forward;	   	
 	   	
 	 }

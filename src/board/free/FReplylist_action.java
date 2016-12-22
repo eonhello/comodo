@@ -27,13 +27,13 @@ public class FReplylist_action implements Action {
 		BoardBean boardBean = new BoardBean();
 		boardBean.setBoard_num(brdno);
 
-		//ÃÑ ÆäÀÌÁö ¼ö
-		System.out.println("º¸µå¸®½ºÆ®°¡ °¡Áö°í ÀÖ´Â °ª : " + boardlist);
+		//ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
+		System.out.println("ë‹µë³€ ê¸€ ê°¯ìˆ˜ ìž…ë‹ˆë‹¤. : " + boardlist);
 		request.setAttribute("boardlist", boardlist);		
 
 		ActionForward forward= new ActionForward();
 	 	forward.setRedirect(false);
- 		forward.setPath("/FDetail_action.fr");
+ 		forward.setPath("/free/FDetail_action.fr");
  		return forward;
 	 }
 }

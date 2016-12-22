@@ -23,19 +23,19 @@ public class FController extends javax.servlet.http.HttpServlet implements javax
 		String command = RequestURI.substring(contextPath.length());
 		ActionForward forward = null;
 		Action action = null;
-
+		
 		System.out.println("RequestURI=" + RequestURI);
 		System.out.println("contextPath=" + contextPath);
 		System.out.println("command=" + command);
 
-		if (command.equals("/FWrite.fr")) {			
+		if (command.equals("/free/FWrite.fr")) {			
 			forward = new ActionForward();
 			forward.setRedirect(true);
-			forward.setPath("/Free_Board2/C_Board/Free/FBoard_Write.jsp");
+			forward.setPath("../C_Board/Free/FBoard_Write.jsp");
 		
-		// ±Û ÀÛ¼º	
-		} else if (command.equals("/FWrite_action.fr")) {
-			System.out.println("°Ô½ÃÆÇ ¾²±â");
+		// ï¿½ï¿½ ï¿½Û¼ï¿½	
+		} else if (command.equals("/free/FWrite_action.fr")) {
+			System.out.println("ê¸€ì“°ê¸° ì•¡ì…˜ìœ¼ë¡œ ë“¤ì–´ì™”ì–´ìš”.");
 			action = new FWrite_action();
 			try {
 				forward = action.execute(request, response);
@@ -43,8 +43,8 @@ public class FController extends javax.servlet.http.HttpServlet implements javax
 				e.printStackTrace();
 			}
 			
-		} else if (command.equals("/FList.fr")) {
-			System.out.println("°Ô½ÃÆÇ ¸®½ºÆ®");
+		} else if (command.equals("/free/FList.fr")) {
+			System.out.println("ë¦¬ìŠ¤íŠ¸ë¡œ ë“¤ì–´ì™”ë‹¤~");
 			action = new FList_action();
 			try {
 				forward = action.execute(request, response);
@@ -52,8 +52,8 @@ public class FController extends javax.servlet.http.HttpServlet implements javax
 				e.printStackTrace();
 			}
 
-		} else if (command.equals("/FDetail_action.fr")) {
-			System.out.println("°Ô½ÃÆÇ »ó¼¼º¸±â");
+		} else if (command.equals("/free/FDetail_action.fr")) {
+			System.out.println("ê¸€ë³´ê¸° ì•¡ì…˜ìœ¼ë¡œ ë“¤ì–´ì™”ì–´ìš”.");
 			action = new FDetail_action();
 			try {
 				forward = action.execute(request, response);
@@ -61,8 +61,8 @@ public class FController extends javax.servlet.http.HttpServlet implements javax
 				e.printStackTrace();
 			}
 			
-		} else if (command.equals("/FModify.fr")) {
-			System.out.println("°Ô½ÃÆÇ ¼öÁ¤ ½ÇÇà");
+		} else if (command.equals("/free/FModify.fr")) {
+			System.out.println("ê¸€ìˆ˜ì • ì•¡ì…˜ìœ¼ë¡œ ë“¤ì–´ì™”ì–´ìš”.");
 			action = new FModify_view();
 			try {
 				forward = action.execute(request, response);
@@ -70,8 +70,8 @@ public class FController extends javax.servlet.http.HttpServlet implements javax
 				e.printStackTrace();
 			}
 			
-		} else if (command.equals("/FModify_action.fr")) {
-			System.out.println("°Ô½ÃÆÇ ¼öÁ¤¿Ï·á¹öÆ° Å¬¸¯ ÈÄ ÄÜÆ®·Ñ·¯·Î µé¾î¿Ô½À´Ï´Ù.");
+		} else if (command.equals("/free/FModify_action.fr")) {
+			System.out.println("ê¸€ ìˆ˜ì • ì•¡ì…˜ìœ¼ë¡œ ë“¤ì–´ì˜´");
 			action = new FModify_action();
 			try {
 				forward = action.execute(request, response);
@@ -79,14 +79,14 @@ public class FController extends javax.servlet.http.HttpServlet implements javax
 				e.printStackTrace();
 			}
 			
-		} else if (command.equals("/FDelete.fr")) {
-			System.out.println("°Ô½ÃÆÇ »èÁ¦ ¹öÆ° Å¬¸¯ ÈÄ »èÁ¦ÆäÀÌÁö·Î ÀÌµ¿ÇÏ¿´½À´Ï´Ù");
+		} else if (command.equals("/free/FDelete.fr")) {
+			System.out.println("ê¸€ ì‚­ì œë¡œ ê°€ì");
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("/C_Board/Free/FBoard_Delete.jsp");
 			
-		} else if (command.equals("/FDeleteAction.fr")) {
-			System.out.println("°Ô½ÃÆÇ »èÁ¦ ¹öÆ° Å¬¸¯ ÈÄ ÄÁÆ®·Ñ·¯·Î µé¾î¿Ô½À´Ï´Ù.");
+		} else if (command.equals("/free/FDeleteAction.fr")) {
+			System.out.println("ê¸€ì‚­ì œ ì•¡ì…˜ìœ¼ë¡œ ë“¤ì–´ì˜´ ");
 			action = new FDelete_action();
 			try {
 				forward = action.execute(request, response);
@@ -94,20 +94,20 @@ public class FController extends javax.servlet.http.HttpServlet implements javax
 				e.printStackTrace();
 			}
 			
-		} else if (command.equals("/FReply.fr")) {
-			System.out.println("´ñ±Û ´Ş±â ¼­ºí¸´ Á¢¼Ó ¼º°ø");
-			action = new FReply_action();		// ´ñ±Û ´Ş±âÀ§ÇÑ ¾×¼Ç ½ÇÇà
-			System.out.println("´äº¯´Ş±â ¾×¼ÇÆÄÀÏ ·Îµå ¼º°ø");
+		} else if (command.equals("/free/FReply.fr")) {
+			System.out.println("ë‹µë³€ ë‹¬ê¸° í´ë¦­ í›„ ì„œë¸”ë¦¿ ì ‘ì† í•¨");
+			action = new FReply_action();		// ë‹µë³€ ë‹¬ê¸° ì•¡ì…˜ ì‹¤í–‰
+			System.out.println("ë‹µë³€ ë‹¬ê¸° ì•¡ì…˜ ì‹¤í–‰ ì™„ë£Œ");
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			
-		} else if (command.equals("/FReplylist.fr")) {
-			System.out.println("´äº¯±Û ¸®½ºÆ®");
+		} else if (command.equals("/free/FReplylist.fr")) {
+			System.out.println("ë‹µë³€ ëª©ë¡ ì„œë¸”ë¦¿ ì ‘ì† ");
 			action = new FReplylist_action();
-			System.out.println("´äº¯¸®½ºÆ® ¾×¼ÇÆÄÀÏ Á¢¼Ó ¼º°ø");
+			System.out.println("ë‹µë³€ ëª©ë¡ ì•¡ì…˜ ì‹¤í–‰ ì™„ë£Œ");
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {

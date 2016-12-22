@@ -52,7 +52,7 @@ body {
 	
 <!-- 댓글 입력 폼 -->
 	<div style="border: 1px solid; width: 600px; padding: 5px">
-    <form name="reply" action="/Free_Board2/FReply.fr" method="post">
+    <form name="reply" action="/free/FReply.fr" method="post">
         <input type="hidden" name="brdno" value="${boarddata.board_num}"/>
         작성자: <input type="text" name="rewriter" size="20" maxlength="20"> <br/>
         <textarea name="rememo" rows="3" cols="60" maxlength="500" placeholder="댓글을 달아주세요."></textarea>
@@ -71,11 +71,11 @@ body {
 		<hr size=1>
 		<div align="center">
 		<input type="button" value="수정"
-		onclick="move('./FModify.fr?num=${boarddata.board_num}&page=${page}');"> |
+		onclick="move('/free/FModify.fr?num=${boarddata.board_num}&page=${page}');"> |
 		<input type="button" value="삭제"
-		onclick="move('./FDelete.fr?num=${boarddata.board_num}&page=${page}');"> |
+		onclick="move('/free/FDelete.fr?num=${boarddata.board_num}&page=${page}');"> |
 			<input type="button" value="목록"
-		onclick="move('./FList.fr?page=${page}');"><br>
+		onclick="move('/free/FList.fr?page=${page}');"><br>
 		</div>
 		</td>
 	</tr>

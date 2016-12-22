@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="db.*" %>
+<%@ page import="db.board.free.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
@@ -11,13 +11,13 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="./assets/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
+		<link href="../assets/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
 		   
 		
 		<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
-		<script src="./assets/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+		<script src="../assets/bootstrap-3.3.2/js/bootstrap.min.js"></script>
 </head>
 
 <body>
@@ -160,10 +160,10 @@
 	%>
 	<tr align="right">
 		<td colspan="5">
-	   		<a href="/Free_Board2/FWrite.fr" role="button" class="btn btn-success" >글쓰기</a>
+	   		<a href="/free/FWrite.fr" role="button" class="btn btn-success" >글쓰기</a>
 		</td>
 	</tr>
-	        <form name="serach" method ="post" action="/Free_Board2/FList.fr">
+	        <form name="serach" method ="post" action="/free/FList.fr">
            <select name="keyField">
                 <option value="0">검색항목</option>
                 <option value="id">아이디</option>

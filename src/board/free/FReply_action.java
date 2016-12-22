@@ -27,12 +27,12 @@ public class FReply_action	implements Action {
 		   			
 				boarddao.replyInsert(boarddata);
 				
-				System.out.println("µé¾î¿Â °Ô½Ã±Û »ç¶÷Àº : " + boarddata.getRewriter());
-				System.out.println("µé¾î¿Â °Ô½ÃÆÇ ¹øÈ£´Â : " + boarddata.getBrdno());
-				System.out.println("µé¾î¿Â °Ô½ÃÆÇ ³»¿ëÀº : " + boarddata.getRememo());
+				System.out.println("ì‘ì„±ì : " + boarddata.getRewriter());
+				System.out.println("ê²Œì‹œíŒ ë²ˆí˜¸ : " + boarddata.getBrdno());
+				System.out.println("ê²Œì‹œíŒ ë‚´ìš©: " + boarddata.getRememo());
 	   		
 		   		forward.setRedirect(false);
-		   		forward.setPath("/FDetail_action.fr?num="+boarddata.getBrdno());
+		   		forward.setPath("/free/FDetail_action.fr?num="+boarddata.getBrdno());
 		   		return forward;
 		   		
 	  		}catch(Exception ex){

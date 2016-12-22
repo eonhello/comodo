@@ -39,12 +39,13 @@ import db.board.free.BoardDAOImpl;
 	   	request.setAttribute("page", page);
 	   	request.setAttribute("replydlist", replylist); // 댓글 불러오기
 	   	
+	   	
 	   	System.out.println("조회수검색입니다 : "+boarddata.getBoard_readcount());
 	   	System.out.println("작성날짜입니다 : "+boarddata.getBoard_date());
 	   
 	   	ActionForward forward = new ActionForward();
 	   	forward.setRedirect(false);
-   		forward.setPath("./C_Board/Free/FBoard_View.jsp");
+   		forward.setPath("../C_Board/Free/FBoard_View.jsp");
    		return forward;
 
 	 }

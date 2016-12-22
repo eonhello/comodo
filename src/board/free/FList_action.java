@@ -17,7 +17,7 @@ import db.board.free.BoardDAOImpl;
  public class FList_action implements Action {
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 
-		 request.setCharacterEncoding("utf-8");
+		request.setCharacterEncoding("utf-8");
 		BoardDAOImpl boarddao=new BoardDAOImpl();
 		List boardlist=new ArrayList();
 
@@ -83,7 +83,7 @@ import db.board.free.BoardDAOImpl;
 		
 		ActionForward forward= new ActionForward();
 	 	forward.setRedirect(false);
- 		forward.setPath("/C_Board/Free/FBoard_List.jsp");
+ 		forward.setPath("../C_Board/Free/FBoard_List.jsp");
  		return forward;
  		
 	 }

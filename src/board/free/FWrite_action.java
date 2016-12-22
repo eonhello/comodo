@@ -48,16 +48,17 @@ public class FWrite_action implements Action {
 			System.out.println("content="+boarddata.getFboard_content());*/
    			
    			
-   			boarddata.setHak_num(Integer.parseInt(request.getParameter("hak_num")));
+   			boarddata.setHak_num(request.getParameter("hak_num").trim());
+   			boarddata.setBoard_name(request.getParameter("board_name"));
    			boarddata.setBoard_pass(request.getParameter("board_pass").trim());
 	   		boarddata.setBoard_subject(request.getParameter("board_subject").trim());
 	   		boarddata.setBoard_content(request.getParameter("board_content").trim());
 	   	
  		
 			boarddao.boardInsert(boarddata);
-   		
+			System.out.println("ë¦¬ìŠ¤íŠ¸ë¡œ ê°’ì„ ë³´ë‚´ì¤€ë‹¤");
 	   		forward.setRedirect(true);
-	   		forward.setPath("/Free_Board2/FList.fr"); 	// ¸®½ºÆ® ±¸Çö Àü ¼­ºí¸´ ¾øÀÌ Á÷Á¢ ¸µÅ© ½÷ÁÖ±â
+	   		forward.setPath("/free/FList.fr"); 	
 	   		return forward;
 	   		
   		}catch(Exception ex){

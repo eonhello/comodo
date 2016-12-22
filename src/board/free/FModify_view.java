@@ -32,7 +32,7 @@ public class FModify_view implements Action {
 		   	request.setAttribute("boarddata", boarddata);
 		    request.setAttribute("page", page);
 		   	forward.setRedirect(false);
-	   		forward.setPath("./C_Board/Free/FBoard_Update.jsp");
+	   		forward.setPath("../C_Board/Free/FBoard_Update.jsp");
 	   		return forward;
 	 }
 }

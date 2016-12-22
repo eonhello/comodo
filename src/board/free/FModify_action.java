@@ -11,12 +11,6 @@ import db.board.free.BoardBean;
 import db.board.free.BoardDAOImpl;
 
 
-
-
-
-
-
-
  public class FModify_action implements Action {
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) 
 	 	throws Exception{
@@ -55,7 +49,7 @@ import db.board.free.BoardDAOImpl;
 		   	 System.out.println("수정페이지 접속 완료");
 		   	 
 		   	 forward.setRedirect(true);
-		   	 forward.setPath("./FDetail_action.fr?num="+boarddata.getBoard_num()+"&page="+page);
+		   	 forward.setPath("/free/FDetail_action.fr?num="+boarddata.getBoard_num()+"&page="+page);
 		   	 return forward;
 	   	 }catch(Exception ex){
 	   			ex.printStackTrace();	 

@@ -4,6 +4,7 @@ import java.sql.Date;
 
 public class BoardBean {
 	private int board_num;
+	private String hak_num;
 	private String board_name;
 	private String board_pass;
 	private String board_subject;
@@ -13,7 +14,7 @@ public class BoardBean {
 	private int board_re_seq;
 	private int board_readcount;
 	private Date board_date;
-	private int hak_num;
+	
 	
 	public int getBoard_num() {
 		return board_num;
@@ -21,10 +22,11 @@ public class BoardBean {
 	public void setBoard_num(int board_num) {
 		this.board_num = board_num;
 	}
-	public int getHak_num() {
+
+	public String getHak_num() {
 		return hak_num;
 	}
-	public void setHak_num(int hak_num) {
+	public void setHak_num(String hak_num) {
 		this.hak_num = hak_num;
 	}
 	public String getBoard_name() {

@@ -44,7 +44,7 @@
 <body>
 	<div class="container" style="margin-top:50px">
 	<table summary="글쓰기 전체 테이블" class="table table-bordered">
-		<form name="BoardWriteForm" method="post" action="/Free_Board2/FWrite_action.fr">
+		<form name="BoardWriteForm" method="post" action="/free/FWrite_action.fr">
 													
    		<colgroup>
    			<col width="20%">
@@ -56,11 +56,11 @@
 		<caption>게시판 글쓰기</caption>	
     		<tr>
 				<td>작성자</td>
-				<td><input type=text name=board_name size=10 maxlength=8 readonly></td>
+				<td><input type=text name=board_name size=10 maxlength=8 ></td>
 			</tr>
 			<tr>
 				<td>학번</td>
-				<td><input type=text name=hak_num size=10 maxlength=8 readonly></td>
+				<td><input type=text name=hak_num size=10 maxlength=8 ></td>
 			</tr>
     		<tr>
      			<td>제 목</td>

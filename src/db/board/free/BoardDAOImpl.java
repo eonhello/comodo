@@ -28,13 +28,13 @@ public class BoardDAOImpl {
 	}	
 	
 	
-	/* 게시?�� �??���? */
+	/* 게시글 입력 */
 	public void boardInsert(BoardBean board) {
 		SqlSession session=null;
 		int result = 0;		
 		try{
 			session = getSession(); 
-			System.out.println("?��기후 ?��?��?��?���? ?��?��?��?��?��.");
+			System.out.println("데이터 베이스 접속 성공 데이터 가져와야함");
 			
 /*			System.out.println("name1="+board.getFboard_name());
 			System.out.println("pass1="+board.getFboard_pass());
@@ -103,7 +103,7 @@ public class BoardDAOImpl {
 		int result = 0;		
 		try{
 			session = getSession(); 
-			System.out.println("리플?��?�� sql쿼리�? ?��리기 ?��?��?��?��.");
+			System.out.println("답변글을 달기 위한 쿼리 문입니다.");
 			result=session.insert("comment.comment_insert", comment);
 			System.out.println("result="+result);
 		}catch(Exception e){
@@ -139,8 +139,8 @@ public class BoardDAOImpl {
 		Map M = new HashMap();
 		M.put("keyword", '%'+keyword+'%');
 		M.put("keyField", keyField);
-		System.out.println("�??��?��기키?��?�� : "+M.get(keyword));
-		System.out.println("�??�� 카테고리 ?��?��?�� : "+M.get(keyField));
+		System.out.println("입력한 키워드입니다. : "+M.get(keyword));
+		System.out.println("선택한 카테고리입니다. : "+M.get(keyField));
 		count = ((Integer) session.selectOne("board.search_count", M)).intValue();	
 		 
 		return count;
