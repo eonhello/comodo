@@ -35,8 +35,9 @@ body {
 	</table>
 	
 	<table width=70% cellspacing=0 cellpadding=2>
-		<form name="FBoardDeleteForm" method="post" action="FBoard_Delete_action.jsp" 
+		<form name="FBoardDeleteForm" method="post" action="./FDeleteAction.fr?num=${param.num}" 
 														onsubmit="return FboardDeleteCheck();" >
+		<input type=hidden name=page value="${param.page}">												
  	<tr>
 		<td align=center>
 		<table align=center border=0 width=91%>

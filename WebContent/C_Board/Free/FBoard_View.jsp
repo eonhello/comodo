@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,47 +26,61 @@ body {
 </head>
 
 <body>
-	<form name="BoardViewForm" method="post">
 	<table summary="전체 테이블 구성">
 	<tr>
-		<td ><div align="center"><h3><b>FBoard_View</b></h3></div></td>
+		<td ><div align="center"><h3><b>${boarddata.board_subject}</b></h3></div></td>
 	</tr>
 	<tr>
 		<td colspan=3>
 		<table border="1" width="800" height="200" summary="목록 테이블 구성"> 
     <tr> 
-		<td align=center bgcolor=#dddddd width=10%> 작성자</td>
-		<td bgcolor=#ffffe8 width=20%>나다</td>
+		<td align=center bgcolor=#dddddd width=10%> 작성자 </td>
+		<td bgcolor=#ffffe8 width=20% align="center">나다</td>
 		<td align=center bgcolor=#dddddd width=10%> 작성일</td>
-		<td bgcolor=#ffffe8 width=20%>2015/11/23</td>
+		<td bgcolor=#ffffe8 width=20% align="center">${boarddata.board_date}</td>
 		<td align=center bgcolor=#dddddd> 조회수 </td>
-		<td bgcolor=#ffffe8 >23</td> 
+		<td bgcolor=#ffffe8 align="center">${boarddata.board_readcount}</td> 
 	</tr>
 	<tr> 
 		<td align=center bgcolor=#dddddd> 제 목</td>
-		<td bgcolor=#ffffe8 colspan=6> 게시판 제목이 들어간다. </td>
+		<td bgcolor=#ffffe8 colspan=6 align="center"> ${boarddata.board_subject} </td>
    </tr>
    <tr> 
-		<td colspan=6><br>ㅎㅇㅎㅇㅎㅇㅎㅇ<br></td>
+		<td colspan=6 align="center"><br>${boarddata.board_content}<br></td>
    </tr>
 	</table>
-	</td>
- 	</tr>
- 	<jsp:include page="FBoard_Reply.jsp" flush="false" />
-	<tr>
+	
+<!-- 댓글 입력 폼 -->
+	<div style="border: 1px solid; width: 600px; padding: 5px">
+    <form name="reply" action="/Free_Board2/FReply.fr" method="post">
+        <input type="hidden" name="brdno" value="${boarddata.board_num}"/>
+        작성자: <input type="text" name="rewriter" size="20" maxlength="20"> <br/>
+        <textarea name="rememo" rows="3" cols="60" maxlength="500" placeholder="댓글을 달아주세요."></textarea>
+        <input type="submit" value="저장"/>
+    </form>
+	
+	</div> 
+			<c:forEach var="reply" items="${replydlist}" >
+						<p>${reply.rewriter}</p>
+						<p>${reply.redate}</p>
+						<p>${reply.rememo}</p>
+			</c:forEach>
+
+		<tr>
 		<td align=center colspan=2> 
 		<hr size=1>
 		<div align="center">
-		<input type="button" value="수정" onclick="move('FBoard_Update.jsp');"> |
-		<input type="button" value="삭제" onclick="move('FBoard_Delete.jsp');"><br>
+		<input type="button" value="수정"
+		onclick="move('./FModify.fr?num=${boarddata.board_num}&page=${page}');"> |
+		<input type="button" value="삭제"
+		onclick="move('./FDelete.fr?num=${boarddata.board_num}&page=${page}');"> |
+			<input type="button" value="목록"
+		onclick="move('./FList.fr?page=${page}');"><br>
 		</div>
 		</td>
 	</tr>
 	</table>
-</form>
+
 
 </body>
-<br>
-<br>
- 	<jsp:include page="FBoard_List.jsp" flush="false" />
 </html>

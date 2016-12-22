@@ -3,59 +3,61 @@ package board.free;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
+import action.Action;
+import action.ActionForward;
+import db.board.free.BoardBean;
+import db.board.free.BoardDAOImpl;
 
-import db.BoardBean;
-import db.BoardDAOImpl;
+
 
 public class FWrite_action implements Action {
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
 		
+		 
+		request.setCharacterEncoding("utf-8");
 		BoardDAOImpl boarddao=new BoardDAOImpl();
 	   	BoardBean boarddata=new BoardBean();
 	   	
 	   	ActionForward forward=new ActionForward();
 	   	
-		String realFolder="";
-   		String saveFolder="boardUpload";   		
-   		int fileSize=5*1024*1024;   		
-   		realFolder=request.getRealPath(saveFolder);
-   		
-   		boolean result=false;
-   		
+//		String realFolder="";
+//   		String saveFolder="boardUpload";   		
+//   		int fileSize=5*1024*1024;   		
+//   		realFolder=request.getRealPath(saveFolder);
+//   		
+//   		boolean result=false;
+//   		
    		try{
-   			
-   			MultipartRequest multi=null;
-   			
-   			multi=new MultipartRequest(request,
-   					realFolder,
-   					fileSize,
-   					"utf-8",
-   					new DefaultFileRenamePolicy());
+//   			
+//   			MultipartRequest multi=null;
+//   			
+//   			multi=new MultipartRequest(request,
+//   					realFolder,
+//   					fileSize,
+//   					"utf-8",
+//   					new DefaultFileRenamePolicy());
    			
    		/*	boarddata.setFboard_name(multi.getParameter("Fboad_name").trim());*/
-   			boarddata.setFboard_pass(multi.getParameter("Fboad_pass").trim());
-	   		boarddata.setFboard_title(multi.getParameter("Fboad_title").trim());
-	   		boarddata.setFboard_content(multi.getParameter("Fboad_content").trim());
+//   			boarddata.setBoard_pass(multi.getParameter("Fboad_pass").trim());
+//	   		boarddata.setBoard_title(multi.getParameter("Fboad_title").trim());
+//	   		boarddata.setBoard_content(multi.getParameter("Fboad_content").trim());
 	   		
-			System.out.println("name="+boarddata.getFboard_name());
+/*			System.out.println("name="+boarddata.getFboard_name());
 			System.out.println("pass="+boarddata.getFboard_pass());
 			System.out.println("subject="+boarddata.getFboard_title());
-			System.out.println("content="+boarddata.getFboard_content());
+			System.out.println("content="+boarddata.getFboard_content());*/
+   			
+   			
+   			boarddata.setHak_num(Integer.parseInt(request.getParameter("hak_num")));
+   			boarddata.setBoard_pass(request.getParameter("board_pass").trim());
+	   		boarddata.setBoard_subject(request.getParameter("board_subject").trim());
+	   		boarddata.setBoard_content(request.getParameter("board_content").trim());
+	   	
  		
 			boarddao.boardInsert(boarddata);
-//	   		result=boarddao.boardInsert(boarddata);
-	   		
-	   		
-	   		/*if(result==false){
-	   			System.out.println("ê²Œì‹œ?ï¿½ï¿½ ?ï¿½ï¿½ï¿½? ?ï¿½ï¿½?ï¿½ï¿½");
-	   			return null;
-	   		}
-	   		System.out.println("ê²Œì‹œ?ï¿½ï¿½ ?ï¿½ï¿½ï¿½? ?ï¿½ï¿½ï¿½?");*/
-	   		
+   		
 	   		forward.setRedirect(true);
-	   		forward.setPath("FBoard_List.jsp"); 	// ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Å© ï¿½ï¿½ï¿½Ö±ï¿½
+	   		forward.setPath("/Free_Board2/FList.fr"); 	// ¸®½ºÆ® ±¸Çö Àü ¼­ºí¸´ ¾øÀÌ Á÷Á¢ ¸µÅ© ½÷ÁÖ±â
 	   		return forward;
 	   		
   		}catch(Exception ex){

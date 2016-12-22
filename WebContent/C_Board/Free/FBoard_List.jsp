@@ -1,77 +1,180 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8" isELIgnored="false"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" 
-"http://www.w3.org/TR/html4/loose.dtd">
-<html lang="ko">
+<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page import="java.util.*"%>
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="db.*" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>게시판 목록</title>
- 
-<style type="text/css">
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-body {
-    font-family: 'Nanum Gothic', sans-serif;
-}
- 
-</style>
-
-<script type="text/javascript">
-	function move(url){
-		location.href=url;
-	}
-
-</script>
-
+	<title>자유게시판</title>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="./assets/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
+		   
+		
+		<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+		<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
+		<script src="./assets/bootstrap-3.3.2/js/bootstrap.min.js"></script>
 </head>
- 
+
 <body>
-    <table class="bbs" width="800" height="200" border="2" bgcolor="FFFFFF">
-        <colgroup>
-            <col width="50" />
-            <col width="450" />
-            <col width="100" />
-            <col width="100" />
-        </colgroup>
-        <thead>
-            <tr>
-                <th>번 호</th>
-                <th>제 목</th>
-                <th>작성자</th>
-                <th>작성일</th>
-                <th>조 회</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-				<td align="center">3</td>
-				<td><a href = "FBoard_View.jsp">글글글</a></td>
-				<td align="center">작성자3</td>
-				<td align="center">2016/12/15</td>
-				<td align="center">232</td>
-			</tr>
-            <tr>
-				<td align="center">2</td>
-				<td><a href = "FBoard_View.jsp">글글글</a></td>
-				<td align="center">작성자2</td>
-				<td align="center">2016/12/15</td>
-				<td align="center">2552</td>
-			</tr>
-            <tr>
-				<td align="center">1</td>
-				<td><a href = "FBoard_View.jsp">글글글</a></td>
-				<td align="center">작성자1</td>
-				<td align="center">2016/12/15</td>
-				<td align="center">22</td>
-			</tr>
-        </tbody>
-        <tfoot>
-        	<tr>
-        		<td align = "center" colspan="5">1</td>
-  			</tr>      		 
-        </tfoot>
-    </table>
-    	<input type="button" value="처음으로" onclick="move('FBoard_List.jsp');"/>
-   		<input type="button" value="글쓰기" onclick="move('FBoard_Write.jsp');"/>
+<!-- 게시판 리스트 -->
+<div class="container" style="margin-top:50px">
+<table align=center width=600 border="1" cellpadding="0" cellspacing="0" class="table table-bordered">
+<%
+//if(listcount > 0){
+%>
+
+<!-- 레코드가 있으면 -->
+<c:if test="${listcount > 0 }">
+
+	<tr align="center" valign="middle">
+		<td colspan="4">자유게시판</td>
+		<td align=center>
+			<font size=2 >글 개수 : ${listcount }</font>
+		</td>
+	</tr>
+	
+	<tr align="center" valign="middle" bordercolor="#333333">
+		<td style="font-family:Tahoma;font-size:8pt;" width="8%" height="26">
+			<div align="center">번호</div>
+		</td>
+		<td style="font-family:Tahoma;font-size:8pt;" width="50%">
+			<div align="center">제목</div>
+		</td>
+		<td style="font-family:Tahoma;font-size:8pt;" width="14%">
+			<div align="center">작성자</div>
+		</td>
+		<td style="font-family:Tahoma;font-size:8pt;" width="17%">
+			<div align="center">날짜</div>
+		</td>
+		<td style="font-family:Tahoma;font-size:8pt;" width="11%">
+			<div align="center">조회수</div>
+		</td>
+	</tr>
+	
+	 
+	<!-- 화면 출력 번호 -->		
+	<c:set var="num" value="${listcount-(page-1)*10}"/> 	
+	
+	<c:forEach var="b" items="${boardlist}">	
+	
+	<tr align="center" valign="middle" bordercolor="#333333"
+		onmouseover="this.style.backgroundColor='F8F8F8'"
+		onmouseout="this.style.backgroundColor=''">
+		<td height="23" style="font-family:Tahoma;font-size:10pt;">
+			<!-- 번호 출력 부분 -->
+			<c:out value="${num}"/>				
+			<c:set var="num" value="${num-1}"/>					
+		</td>
+		
+		<td style="font-family:Tahoma;font-size:10pt;">
+			<div align="left">
+			
+			<!-- 답변글 제목앞에 여백 처리 부분 -->
+		    <c:if test="${b.board_re_lev != 0}"> 
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ▶				
+			</c:if>   
+			<c:if test="${b.board_re_lev == 0}"> 
+				&nbsp; ▶ <a href="./FDetail_action.fr?num=${b.board_num}&page=${page}">
+				${b.board_subject}
+			</a>
+			</c:if>			
+
+			
+			</div>
+		</td>
+		
+		<td style="font-family:Tahoma;font-size:10pt;">
+			<div align="center"><%--bl.getBOARD_NAME() --%></div>
+					${b.board_name}
+		</td>
+		<td style="font-family:Tahoma;font-size:10pt;">
+			<div align="center"><%--bl.getBOARD_DATE() --%></div>
+					${b.board_date}
+		</td>	
+		<td style="font-family:Tahoma;font-size:10pt;">
+			<div align="center"><%--bl.getBOARD_READCOUNT() --%></div>
+					${b.board_readcount}
+		</td>
+	</tr>
+	
+	</c:forEach>
+	<%-- </c:if> --%>
+	<%//}// for end %>
+	
+	
+	<tr align=center height=20>
+		<td colspan=7 style=font-family:Tahoma;font-size:10pt;>
+			
+			<c:if test="${page <= 1 }">
+				<input type = "button" value = "이전" class="btn btn-default"></> &nbsp;
+			</c:if>
+			<!-- 뒤에 &keyword=${keyword} 붙여줘서 검색기능 페이징처리 완료 -->
+			<c:if test="${page > 1 }">
+				  <a href="./FList.fr?page=${page-1}&keyword=${keyword}" role="button" class="btn btn-default">이전</a>&nbsp;
+			</c:if>
+			
+			
+			<c:forEach var="a" begin="${startpage}" end="${endpage}">
+				<c:if test="${a == page }">
+					[${a}]
+				</c:if>
+				<c:if test="${a != page }">
+					<a href="./FList.fr?page=${a}&keyword=${keyword}">[${a}]</a>&nbsp;
+				</c:if>
+			</c:forEach>
+			
+			<c:if test="${page >= maxpage }">
+				<input type = "button" value = "다음" class="btn btn-default"></> 
+			</c:if>
+			
+			<c:if test="${page < maxpage }">
+				<a href="./FList.fr?page=${page+1}&keyword=${keyword}" role="button" class="btn btn-default">다음</a>
+			</c:if>
+			
+			
+		</td>
+	</tr>
+	
+	</c:if>
+	<%
+//    }else{
+	%>
+	
+	<!-- 레코드가 없으면 -->
+	<c:if test="${listcount == 0 }">
+	<tr align="center" valign="middle">
+		<td colspan="4">자유게시판</td>
+		<td align=right>
+			<font size=2>등록된 글이 없습니다.</font>
+		</td>
+	</tr>
+	</c:if>
+	
+	<%
+//	}
+	%>
+	<tr align="right">
+		<td colspan="5">
+	   		<a href="/Free_Board2/FWrite.fr" role="button" class="btn btn-success" >글쓰기</a>
+		</td>
+	</tr>
+	        <form name="serach" method ="post" action="/Free_Board2/FList.fr">
+           <select name="keyField">
+                <option value="0">검색항목</option>
+                <option value="id">아이디</option>
+                <option value="subject">제목</option>
+                <<option value="content">내용</option>
+            </select>
+            <input type="text" name="keyword" />
+            <input type="submit" value="검색" class="btn btn-success"/>
+            </form>
+	
+</table>
+</div>
 </body>
 </html>
