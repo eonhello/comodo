@@ -22,6 +22,7 @@
 	<mappers>
 		<mapper resource="./db/board/sleep/sleep_board.xml" />
 		<!-- <mapper resource="board.xml" />-->
+		<!-- QnA --><mapper resource="./db/board/qna/Qboard.xml" />
 	</mappers>
 
 </configuration>

@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Qboard">
+
+<!-- 	q_board_num NUMBER NOT NULL, /* 글번호 */
+	q_haknum VARCHAR2(10) NOT NULL, /* 학번 */
+	q_subject VARCHAR2(100) NOT NULL, /* 제목 */
+	q_content VARCHAR2(1000) NOT NULL, /* 내용 */
+	q_file VARCHAR2(50),
+	q_check VARCHAR2(2) DEFAULT 0, /* 예정) 답변여부 혹은 비밀글여부 */
+	q_re_ref NUMBER,
+	q_re_lev NUMBER,
+	q_re_seq NUMBER,
+	q_readcount NUMBER,
+	q_reg_date DATE, /* 작성 날짜 */
+	q_regupdate_date DATE /* 수정 날짜 */ -->
+<!-- 	private int Qboard_num;
+	private String Qboard_pass;
+	private String Qboard_subject;
+	private String Qboard_content;
+	private String Qboard_file;
+	private int Qboard_re_ref;
+	private int Qboard_re_lev;
+	private int Qboard_readcount;
+	private Date Qboard_date; -->
+		
+	
+	<!-- 게시판 저장 -->
+	<insert id="Qboard_insert" parameterType="db.board.qna.QBoardBean">
+		insert into	qna_tab(
+			q_board_num,
+			q_haknum,
+			q_pass,
+			q_subject,
+			q_content,
+			q_check,
+			q_file,
+			q_re_ref,
+			q_re_lev,
+			q_re_seq,
+			q_readcount,
+			q_reg_date)
+		 values(
+		 	q_board_num.nextval,
+		 	1,
+		 	#{q_pass},
+		 	#{q_subject},
+			#{q_content},
+			0,
+			#{q_file,jdbcType=VARCHAR},
+			q_board_num.nextval,
+			0,
+			0,
+			0,
+			sysdate)	
+	</insert>
+	
+	<!-- 게시판 총게시물 수 -->
+	<select id="Qboard_count" resultType="int">
+		select 
+			count(q_board_num) 
+		from 
+			qna_tab
+	</select>	
+	
+	<!-- 게시판 목록 (page번호를 전달받아서 startRow와 endRow를 구함)-->
+	<select id="Qboard_list"  parameterType="int"  resultType="Qboard">
+	    <![CDATA[
+		select 
+			* 
+		from 
+			 (select 
+			 	rownum rnum,
+			 	q_board_num,
+			 	q_haknum,
+			 	q_pass,
+			 	q_subject,			 	
+			 	q_content,
+			 	q_file,
+			 	q_re_ref,
+			 	q_re_lev,
+			 	q_re_seq,
+			 	q_readcount,
+		 	 	q_reg_date,
+		 	 	q_regupdate_date 
+		 	 from  
+		  	  	(select 
+		  	  		* 
+		  	  	from 
+		  	  		qna_tab 
+		  	  	order by 
+		  	  		q_re_ref desc,
+		  	  		q_re_seq asc
+		  	  	)
+		  	 ) 
+	   	 where 
+	   	 	rnum >= ((#{page}-1) * 10+1)  
+	   	 and 
+	   	 	rnum <= (#{page} * 10)
+		]]>
+	</select>
+	
+		<!-- 게시판 조회수 증가 -->
+	<update id="Qboard_hit" parameterType="int">
+		update 
+			qna_tab 
+		set
+			q_readcount=q_readcount+1
+		where
+			q_board_num=#{q_board_num}
+	</update>	
+	
+	<!-- 게시판 내용보기 -->
+	<select id="Qboard_cont" resultType="Qboard" parameterType="int">
+		select 
+			* 
+		from 
+			qna_tab 
+		where 
+			q_board_num=#{q_board_num}
+	</select>	
+	
+	<!-- 게시물 삭제 -->
+	<delete id="Qboard_del" parameterType="int">
+		delete from 
+			qna_tab 
+		where 
+			q_board_num=#{q_board_num}
+	</delete>
+
+	<!-- 게시물 수정 -->
+	<update id="Qboard_edit" parameterType="Qboard">
+		update 
+			qna_tab 
+		set		
+			q_subject=#{q_subject},	
+			q_content=#{q_content}
+		where 
+			q_board_num=#{q_board_num}
+	</update>
+
+	<!-- 답변글 레벨 증가 -->
+	<update id="Qboard_Level" parameterType="Qboard">
+		update 
+			qna_tab 
+		set
+			q_re_seq=q_re_seq+1
+		where 
+			q_re_ref=#{q_re_ref} 
+		and 
+			q_re_seq > #{q_re_seq}
+	</update>
+	
+	<!-- 답변글 저장 -->
+	<insert id="Qboard_reply" parameterType="Qboard">
+		insert into qna_tab(
+			q_board_num,
+			q_haknum,
+			q_pass,
+			q_subject,
+			q_content,
+			q_check,
+			q_file,
+			q_re_ref,
+			q_re_lev,
+			q_re_seq,
+			q_readcount,
+			q_reg_date
+		)
+		values(
+			q_board_num.nextval,
+		 	1,
+		 	#{q_pass},
+		 	#{q_subject},
+			#{q_content},
+			0,
+			#{q_file,jdbcType=VARCHAR},
+			#{q_re_ref},
+			#{q_re_lev},
+			#{q_re_seq},
+			0,
+			sysdate
+		)
+	</insert>	
+	
+	
+	
+	<!--  검색     -->
+	<!-- 게시판 총게시물 수 -->
+	<select id="Qboard_Search_count" resultType="int" parameterType="db.board.qna.QBoardBean">
+		select 
+			count(q_board_num) 
+		from 
+			qna_tab
+		where
+			<!-- 검색 조건이 없어서 총레코드 개수 반환 -->
+			<if test="find_field==''">
+			</if>
+			<!-- 검색 조건이 글쓴이인 경우 -->
+			<if test="find_field=='q_haknum'">
+				q_haknum like #{search}
+			</if>
+			<!-- 검색 조건이 제목인 경우 -->
+			<if test="find_field=='q_subject'">
+				q_subject like #{search}
+			</if>
+			<!-- 검색 조건이 내용인 경우 -->
+			<if test="find_field=='q_content'">
+				q_subject like #{search}
+				OR
+				q_content like #{search}				
+			</if>
+					
+<!--   	  	where 
+             q_subject like #{search}
+           or
+             q_content like #{search}	 -->	
+	</select>	
+	
+	<!-- 게시판 목록 (page번호를 전달받아서 startRow와 endRow를 구함)-->
+	<select id="Qboard_Search_list"  parameterType="db.board.qna.QBoardBean"  resultType="Qboard">
+	    <![CDATA[
+		select 
+			* 
+		from 
+			 (select 
+			 	rownum rnum,
+			 	q_board_num,
+			 	q_haknum,
+			 	q_pass,
+			 	q_subject,			 	
+			 	q_content,
+			 	q_file,
+			 	q_re_ref,
+			 	q_re_lev,
+			 	q_re_seq,
+			 	q_readcount,
+		 	 	q_reg_date,
+		 	 	q_regupdate_date 
+		 	 from  
+		  	  	(select 
+		  	  		* 
+		  	  	from 
+		  	  		qna_tab 
+				where
+				]]>
+				<!-- 검색 조건이 없어서 총레코드 개수 반환 -->
+				<if test="find_field==''">
+				</if>
+				<!-- 검색 조건이 글쓴이인 경우 -->
+				<if test="find_field=='q_haknum'">
+					q_haknum like #{search}
+				</if>
+				<!-- 검색 조건이 제목인 경우 -->
+				<if test="find_field=='q_subject'">
+					q_subject like #{search}
+				</if>
+				<!-- 검색 조건이 내용인 경우 -->
+				<if test="find_field=='q_content'">
+					q_subject like #{search}
+					OR
+					q_content like #{search}				
+				</if>		  	  		
+				<!-- where 
+	             	q_subject like #{search}
+	          	or
+	             	q_content like #{search}		  	  		 -->
+	            <![CDATA[
+		  	  	order by 
+		  	  		q_re_ref desc,
+		  	  		q_re_seq asc
+		  	  	)
+		  	 ) 
+	   	 where 
+	   	 	rnum >= ((#{page}-1) * 10+1)  
+	   	 and 
+	   	 	rnum <= (#{page} * 10)
+		]]>
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
