@@ -55,10 +55,10 @@
 		<div class="col-md-12">
 			<div class="page-header">
 				<h1>
-					회원가입 <small>horizontal form</small>
+					회원정보수정 <small>horizontal form</small>
 				</h1>
 			</div>
-			<form class="form-horizontal" method="post" action="/joinInsert.mem" >
+			<form class="form-horizontal" method="post" action="/memModify.mem" >
 				<div class="form-group">
 					<label class="col-sm-3 control-label" for="inputNumberCheck">학번</label>
 					<div class="col-sm-6">

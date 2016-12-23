@@ -5,6 +5,8 @@
 
 	<typeAliases>
 		<typeAlias type="db.board.sleep.BoardBean" alias="board" />
+		<typeAlias type="db.board.free.BoardBean" alias="board" />
+		<typeAlias type="db.board.free.CommentBean" alias="comment" />
 	</typeAliases>
 
 	<environments default="development">
@@ -23,6 +25,9 @@
 		<mapper resource="./db/board/sleep/sleep_board.xml" />
 		<!-- <mapper resource="board.xml" />-->
 		<!-- QnA --><mapper resource="./db/board/qna/Qboard.xml" />
+		<mapper resource="./db/member/member_board.xml" />
+		<mapper resource="./db/board/free/board.xml" />
+		<mapper resource="./db/board/free/comment.xml" />
 	</mappers>
 
 </configuration>
