@@ -3,6 +3,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="db.board.sleep.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <%-- <%@ include file="../nav.html" %> --%>
 
@@ -126,9 +127,10 @@
 			<td>${b.s_subject }</td>
 			<td>${b.s_sleep_type }</td>
 			<td>${b.s_content }</td>
-			<td>${b.s_start_date }</td>
-			<td>${b.s_end_date }</td>
-			<td>${b.s_board_date }</td>
+<%-- 			<td>${b.s_start_date }</td> --%>
+			<td><fmt:formatDate value="${b.s_start_date}" type="date"/></td>
+			<td><fmt:formatDate value="${b.s_end_date}" type="date"/></td>
+			<td><fmt:formatDate value="${b.s_board_date}" type="date"/></td>
 			<td><c:if test="${1==b.s_confirm }">승인됨</c:if>
 				<c:if test="${2==b.s_confirm }">불허됨</c:if></td>
 			<td>${b.s_confirm_date }</td>
@@ -136,8 +138,10 @@
 				<c:if test="${0==b.s_cancel }"></c:if></td>
 			<td>
 				<div id="n_select"><c:set var="n" value="${b.s_board_num}"/></div>
+				<c:if test="${1==sessionScope.sessionPermission }">
 				<input type="button" value="승인" class="confirm_btn" onclick="confirm_select('${b.s_board_num}')" style="display:inline">
 				<input type="button" value="불허" class="disapprove_btn" onclick="disapprove_select('${b.s_board_num}')" style="display:inline">
+				</c:if>
 				<input type="button" value="신청취소" class="cancel_btn" onclick="cancel_select('${b.s_board_num}')" style="display:inline">
 				
 				
@@ -198,7 +202,7 @@
 	</tr>
 	</table>
 	count = ${listcount }
-	session = <%=session.getAttribute("sessionHaknum") %>
+	session = <%=session.getAttribute("sessionPermission") %>
 	<%-- ${sessionScope.sessionHaknum} --%>
 	
 	<a href="/sleep/Sleep_Write_Action.sl">

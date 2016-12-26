@@ -13,7 +13,7 @@
 // 				session.setAttribute("sessionName", request.getAttribute("sessionName"));
 // 				session.setAttribute("sessionPermission", request.getAttribute("sessionPermission"));
 <%-- 			%> --%>
-			location.href="./Sleep_List_Action.sl";
+			location.href="/sleep/Sleep_List_Action.sl";
 		</script>
 		</c:when>
 	

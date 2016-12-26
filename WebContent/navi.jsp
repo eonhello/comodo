@@ -17,7 +17,7 @@
             <link rel="stylesheet" href="css/layouts/email-old-ie.css">
         <![endif]-->
         <!--[if gt IE 8]><!-->
-            <link rel="stylesheet" href="<c:url value='./C_Board/css/layouts/pure_main.css' />">
+            <link rel="stylesheet" href="<c:url value='/C_Board/css/layouts/pure_main.css' />">
         <!--<![endif]-->
 </head>
 <body>

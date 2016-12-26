@@ -15,7 +15,7 @@ xmlns="http://java.sun.com/xml/ns/javaee"
 <!-- 	</servlet-mapping>  -->
   
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
+    <welcome-file>navi.jsp</welcome-file>
     <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
     <welcome-file>default.html</welcome-file>
