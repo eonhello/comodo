@@ -15,7 +15,7 @@
 	           $('#referrer').val(document.referrer);
 	       
 		 });
-				/* var referrer =  document.referrer;//이전페이지 url 받기 */
+				/*1 var referrer =  document.referrer;//이전페이지 url 받기 */
 				/* window.location='logout.jsp?'+referrer; */
 
 			 
