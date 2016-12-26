@@ -22,8 +22,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
           
-<%--     			<c:set var="menuUrl" value="${pageContext.request.requestURL}"/>       
-			<c:out value="${menuUrl }"/>  --%>
+     		<c:set var="menuUrl" value="${pageContext.request.requestURL}"/>       
+			 <%-- <c:out value="${menuUrl }"/>  --%>
 
 
 			<c:choose>
