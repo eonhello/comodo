@@ -22,42 +22,42 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
           
-   			<c:set var="menuUrl" value="${pageContext.request.requestURL}"/>       
-			<c:out value="${menuUrl }"/>
+<%--    			<c:set var="menuUrl" value="${pageContext.request.requestURL}"/>       
+			<c:out value="${menuUrl }"/> --%>
 
 
 			<c:choose>
 				<c:when test="${fn:contains(menuUrl,'Noti')}">
 					<li id="noti" class="active" ><a href="#about">공지사항</a></li>
-					<li id="sleep"><a href="#contact">외출/외박</a></li>
+					<li id="sleep"><a href="/sleep/Sleep_List_Action.sl">외출/외박</a></li>
 					<li id="free" ><a href="/free/FList.fr">자유게시판</a></li>
 					<li id="qna"><a href="/qna/QnA_List.qa">QnA</a></li>
 					<li id="fac" ><a href="#contact">시설관리</a></li>	
 				</c:when>
 				<c:when test="${fn:contains(menuUrl,'Sleep')}">
 					<li id="noti"><a href="#about">공지사항</a></li>
-					<li id="sleep" class="active" ><a href="#contact">외출/외박</a></li>
+					<li id="sleep" class="active" ><a href="/sleep/Sleep_List_Action.sl">외출/외박</a></li>
 					<li id="free" ><a href="/free/FList.fr">자유게시판</a></li>
 					<li id="qna"><a href="/qna/QnA_List.qa">QnA</a></li>
 					<li id="fac" ><a href="#contact">시설관리</a></li>	
 				</c:when>
 				<c:when test="${fn:contains(menuUrl,'Free')}">
 					<li id="noti"><a href="#about">공지사항</a></li>
-					<li id="sleep"><a href="">외출/외박</a></li>
+					<li id="sleep"><a href="/sleep/Sleep_List_Action.sl">외출/외박</a></li>
 					<li id="free"  class="active"  ><a href="/free/FList.fr">자유게시판</a></li>
 					<li id="qna"><a href="/qna/QnA_List.qa">QnA</a></li>
 					<li id="fac" ><a href="#contact">시설관리</a></li>	
 				</c:when>
 				<c:when test="${fn:contains(menuUrl,'QnA')}">
 					<li id="noti"><a href="#about">공지사항</a></li>
-					<li id="sleep"><a href="#contact">외출/외박</a></li>
+					<li id="sleep"><a href="/sleep/Sleep_List_Action.sl">외출/외박</a></li>
 					<li id="free" ><a href="/free/FList.fr">자유게시판</a></li>
 					<li id="qna" class="active"><a href="/qna/QnA_List.qa">QnA</a></li>
 					<li id="fac" ><a href="#contact">시설관리</a></li>	
 				</c:when>
 				<c:when test="${fn:contains(menuUrl,'Fac')}">
 					<li id="noti"><a href="#about">공지사항</a></li>
-					<li id="sleep"><a href="#contact">외출/외박</a></li>
+					<li id="sleep"><a href="/sleep/Sleep_List_Action.sl">외출/외박</a></li>
 					<li id="free" ><a href="/free/FList.fr">자유게시판</a></li>
 					<li id="qna"><a href="/qna/QnA_List.qa">QnA</a></li>
 					<li id="fac" class="active"  ><a href="#contact">시설관리</a></li>	
@@ -65,7 +65,7 @@
 
 				<c:otherwise>
           		    <li id="noti"><a href="#about">공지사항</a></li>
-        			<li id="sleep"><a href="#contact">외출/외박</a></li>
+        			<li id="sleep"><a href="/sleep/Sleep_List_Action.sl">외출/외박</a></li>
         			<li id="free" ><a href="/free/FList.fr">자유게시판</a></li>
         			<li id="qna"><a href="/qna/QnA_List.qa">QnA</a></li>
         			<li id="fac" ><a href="#contact">시설관리</a></li>	
@@ -138,13 +138,12 @@
             </li> -->
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="../navbar-static-top/">회원정보</a></li>
-            
+                     
              <c:if test="${empty sessionScope.sessionHaknum}">
             	<li class="active"><a href="/Member/Login/LoginMain.jsp">로그인<span class="sr-only">(current)</span></a></li>
           	</c:if>          
             <c:if test="${!empty sessionScope.sessionHaknum}">
-            	<li class="active"><a href="">회원정보<span class="sr-only">(current)</span></a></li>
+            	<li class="active"><a href="/memModify.mem">회원정보<span class="sr-only">(current)</span></a></li>
             	<li class="active"><a href="/Member/Login/Logout.jsp">로그아웃<span class="sr-only">(current)</span></a></li>
           	</c:if>
          	
