@@ -22,6 +22,8 @@
 
 </head>
 <body>
+	<%@include file="/nav.jsp" %>
+
 <form name="deleteForm" action="./QnA_DeleteAction.qa?num=${param.num}" method="post">
 <input type=hidden name=page value="${param.page}">
 <table border=1 align=center>

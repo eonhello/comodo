@@ -49,6 +49,8 @@
 	</script>
 </head>
 <body>
+	<%@include file="/nav.jsp" %>
+
 
 <form action="/qna/QnA_ReplyAction.qa" method="post" name="boardform">
 <input type="hidden" name="BOARD_NUM" value="${boarddata.q_board_num}">
@@ -56,7 +58,7 @@
 <input type="hidden" name="BOARD_RE_LEV" value="${boarddata.q_re_lev}">
 <input type="hidden" name="BOARD_RE_SEQ" value="${boarddata.q_re_seq}">
 <input type="hidden" name="page" value="${page}">
-<div class="container" style="margin-top:50px">
+<div class="container" style="margin-top:100px">
 	<table align="center"  border="1" cellpadding="0" cellspacing="0" class="table table-bordered">
 		<tr align="center" valign="middle">
 			<td colspan="5">MVC 게시판</td>

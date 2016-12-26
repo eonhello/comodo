@@ -47,10 +47,12 @@
 	
 </head>
 <body>
+	<%@include file="/nav.jsp" %>
+
 
 <form action="/qna/QnA_AddAction.qa" method="post" 
 	enctype="multipart/form-data" name="boardform">
-<div class="container" style="margin-top:50px">
+<div class="container" style="margin-top:100px">
 	<table cellpadding="0" cellspacing="0" align=center class="table table-bordered">
 		<tr align="center" valign="middle" >
 			<td colspan="5">MVC 게시판</td>

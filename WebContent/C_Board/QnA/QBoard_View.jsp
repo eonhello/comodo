@@ -25,8 +25,10 @@
 </head>
 
 <body>
+	<%@include file="/nav.jsp" %>
+
 <!-- 게시판 수정 -->
-<div class="container" style="margin-top:50px">
+<div class="container" style="margin-top:100px">
 	<table cellpadding="0" cellspacing="0" align=center border=1 class="table table-bordered">
 		<tr align="center" valign="middle">
 			<td colspan="5">QnA 게시판</td>
