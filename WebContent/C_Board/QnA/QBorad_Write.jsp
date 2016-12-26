@@ -47,6 +47,8 @@
 	
 </head>
 <body>
+
+	<!-- 메뉴  -->
 	<%@include file="/nav.jsp" %>
 
 
