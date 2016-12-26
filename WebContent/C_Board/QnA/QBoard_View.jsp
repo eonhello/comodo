@@ -36,7 +36,7 @@
 		</tr>
 		
 		<tr>
-			<td style="font-family:돋음; font-size:12; width:15%" >
+			<td style="font-family:돋음; font-size:12; width:15%" class="active">
 				<div align="center">제 목&nbsp;&nbsp;</div>
 			</td>
 			
@@ -52,7 +52,7 @@
 		</tr> -->
 		
 		<tr>
-			<td style="font-family:돋음; font-size:12">
+			<td style="font-family:돋음; font-size:12" class="active">
 				<div align="center">내 용</div>
 			</td>
 			<td style="font-family:돋음; font-size:12">
@@ -63,7 +63,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td style="font-family:돋음; font-size:12">
+			<td style="font-family:돋음; font-size:12" class="active">
 				<div align="center">첨부파일</div>
 			</td>
 			<td style="font-family:돋음; font-size:12">

@@ -210,7 +210,7 @@
 				<c:if test="${!search.equals('')}">
 					<a href="./QnA_List.qa" role="button" class="btn btn-default">전체목록보기</a>
 				</c:if>					
-		   		 <a href="./QnA_Write.qa" role="button" class="btn btn-default" >글쓰기</a>	 
+		   		 <a href="./QnA_Write.qa" role="button" class="btn btn-success" >글쓰기</a>	 
 		   		<!-- <input type="button" href="./QnA_Write.qa" value="글쓰기" class="btn btn-default" >  	 -->	
 			</td>
 		</tr>

@@ -41,69 +41,86 @@ body {
 	<%@include file="/nav.jsp"%>
 
 	<div class="container" style="margin-top: 100px">
-
-		<table summary="전체 테이블 구성">
-			<tr>
-				<td><div align="center">
-						<h3>
-							<b>${boarddata.board_subject}</b>
-						</h3>
-					</div></td>
+			<div class="page-header">
+				<h1>
+					자유게시판 <small>상세보기</small>
+				</h1>
+			</div>	
+		<table class="table table-bordered">
+			<tr align="center" valign="middle" >
+				<td colspan="6">자유게시판</td>
 			</tr>
-			<tr>
-				<td colspan=3>
-					<table border="1" width="800" height="200" summary="목록 테이블 구성">
+
+
 						<tr>
-							<td align=center bgcolor=#dddddd width=10%>작성자</td>
-							<td bgcolor=#ffffe8 width=20% align="center">${boarddata.board_name}</td>
-							<td align=center bgcolor=#dddddd width=10%>작성일</td>
-							<td bgcolor=#ffffe8 width=20% align="center">${boarddata.board_date}</td>
-							<td align=center bgcolor=#dddddd>조회수</td>
-							<td bgcolor=#ffffe8 align="center">${boarddata.board_readcount}</td>
+							<td align=center class="active" >작성자</td>
+							<td align="center">${boarddata.board_name}</td>
+							<td align=center class="active">작성일</td>
+							<td align="center">${boarddata.board_date}</td>
+							<td align=center class="active">조회수</td>
+							<td align="center">${boarddata.board_readcount}</td>
 						</tr>
 						<tr>
-							<td align=center bgcolor=#dddddd>제 목</td>
-							<td bgcolor=#ffffe8 colspan=6 align="center">
+							<td align=center class="active"> 제 목</td>
+							<td colspan=6 align="center">
 								${boarddata.board_subject}</td>
 						</tr>
 						<tr>
-							<td colspan=6 align="center"><br>${boarddata.board_content}<br></td>
+							<td colspan=6 align="center"><br><xmp>${boarddata.board_content}</xmp><br><br><br></td>
 						</tr>
-					</table> <!-- 댓글 입력 폼 --> <c:if
-						test="${sessionScope.sessionHaknum != null }">
-						<div style="border: 1px solid; width: 600px; padding: 5px">
-							<form name="reply" action="/free/FReply.fr" method="post">
-								<input type="hidden" name="brdno" value="${boarddata.board_num}" />
-								작성자: <input type="text" name="rewriter" size="20" maxlength="20"
-									value="<%=session.getAttribute("sessionName")%>" readonly>
-								<br />
-								<textarea name="rememo" rows="3" cols="60" maxlength="500"
-									placeholder="댓글을 달아주세요."></textarea>
-								<input type="submit" value="저장" />
-							</form>
+						<tr>
+							<td colspan=6>
+								<!-- 댓글 입력 폼 -->
+								<c:if	test="${sessionScope.sessionHaknum != null }">
+									<div style="padding:15px">
+										<form  class="form-inline" name="reply" action="/free/FReply.fr" method="post">
+											<input type="hidden" name="brdno" value="${boarddata.board_num}" />
+											<div class="form-group" style="padding:15px;width: 100%;text-align: center;">
+											    <label for="exampleInputName2">작성자:</label>
+											    <input  class="form-control"  type="text" name="rewriter" size="20" maxlength="20"
+												value="<%=session.getAttribute("sessionName")%>" readonly>
+												&nbsp;&nbsp;<input type="submit" value="저장" class="btn btn-success" />
+											</div>
+											
 
-						</div>
-					</c:if> <c:forEach var="reply" items="${replydlist}">
-						<p>${reply.rewriter}</p>
-						<p>${reply.redate}</p>
-						<p>${reply.rememo}</p>
-					</c:forEach>
+											<br />
+											<div style="text-align: center;">
+											<textarea class="form-control" style="width:70%;"  name="rememo" rows="3" cols="60" maxlength="500"
+												placeholder="댓글을 달아주세요."></textarea>
+											</div>
+										</form>
+									</div>
+								</c:if> 
+									
+								<c:forEach var="reply" items="${replydlist}">
+									<div style="text-align: -webkit-center;">
+										<hr size=1>										
+										<p>${reply.rewriter} &nbsp;&nbsp; (${reply.redate}) </p>
+											<pre>${reply.rememo}</pre>
+							
+									</div>
+								</c:forEach>	
+															
+							</td>
+						</tr>
+				
 			<tr>
-				<td align=center colspan=2>
+				<td align=center colspan=6>
 					<hr size=1>
 					<div align="center">
 						<c:if test="${sessionScope.sessionHaknum != null }">
-							<input type="button" value="수정"
-								onclick="move('/free/FModify.fr?num=${boarddata.board_num}&page=${page}');"> |
-		<input type="button" value="삭제"
-								onclick="move('/free/FDelete.fr?num=${boarddata.board_num}&page=${page}');"> |
-		</c:if>
-						<input type="button" value="목록"
+							<input class="btn btn-default" type="button" value="수정"
+								onclick="move('/free/FModify.fr?num=${boarddata.board_num}&page=${page}');"> &nbsp;&nbsp; 
+							<input class="btn btn-default" type="button" value="삭제"
+								onclick="move('/free/FDelete.fr?num=${boarddata.board_num}&page=${page}');"> &nbsp;&nbsp; 
+						</c:if>
+						<input class="btn btn-default" type="button" value="목록"
 							onclick="move('/free/FList.fr?page=${page}');"><br>
 					</div>
 				</td>
 			</tr>
-		</table>
+			
+		</table>			
 	</div>
 
 </body>
