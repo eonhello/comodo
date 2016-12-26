@@ -58,7 +58,7 @@
 					회원정보수정 <small>horizontal form</small>
 				</h1>
 			</div>
-			<form class="form-horizontal" method="post" action="/memModify.mem" >
+			<form class="form-horizontal" method="post" action="/memModify_action.mem" >
 				<div class="form-group">
 					<label class="col-sm-3 control-label" for="inputNumberCheck">학번</label>
 					<div class="col-sm-6">
@@ -119,7 +119,7 @@
 				<div class="form-group">
 					<label class="col-sm-3 control-label" for="inputName">주소</label>
 					<div class="col-sm-6">
-						<input class="form-control" id="Address" name="Address" type="text"
+						<input class="form-control" id="Address" name="address" type="text"
 							placeholder="주소" value="${boarddata.address}">
 					</div>
 				</div>	
@@ -191,7 +191,7 @@
 						<button class="btn btn-primary" type="submit">
 							수정하기<i class="fa fa-check spaceLeft"></i>
 						</button>
-						<button class="btn btn-danger" type="submit">
+						<button class="btn btn-danger" onClick="history.go(-1)">
 							취소<i class="fa fa-times spaceLeft"></i>
 						</button>
 					</div>
