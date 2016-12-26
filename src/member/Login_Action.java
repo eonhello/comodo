@@ -27,7 +27,7 @@ import db.member.MemberBean;
 		
 		HttpSession  session = request.getSession();
 		//session.setAttribute("sessionName", Value);
-		
+		String referrer = (String)request.getParameter("referrer");
 		
 		try {
 			if(memberdao.getLoginInformation(Integer.parseInt(request.getParameter("haknum")))!=null){
@@ -67,7 +67,7 @@ import db.member.MemberBean;
 		ActionForward forward= new ActionForward();
 	 	forward.setRedirect(false);
  		//forward.setPath("/Sleep_List_Action.sl");
-	 	forward.setPath("./Member/Login/LoginPro.jsp");
+	 	forward.setPath("./Member/Login/LoginPro.jsp?referrer="+referrer);
  		System.out.println(forward.getPath());
  		return forward;
 	 }
