@@ -23,10 +23,10 @@ public class Sleep_Add_Action implements Action {
    		request.setCharacterEncoding("utf-8");
    		try{
    			
-   			boarddata.setS_haknum(Integer.parseInt(request.getParameter("S_BOARD_HAKNUM").trim()));
+   			boarddata.setHaknum(Integer.parseInt(request.getParameter("S_BOARD_HAKNUM").trim()));
 //   			String temp=enc.Encrypt_SHA(request.getParameter("S_BOARD_PASSWORD").trim());
 //   			System.out.println(temp);
-   			boarddata.setS_password(request.getParameter("S_BOARD_PASSWORD").trim());
+
    			boarddata.setS_name(request.getParameter("S_BOARD_NAME").trim());
    			
    			boarddata.setS_major(request.getParameter("S_BOARD_MAJOR").trim());
@@ -43,9 +43,7 @@ public class Sleep_Add_Action implements Action {
 	   		boarddata.setS_end_date(transFormat.parse(request.getParameter("S_END_DATE")));
 	   		//sysdate로 쿼리문상에서 넣어줌. 필요없음.
 	   		//boarddata.setS_board_date(transFormat.parse(request.getParameter("S_BOARD_DATE")));
-	   		boarddata.setS_confirm(Integer.parseInt(request.getParameter("S_CONFIRM")));
-	   		boarddata.setS_confirm_date(request.getParameter("S_CONFIRM_DATE"));
-	   		boarddata.setS_cancel(Integer.parseInt(request.getParameter("S_CANCEL")));
+
 	   		
 			System.out.println("name="+boarddata.getS_name());
 			System.out.println("pass="+boarddata.getS_password());

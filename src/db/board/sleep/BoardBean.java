@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class BoardBean {
 	private int s_board_num;
-	private int s_haknum;
+	private int haknum;
 	private String s_password;
 	private String s_name;
 	private String s_major;
@@ -24,11 +24,11 @@ public class BoardBean {
 	public void setS_board_num(int s_board_num) {
 		this.s_board_num = s_board_num;
 	}
-	public int getS_haknum() {
-		return s_haknum;
+	public int getHaknum() {
+		return haknum;
 	}
-	public void setS_haknum(int s_haknum) {
-		this.s_haknum = s_haknum;
+	public void setHaknum(int haknum) {
+		this.haknum = haknum;
 	}
 	public String getS_password() {
 		return s_password;
