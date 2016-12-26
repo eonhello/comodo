@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -42,7 +43,10 @@
 </head>
 
 <body>
+
 	<div class="container" style="margin-top:50px">
+	
+	<c:if test="${sessionScope.sessionHaknum != null }">
 	<table summary="글쓰기 전체 테이블" class="table table-bordered">
 		<form name="BoardWriteForm" method="post" action="/free/FWrite_action.fr">
 													
@@ -87,6 +91,16 @@
 		</div>
 	</form> 
 </table>
+
+	
+
+</c:if>
+
+<c:if test="${sessionScope.sessionHaknum == null }">
+<%@ include file="/Member/Login/LoginMain.jsp" %>
+</c:if>
+
+
 	</div>
 </body>
 </html>
