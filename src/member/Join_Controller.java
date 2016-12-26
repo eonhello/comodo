@@ -42,7 +42,7 @@ public class Join_Controller extends javax.servlet.http.HttpServlet
 			System.out.println("메인페이지로 들어가기 위해 /Main.mem 입력성공 ");
 			forward = new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("/C_Board/Main.jsp");
+			forward.setPath("/C_Board/index.jsp");
 		
 		// 회원가입 액션단으로 이동	
 		} else if(command.equals("/joinInsert.mem")){
