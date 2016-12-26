@@ -165,47 +165,6 @@
 			종료날짜 : <input type="textfield" name="S_END_DATE" id="s_end_date">
 		</td>
 	</tr>
-	<tr>
-		<td style="font-family:돋음; font-size:12" height="16">
-			<div align="center">게시일</div>
-		</td>
-		<td>
-			<input name="S_BOARD_DATE" id="s_board_date" type="text" size="50" maxlength="100" 
-				value=""/>
-		</td>
-	</tr>
-
-	<tr>
-		<td style="font-family:돋음; font-size:12" height="16">
-			<div align="center">승인여부</div>
-		</td>
-		<td>
-			<!-- if문써서 승인, 거절 바꿔보기 -->
-			<input name="S_CONFIRM" id="s_confirm" type="text" size="50" maxlength="100" 
-				value="1"   />
-		</td>
-	</tr>
-	<!-- 승인날짜 -->
-	<tr>
-		<td style="font-family:돋음; font-size:12">
-			<div align="center">승인날짜</div>
-		</td>
-		<td>
-			<input name="S_CONFIRM_DATE" id="s_confirm_date" type="text" size="50" maxlength="100" 
-				value=""/>
-		</td>
-	</tr>
-
-	<tr>
-		<td style="font-family:돋음; font-size:12" height="16">
-			<div align="center">취소여부</div>
-		</td>
-		<td>
-			<!-- if문써서 취소, null 바꿔보기 -->
-			<input name="S_CANCEL" id="s_cancel" type="text" size="50" maxlength="100" 
-				value="1"   />
-		</td>
-	</tr>
 
 	<tr>
 		<td colspan="2" style="height:1px;">
@@ -220,7 +179,5 @@
 	</tr>
 </table>
 </form>
-
-<p>Date : <input type="textfield" id="dateTest"></p>
 </body>
 </html>

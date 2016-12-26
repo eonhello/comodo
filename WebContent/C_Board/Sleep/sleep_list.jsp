@@ -130,7 +130,7 @@
 <%-- 			<td>${b.s_start_date }</td> --%>
 			<td><fmt:formatDate value="${b.s_start_date}" type="date"/></td>
 			<td><fmt:formatDate value="${b.s_end_date}" type="date"/></td>
-			<td><fmt:formatDate value="${b.s_board_date}" type="date"/></td>
+			<td><fmt:formatDate value="${b.s_board_date}" type="both"/></td>
 			<td><c:if test="${1==b.s_confirm }">승인됨</c:if>
 				<c:if test="${2==b.s_confirm }">불허됨</c:if></td>
 			<td>${b.s_confirm_date }</td>
@@ -207,7 +207,7 @@
 	session = <%=session.getAttribute("sessionPermission") %>
 	<%-- ${sessionScope.sessionHaknum} --%>
 	
-	<c:if test="${null!=sessionScope.sessionPermission}">
+	<c:if test="${0==sessionScope.sessionPermission}">
 	<a href="/sleep/Sleep_Write_Action.sl">
 		<input type="button" value="신청하기">
 	</a>
