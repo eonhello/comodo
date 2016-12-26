@@ -15,27 +15,28 @@
 	           $('#referrer').val(document.referrer);
 	       
 		 });
-				/*1 var referrer =  document.referrer;//이전페이지 url 받기 */
+				/* var referrer =  document.referrer;//이전페이지 url 받기 */
 				/* window.location='logout.jsp?'+referrer; */
 
 			 
 		</script>
-
+	<link rel="./style.css"/>
 </head>
 <body>
 	<% if(session.getAttribute("sessionHaknum")==null){%>
 		<center>
 		<br /><br /><br />
+		<div class="login">
 		<h1>Welcome!!</h1>
 		<br /><br /><br />
 		<!-- .mem 컨트롤러로 보내자 -->
 		<form action="/Login.mem" method="post">
 		session = <%=session.getAttribute("sessionHaknum") %><br /><br />
-			학번 = <input type="text" name="haknum"/><br /><br />
-			PW = <input type="password" name="password"/><br /><br />
+			학번 = <input type="text" name="haknum" placeholder="Username" required="required"/><br /><br />
+			PW = <input type="password" name="password" placeholder="Password" required="required"/><br /><br />
 			<% //session.setAttribute("sessionId", true);%> 
 			<input type="hidden" name="referrer" id="referrer" value="">
-			<input type="submit" value="Login"/>
+			<input type="submit" value="Login" class="btn btn-primary btn-block btn-large"/>
 			<input type="button" value="SignUp" onClick="window.location='signup.jsp'"/>
 		</form>
 		</center>
@@ -46,5 +47,6 @@
 		<input type="button" value="Logout" onClick="login()"/>
 		</center>
 		<%} %>
+		</div>
 </body>
 </html>
