@@ -138,7 +138,14 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a href="../navbar-static-top/">회원정보</a></li>
-            <li class="active"><a href="./">로그인/로그아웃<span class="sr-only">(current)</span></a></li>
+            
+             <c:if test="${empty sessionScope.sessionHaknum}">
+            	<li class="active"><a href="/Member/Login/LoginMain.jsp">로그인<span class="sr-only">(current)</span></a></li>
+          	</c:if>          
+            <c:if test="${!empty sessionScope.sessionHaknum}">
+            	<li class="active"><a href="/Member/Login/Logout.jsp">로그아웃<span class="sr-only">(current)</span></a></li>
+          	</c:if>
+         	
           </ul>
         </div><!--/.nav-collapse -->
       </div>

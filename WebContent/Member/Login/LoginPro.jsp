@@ -8,12 +8,16 @@
 	      
 		<script>
 		${sessionScope.sessionHaknum}
-			alert("환영함! LoginPro의 result = "+ ${result});
+//			alert("환영함! LoginPro의 result = "+ ${result});
 <%-- 			<% session.setAttribute("sessionHaknum", request.getAttribute("sessionHaknum")); --%>
 // 				session.setAttribute("sessionName", request.getAttribute("sessionName"));
 // 				session.setAttribute("sessionPermission", request.getAttribute("sessionPermission"));
 <%-- 			%> --%>
-			location.href="/sleep/Sleep_List_Action.sl";
+
+
+
+		var referrer = '<%= request.getParameter("referrer") %>';
+
 		</script>
 		</c:when>
 	
@@ -43,7 +47,12 @@
 <head>
 </head>
 <body>
-로그인 PRO!
+<%-- 로그인 PRO!
 ${result }
+ --%>
+		<script>
+			location.href= referrer;
+			/* history.go(-2); */
+		</script>
 </body>
 </html>

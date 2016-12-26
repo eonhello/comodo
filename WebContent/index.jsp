@@ -3,6 +3,9 @@
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
+
+
 <html>
 <head>
     <meta charset="utf-8">
@@ -16,7 +19,7 @@
     <!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
     <script src="../assets/bootstrap-3.3.2/js/bootstrap.min.js"></script>
 
-
+<%@include file="/nav.jsp" %>
 	<title>Comodo</title>
 	
 	
@@ -34,7 +37,7 @@
 <body>
 
 
-	<%@include file="/nav.jsp" %>
+	
      
      
      <div class="container">
