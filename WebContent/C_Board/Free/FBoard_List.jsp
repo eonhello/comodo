@@ -21,12 +21,6 @@
 </head>
 
 <body>
-
-	<!-- 메뉴  -->
-	<%@include file="/nav.jsp" %>
-	
-
-
 <!-- 게시판 리스트 -->
 <div class="container" style="margin-top:50px">
 <table align=center width=600 border="1" cellpadding="0" cellspacing="0" class="table table-bordered">

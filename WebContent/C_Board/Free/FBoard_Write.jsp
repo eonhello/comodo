@@ -1,17 +1,18 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="/assets/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
+		<link href="./assets/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
 		   
 		
 		<!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 		<!-- 모든 컴파일된 플러그인을 포함합니다 (아래), 원하지 않는다면 필요한 각각의 파일을 포함하세요 -->
-		<script src="/assets/bootstrap-3.3.2/js/bootstrap.min.js"></script>
+		<script src="./assets/bootstrap-3.3.2/js/bootstrap.min.js"></script>
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>자유게시판 글쓰기</title>
@@ -41,11 +42,6 @@
 </head>
 
 <body>
-
-	<!-- 메뉴  -->
-	<%@include file="/nav.jsp" %>
-	
-
 	<div class="container" style="margin-top:50px">
 	<table summary="글쓰기 전체 테이블" class="table table-bordered">
 		<form name="BoardWriteForm" method="post" action="/free/FWrite_action.fr">
@@ -60,11 +56,11 @@
 		<caption>게시판 글쓰기</caption>	
     		<tr>
 				<td>작성자</td>
-				<td><input type=text name=board_name size=10 maxlength=8 ></td>
+				<td><input type=text name=board_name size=10 maxlength=8 value="<%=session.getAttribute("sessionName") %>" readonly></td>
 			</tr>
 			<tr>
 				<td>학번</td>
-				<td><input type=text name=hak_num size=10 maxlength=8 ></td>
+				<td><input type=text name=hak_num size=10 maxlength=8 value="<%=session.getAttribute("sessionHaknum") %>" readonly></td>
 			</tr>
     		<tr>
      			<td>제 목</td>

@@ -26,10 +26,6 @@ body {
 </style>
 <body>
 
-	<!-- 메뉴  -->
-	<%@include file="/nav.jsp" %>
-	
-
 	<table summary="글수정 전체 테이블">
 <form action="/free/FModify_action.fr" method="post" name="modifyform">
 <input type="hidden" name="BOARD_NUM" value="${boarddata.board_num}">

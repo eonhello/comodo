@@ -25,8 +25,6 @@ body {
 </head>
 
 <body>
-
-
 	<center>
 	<br><br>
 	<table width=50% cellspacing=0 cellpadding=3>

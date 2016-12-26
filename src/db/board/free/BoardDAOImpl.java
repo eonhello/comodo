@@ -60,7 +60,7 @@ public class BoardDAOImpl {
 		return count;
 	}
 	
-	/* 게시?�� 목록 불러?���? */
+	/* 게시글 목록 불러오기 */
 	public List<BoardBean> getBoardList(int page)	throws SQLException {
 		SqlSession session=null;
 		session = getSession();
@@ -68,7 +68,7 @@ public class BoardDAOImpl {
 	    return list;
 	}	
 
-	/* 게시?�� 조회?�� 증�? */
+	/* 게시글 조회수 증가 */
 	public void boardHit(int board_num) throws SQLException {
 		SqlSession session=null;
 		session = getSession();
@@ -76,7 +76,7 @@ public class BoardDAOImpl {
 	}
 	
 	
-	/* 게시?�� ?��?�� 보기 */
+	/* 게시판 내용 보기 */
 	public BoardBean getBoardCont(int board_num) throws SQLException {
 		SqlSession session=null;
 		session = getSession();

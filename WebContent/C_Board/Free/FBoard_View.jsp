@@ -26,11 +26,6 @@ body {
 </head>
 
 <body>
-
-	<!-- 메뉴  -->
-	<%@include file="/nav.jsp" %>
-	
-
 	<table summary="전체 테이블 구성">
 	<tr>
 		<td ><div align="center"><h3><b>${boarddata.board_subject}</b></h3></div></td>
