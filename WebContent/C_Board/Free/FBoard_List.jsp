@@ -166,7 +166,7 @@
 	        <form name="serach" method ="post" action="/free/FList.fr">
            <select name="keyField">
                 <option value="0">검색항목</option>
-                <option value="id">아이디</option>
+                <option value="id">작성자</option>
                 <option value="subject">제목</option>
                 <<option value="content">내용</option>
             </select>
