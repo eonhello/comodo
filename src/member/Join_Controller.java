@@ -82,7 +82,7 @@ public class Join_Controller extends javax.servlet.http.HttpServlet
 		// 수정하기 위해서 정보 입력한걸 데이터 베이스에 넣기	
 		} */else if(command.equals("/memModify_action.mem")){
 			action = new JModify_action();
-			System.out.println("수정 할 정보들을 데이터베이스에 넣겠습니다..");
+			System.out.println("수정 할 정보들을 데이터베이스에 넣겠습니다...");
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
