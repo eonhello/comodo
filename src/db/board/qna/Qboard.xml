@@ -6,7 +6,7 @@
 <mapper namespace="Qboard">
 
 <!-- 	q_board_num NUMBER NOT NULL, /* 글번호 */
-	q_haknum VARCHAR2(10) NOT NULL, /* 학번 */
+	haknum VARCHAR2(10) NOT NULL, /* 학번 */
 	q_subject VARCHAR2(100) NOT NULL, /* 제목 */
 	q_content VARCHAR2(1000) NOT NULL, /* 내용 */
 	q_file VARCHAR2(50),
@@ -32,7 +32,7 @@
 	<insert id="Qboard_insert" parameterType="db.board.qna.QBoardBean">
 		insert into	qna_tab(
 			q_board_num,
-			q_haknum,
+			haknum,
 			q_pass,
 			q_subject,
 			q_content,
@@ -75,7 +75,7 @@
 			 (select 
 			 	rownum rnum,
 			 	q_board_num,
-			 	q_haknum,
+			 	haknum,
 			 	q_pass,
 			 	q_subject,			 	
 			 	q_content,
@@ -158,7 +158,7 @@
 	<insert id="Qboard_reply" parameterType="Qboard">
 		insert into qna_tab(
 			q_board_num,
-			q_haknum,
+			haknum,
 			q_pass,
 			q_subject,
 			q_content,
@@ -200,8 +200,8 @@
 			<if test="find_field==''">
 			</if>
 			<!-- 검색 조건이 글쓴이인 경우 -->
-			<if test="find_field=='q_haknum'">
-				q_haknum like #{search}
+			<if test="find_field=='haknum'">
+				haknum like #{search}
 			</if>
 			<!-- 검색 조건이 제목인 경우 -->
 			<if test="find_field=='q_subject'">
@@ -229,7 +229,7 @@
 			 (select 
 			 	rownum rnum,
 			 	q_board_num,
-			 	q_haknum,
+			 	haknum,
 			 	q_pass,
 			 	q_subject,			 	
 			 	q_content,
@@ -251,8 +251,8 @@
 				<if test="find_field==''">
 				</if>
 				<!-- 검색 조건이 글쓴이인 경우 -->
-				<if test="find_field=='q_haknum'">
-					q_haknum like #{search}
+				<if test="find_field=='haknum'">
+					haknum like #{search}
 				</if>
 				<!-- 검색 조건이 제목인 경우 -->
 				<if test="find_field=='q_subject'">
