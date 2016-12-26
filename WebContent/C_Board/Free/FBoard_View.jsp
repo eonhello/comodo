@@ -35,7 +35,7 @@ body {
 		<table border="1" width="800" height="200" summary="목록 테이블 구성"> 
     <tr> 
 		<td align=center bgcolor=#dddddd width=10%> 작성자 </td>
-		<td bgcolor=#ffffe8 width=20% align="center">나다</td>
+		<td bgcolor=#ffffe8 width=20% align="center">${boarddata.board_name}</td>
 		<td align=center bgcolor=#dddddd width=10%> 작성일</td>
 		<td bgcolor=#ffffe8 width=20% align="center">${boarddata.board_date}</td>
 		<td align=center bgcolor=#dddddd> 조회수 </td>
