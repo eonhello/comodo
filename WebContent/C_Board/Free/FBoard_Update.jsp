@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -26,6 +27,7 @@ body {
 </style>
 <body>
 
+<c:if test="${sessionScope.sessionHaknum != null }">
 	<table summary="글수정 전체 테이블">
 <form action="/free/FModify_action.fr" method="post" name="modifyform">
 <input type="hidden" name="BOARD_NUM" value="${boarddata.board_num}">
@@ -41,7 +43,7 @@ body {
 		<caption>글 수정하기</caption>	
     		<tr>
 				<td>작성자</td>
-				<td><input type=text name=name size=10 maxlength=8 readonly></td>
+				<td><input type=text name=name size=10 maxlength=8 value="${boarddata.board_name}"readonly></td>
 			</tr>
     		<tr>
      			<td>제 목</td>
@@ -68,6 +70,11 @@ body {
 		</table>
 	</form> 
 </table>
+</c:if>
+
+<c:if test="${sessionScope.sessionHaknum == null }">
+<%@ include file="/Member/Login/LoginMain.jsp" %>
+</c:if>
 
 </body>
 </html>

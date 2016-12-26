@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -32,8 +32,15 @@
         <a href="#" class="nav-menu-button">Menu</a>
 
         <div class="nav-inner">
+<<<<<<< HEAD
             <button class="primary-button pure-button" onclick="location.href='/Member/Login/LoginMain.jsp'">로그인</button>
             <button class="primary-button pure-button">회원가입</button>
+=======
+            <button class="primary-button pure-button">로그인</button>
+            <c:if test="${sessionScope.sessionHaknum == null }">
+            <button class="primary-button pure-button" onclick="location.href='/Member/Join/JoinForm.jsp'">회원가입</button>
+            </c:if>
+>>>>>>> branch 'master' of https://github.com/raeoon0511/comodo.git
 
             <div class="pure-menu">
                 <ul class="pure-menu-list">

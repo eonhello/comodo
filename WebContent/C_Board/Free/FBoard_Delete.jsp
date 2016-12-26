@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -25,14 +26,19 @@ body {
 </head>
 
 <body>
+<c:if test="${sessionScope.sessionHaknum != null }">
 	<center>
 	<br><br>
+	
 	<table width=50% cellspacing=0 cellpadding=3>
  		<tr>
 			<td bgcolor=#dcdcdc height=21 align=center>
 			작성자의 비밀번호를 입력해 주세요.</td>
 		</tr>
 	</table>
+	
+	
+	
 	
 	<table width=70% cellspacing=0 cellpadding=2>
 		<form name="FBoardDeleteForm" method="post" action="/free/FDeleteAction.fr?num=${param.num}" 
@@ -61,5 +67,10 @@ body {
 	</form> 
 	</table>
 	</center>
+	</c:if>
+	
+	<c:if test="${sessionScope.sessionHaknum == null }">
+	<%@ include file="/Member/Login/LoginMain.jsp" %>
+	</c:if>
 </body>
 </html>
