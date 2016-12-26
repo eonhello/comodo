@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import action.Action;
 import action.ActionForward;
@@ -18,9 +19,11 @@ import db.member.MemberBean;
 		 request.setCharacterEncoding("utf-8");
 		 PrintWriter out=response.getWriter();
 		 ActionForward forward = new ActionForward();
+		 HttpSession session = request.getSession();
 		 boolean result = false;
 		 
-		 int num=Integer.parseInt(request.getParameter("haknum"));
+		 System.out.println("수정 될 정보를 받아오기위한 학번 : "+session.getAttribute("sessionHaknum"));
+		 int num=Integer.parseInt((String) session.getAttribute("sessionHaknum")); 
 		 String pass = request.getParameter("password");
 		
 		 BoardDAOImpl boarddao=new BoardDAOImpl();
@@ -42,7 +45,7 @@ import db.member.MemberBean;
 				boarddata.setPassword("password");
 				boarddata.setName("name");
 				boarddata.setMajor("major");
-				boarddata.setAddress("address");
+				boarddata.setAddress("Address");
 				boarddata.setCall_num(Integer.parseInt("call_num"));
 				boarddata.setMail(request.getParameter("mail"));
 			 

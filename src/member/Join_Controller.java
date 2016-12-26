@@ -39,7 +39,7 @@ public class Join_Controller extends javax.servlet.http.HttpServlet
 			
 		// 메인페이지로 이동	
 		} else if(command.equals("/mem/Main.mem")) {
-			System.out.println("메인페이지로 들어가기 위해 /Main.mem 입력성공 !");
+			System.out.println("메인페이지로 들어가기 위해 /Main.mem 입력성공 ");
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("/index.jsp");
@@ -56,14 +56,20 @@ public class Join_Controller extends javax.servlet.http.HttpServlet
 			
 		// 회원정보 수정을 위한 정보 불러오기	
 		} else if(command.equals("/memModify.mem")){
-			action = new JModify_action();
-			System.out.println("회원가입 추가 액션으로 이동하였습니다.");
+			action = new JModify_view();
+			System.out.println("수정될 회원정보를 불러 오겠습니다.");
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			
+		} else if(command.equals("/Memmodify_pro.mem")){
+			
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("/Member/Join/Memmodify.jsp");
+		
 		} else if (command.equals("/Login.mem")) {
 			System.out.println("멤버 - 로그인 컨트롤러 진입");
 			System.out.println("Member Controller로 넘어온 haknum = "+request.getParameter("haknum"));

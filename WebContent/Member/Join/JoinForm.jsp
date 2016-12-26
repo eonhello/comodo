@@ -54,8 +54,8 @@
 
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1>
-					회원가입 <small>horizontal form</small>
+				<h1 align = "center">
+					회원가입
 				</h1>
 			</div>
 			<form class="form-horizontal" method="post" action="/joinInsert.mem" >
@@ -119,7 +119,7 @@
 				<div class="form-group">
 					<label class="col-sm-3 control-label" for="inputName">주소</label>
 					<div class="col-sm-6">
-						<input class="form-control" id="Address" name="Address" type="text"
+						<input class="form-control" id="address" name="address" type="text"
 							placeholder="주소">
 					</div>
 				</div>	

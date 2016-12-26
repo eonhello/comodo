@@ -64,7 +64,7 @@
 					<div class="col-sm-6">
 						<div class="input-group">
 							<input class="form-control" id="haknum" name="haknum" type="text"
-								placeholder="중복체크"> <span class="input-group-btn">
+								placeholder="중복체크" value="${boarddata.haknum}" readonly> <span class="input-group-btn">
 								<button class="btn btn-success" type="button">
 									인증번호 확인<i class="fa fa-edit spaceLeft"></i>
 								</button>
@@ -87,7 +87,7 @@
 					<label class="col-sm-3 control-label" for="inputPasswordCheck">비밀번호
 						확인</label>
 					<div class="col-sm-6">
-						<input class="form-control" id="passwordㅊheck" name="passwordㅊheck"
+						<input class="form-control" id="passwordcheck" name="passwordcheck"
 							type="password" placeholder="비밀번호 확인">
 						<p class="help-block">비밀번호를 한번 더 입력해주세요.</p>
 					</div>
@@ -97,7 +97,7 @@
 					<label class="col-sm-3 control-label" for="inputName">이름</label>
 					<div class="col-sm-6">
 						<input class="form-control" id="name" name="name" type="text"
-							placeholder="이름">
+							placeholder="이름" value="${boarddata.name}">
 					</div>
 				</div>				
 				
@@ -120,7 +120,7 @@
 					<label class="col-sm-3 control-label" for="inputName">주소</label>
 					<div class="col-sm-6">
 						<input class="form-control" id="Address" name="Address" type="text"
-							placeholder="주소">
+							placeholder="주소" value="${boarddata.address}">
 					</div>
 				</div>	
 				
@@ -130,7 +130,7 @@
 					<label class="col-sm-3 control-label" for="mail">이메일</label>
 					<div class="col-sm-6">
 						<input class="form-control" id="mail" name="mail" type="email"
-							placeholder="이메일">							
+							placeholder="이메일" value="${boarddata.mail}">							
 					</div>		
 				</div>
 
@@ -138,7 +138,7 @@
 					<label class="col-sm-3 control-label" for="inputName">핸드폰번호</label>
 					<div class="col-sm-6">
 						<input class="form-control" id="call_num" name="call_num" type="text"
-							placeholder="핸드폰번호">
+							placeholder="핸드폰번호" value="${boarddata.call_num}">
 					</div>
 				</div>	
 								
@@ -189,10 +189,10 @@
 				<div class="form-group">
 					<div class="col-sm-12 text-center">
 						<button class="btn btn-primary" type="submit">
-							회원가입<i class="fa fa-check spaceLeft"></i>
+							수정하기<i class="fa fa-check spaceLeft"></i>
 						</button>
 						<button class="btn btn-danger" type="submit">
-							가입취소<i class="fa fa-times spaceLeft"></i>
+							취소<i class="fa fa-times spaceLeft"></i>
 						</button>
 					</div>
 				</div>
