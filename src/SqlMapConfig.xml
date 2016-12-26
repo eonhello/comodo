@@ -7,7 +7,7 @@
 		<typeAlias type="db.board.free.BoardBean" alias="free" />
 		<typeAlias type="db.board.free.CommentBean" alias="comment" />
 		<typeAlias type="db.board.sleep.BoardBean" alias="board" />
-		
+		<typeAlias type="db.board.qna.BoardBean" alias="Qboard" />		
 		
 	</typeAliases>
 
