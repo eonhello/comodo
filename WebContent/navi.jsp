@@ -32,7 +32,7 @@
         <a href="#" class="nav-menu-button">Menu</a>
 
         <div class="nav-inner">
-            <button class="primary-button pure-button">로그인</button>
+            <button class="primary-button pure-button" onclick="location.href='/Member/Login/LoginMain.jsp'">로그인</button>
             <button class="primary-button pure-button">회원가입</button>
 
             <div class="pure-menu">
