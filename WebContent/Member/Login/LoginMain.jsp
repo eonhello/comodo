@@ -15,11 +15,12 @@
 	           $('#referrer').val(document.referrer);
 	       
 		 });
-				/*1 var referrer =  document.referrer;//이전페이지 url 받기 */
+				/* var referrer =  document.referrer;//이전페이지 url 받기 */
 				/* window.location='logout.jsp?'+referrer; */
 
 			 
 		</script>
+	<link rel="./style.css"/>
 </head>
 <body>
 	<% if(session.getAttribute("sessionHaknum")==null){%>
@@ -31,8 +32,8 @@
 		<!-- .mem 컨트롤러로 보내자 -->
 		<form action="/Login.mem" method="post">
 		session = <%=session.getAttribute("sessionHaknum") %><br /><br />
-			학번 = <input type="text" name="haknum" placeholder="Username"/><br /><br />
-			PW = <input type="password" name="password" placeholder="Password"/><br /><br />
+			학번 = <input type="text" name="haknum" placeholder="Username" required="required"/><br /><br />
+			PW = <input type="password" name="password" placeholder="Password" required="required"/><br /><br />
 			<% //session.setAttribute("sessionId", true);%> 
 			<input type="hidden" name="referrer" id="referrer" value="">
 			<input type="submit" value="Login" class="btn btn-primary btn-block btn-large"/>
