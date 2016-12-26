@@ -22,8 +22,8 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
           
-<%--    			<c:set var="menuUrl" value="${pageContext.request.requestURL}"/>       
-			<c:out value="${menuUrl }"/> --%>
+<%--     			<c:set var="menuUrl" value="${pageContext.request.requestURL}"/>       
+			<c:out value="${menuUrl }"/>  --%>
 
 
 			<c:choose>
@@ -36,7 +36,7 @@
 				</c:when>
 				<c:when test="${fn:contains(menuUrl,'Sleep')}">
 					<li id="noti"><a href="#about">공지사항</a></li>
-					<li id="sleep" class="active" ><a href="/sleep/Sleep_List_Action.sl">외출/외박</a></li>
+					<li id="sleep" class="active"><a href="/sleep/Sleep_List_Action.sl">외출/외박</a></li>
 					<li id="free" ><a href="/free/FList.fr">자유게시판</a></li>
 					<li id="qna"><a href="/qna/QnA_List.qa">QnA</a></li>
 					<li id="fac" ><a href="#contact">시설관리</a></li>	
