@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page import="db.board.free.*"%>
@@ -157,25 +158,62 @@
 				//	}
 			%>
 			<tr align="right">
-				<td colspan="5"><c:if
-						test="${sessionScope.sessionHaknum != null }">
+				<td colspan="5">
+					<c:if test="${sessionScope.sessionHaknum != null }">
 						<!-- 세션으로 받은 학번(즉,로그인을 안했을경우)이 없을 경우 글쓰기 버튼이 안보이도록 한다.  -->
 						<a href="/free/FWrite.fr" role="button" class="btn btn-success">글쓰기</a>
-					</c:if> <c:if test="${sessionScope.sessionHaknum == null }">
+					</c:if> 
+					<c:if test="${sessionScope.sessionHaknum == null }">
 						<!-- 세션으로 받은 학번(즉,로그인을 안했을경우)이 없을 경우 글쓰기 버튼이 안보이도록 한다.  -->
 						<a href="/Member/Login/LoginMain.jsp" role="button"
 							class="btn btn-success">글쓰기</a>
-					</c:if></td>
+					</c:if>
+					</td>
 			</tr>
-			<form name="serach" method="post" action="/free/FList.fr">
+			
+		
+		<!-- 검색 부분 -->
+		<div id="bbsfind">
+		  <script>
+		   function find_check(){
+			   if($.trim($("#searchData").val())==""){
+				   alert("검색이름을 입력하세요!");
+				   $("#find_name").val("").focus();
+				   return false;
+			   }
+		   }
+		  </script>
+		  <form action="/free/FList.fr"
+		  onsubmit="return find_check()" class="form-inline">
+		   <table>
+		    <tr>
+		     <td>
+ 		      <select name="keyField" class="form-control">
+					<option value="0">검색항목</option>
+					<option value="id">작성자</option>
+					<option value="subject">제목</option> 
+					<option value="content">내용</option>
+		      </select> 
+		     </td>
+		     <td  class="form-horizontal">
+		      <input name="keyword" id="searchData" size="18" class="form-control"/>
+		      <input type="submit" value="검색" class="btn btn-default"  />
+		     </td>
+		    </tr>
+		   </table>		 
+		  </form>
+		</div>			
+			
+<!-- 			<form name="serach" method="post" action="/free/FList.fr">
 				<select name="keyField">
 					<option value="0">검색항목</option>
 					<option value="id">작성자</option>
-					<option value="subject">제목</option> <
+					<option value="subject">제목</option> 
 					<option value="content">내용</option>
-				</select> <input type="text" name="keyword" /> <input type="submit"
-					value="검색" class="btn btn-success" />
-			</form>
+				</select> 
+				<input type="text" name="keyword" /> 
+				<input type="submit" value="검색" class="btn btn-success" />
+			</form> -->
 
 		</table>
 	</div>
