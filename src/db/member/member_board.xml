@@ -9,18 +9,18 @@
 	<insert id="join_insert" parameterType="db.member.MemberBean"> 
  		insert into MEMBER(HAKNUM, PASSWORD, NAME, MAJOR, ADDRESS, CALL_NUM, MAIL, PERMISSION ) 
  		values(
- 		#{haknum}, #{password}, #{name}, #{major}, #{Address}, #{call_num}, #{mail}, 1)
+ 		#{haknum}, #{password}, #{name}, #{major}, #{address}, #{call_num}, #{mail}, 1)
  	</insert> 
  	
  	<!-- 회원정보 수정 시 내용보기 -->
- 	<select id="join_content" resultType="board" parameterType="int"> 
+ 	<select id="join_content" resultType="member" parameterType="int"> 
 		select * from MEMBER where HAKNUM=#{haknum} 
  	</select>
  	
  	 <!-- 회원정보 수정 -->
  	<update id="member_edit" parameterType="board"> 
  		update MEMBER set HAKNUM=#{haknum}, PASSWORD=#{password},
- 		NAME=#{name}, MAJOR=#{major}, ADDRESS=#{Address}, CALL_NUM=#{call_num},
+ 		NAME=#{name}, MAJOR=#{major}, ADDRESS=#{address}, CALL_NUM=#{call_num},
  		MAIL=#{mail}
  		 where HAKNUM=#{haknum}
  	</update> 

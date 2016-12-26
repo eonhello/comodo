@@ -6,7 +6,7 @@ public class MemberBean {
 	private String password;
 	private String name;
 	private String major;
-	private String Address;
+	private String address;
 	private int call_num;
 	private String mail;
 	private int room_num;
@@ -36,11 +36,12 @@ public class MemberBean {
 	public void setMajor(String major) {
 		this.major = major;
 	}
+	
 	public String getAddress() {
-		return Address;
+		return address;
 	}
 	public void setAddress(String address) {
-		Address = address;
+		this.address = address;
 	}
 	public int getCall_num() {
 		return call_num;

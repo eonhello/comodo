@@ -64,12 +64,31 @@ public class Join_Controller extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 			
+		// 수정되기전 정보 jsp화면으로 띄우기	
 		} else if(command.equals("/Memmodify_pro.mem")){
-			
 			forward = new ActionForward();
 			forward.setRedirect(false);
 			forward.setPath("/Member/Join/Memmodify.jsp");
 		
+		} /*else if(command.equals("/memModify_action.mem")){
+			action = new JModify_view();
+			System.out.println("회원 정보 수정을 위한 데이터 베이스 접속합니다. ");
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		
+		// 수정하기 위해서 정보 입력한걸 데이터 베이스에 넣기	
+		} */else if(command.equals("/memModify_action.mem")){
+			action = new JModify_action();
+			System.out.println("수정 할 정보들을 데이터베이스에 넣겠습니다.");
+			try {
+				forward = action.execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			
 		} else if (command.equals("/Login.mem")) {
 			System.out.println("멤버 - 로그인 컨트롤러 진입");
 			System.out.println("Member Controller로 넘어온 haknum = "+request.getParameter("haknum"));

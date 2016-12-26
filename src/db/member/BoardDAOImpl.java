@@ -66,7 +66,7 @@ public class BoardDAOImpl {
 		SqlSession session=null;
 		session = getSession();
 		return (MemberBean) session.selectOne("join_board.login_inform", haknum);
-	}	
+	}
 	
 	
 	// 게시판 저장 
