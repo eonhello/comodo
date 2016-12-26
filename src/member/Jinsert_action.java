@@ -25,7 +25,7 @@ public class Jinsert_action implements Action {
 		   		boarddata.setPassword(request.getParameter("password"));
 		   		boarddata.setName(request.getParameter("name"));
 		   		boarddata.setMajor(request.getParameter("major"));
-		   		boarddata.setAddress(request.getParameter("Address"));
+		   		boarddata.setAddress(request.getParameter("address"));
 		   		boarddata.setCall_num(Integer.parseInt(request.getParameter("call_num")));
 		   		boarddata.setMail(request.getParameter("mail"));
 		   		
