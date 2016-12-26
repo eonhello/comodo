@@ -64,7 +64,7 @@ public class Join_Controller extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 			
-		// 수정되기전 정보 jsp화면으로 띄우기	
+		// 수정되기 전& 수정된 후 정보 jsp화면으로 띄우기	
 		} else if(command.equals("/Memmodify_pro.mem")){
 			forward = new ActionForward();
 			forward.setRedirect(false);
@@ -89,6 +89,11 @@ public class Join_Controller extends javax.servlet.http.HttpServlet
 				e.printStackTrace();
 			}
 			
+		} else if(command.equals("/Memmodify_go.mem")){
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("/index.jsp");
+		
 		} else if (command.equals("/Login.mem")) {
 			System.out.println("멤버 - 로그인 컨트롤러 진입");
 			System.out.println("Member Controller로 넘어온 haknum = "+request.getParameter("haknum"));

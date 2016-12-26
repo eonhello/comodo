@@ -61,7 +61,7 @@ import db.member.MemberBean;
 					System.out.println("수정페이지 접속 완료");
 		   	 
 		   	 forward.setRedirect(true);
-		   	 forward.setPath("");
+		   	 forward.setPath("/Memmodify_go.mem");
 		   	 return forward;
 	   	 }catch(Exception ex){
 	   			ex.printStackTrace();	 
