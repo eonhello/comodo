@@ -10,6 +10,7 @@
 		<typeAlias type="db.board.free.CommentBean" alias="comment" />
 		<typeAlias type="db.board.sleep.BoardBean" alias="board" />
 		<typeAlias type="db.member.MemberBean" alias="member" />
+		<typeAlias type="db.board.fac.BoardBean" alias="fac_board" />
 		
 	</typeAliases>
 
@@ -31,6 +32,7 @@
 		<mapper resource="./db/board/free/comment.xml" />
 		<mapper resource="./db/member/member_board.xml" />
 		<mapper resource="./db/board/sleep/sleep_board.xml" />
+		<mapper resource="./db/board/fac/fac_board.xml" />
 	</mappers>
 
 </configuration>
