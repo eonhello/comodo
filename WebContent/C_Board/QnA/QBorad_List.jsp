@@ -99,7 +99,7 @@
 			
 			<td style="font-family:Tahoma;font-size:10pt;">
 				<div align="center"><%--bl.getBOARD_NAME() --%></div>
-						${b.q_haknum}
+						${b.haknum}
 			</td>
 			<td style="font-family:Tahoma;font-size:10pt;">
 				<div align="center"><%--bl.getBOARD_DATE() --%></div>
@@ -233,7 +233,7 @@
 		    <tr>
 		     <td>
  		      <select name="find_field" class="form-control">
-		       <option value="q_haknum">작성자</option>
+		       <option value="haknum">작성자</option>
 		       <option value="q_subject">글제목</option>
 		       <option value="q_content">글제목+내용</option>
 		      </select> 
