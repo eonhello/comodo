@@ -4,6 +4,7 @@ import java.io.PrintWriter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import action.Action;
 import action.ActionForward;
@@ -18,9 +19,11 @@ import db.member.MemberBean;
 		 request.setCharacterEncoding("utf-8");
 		 PrintWriter out=response.getWriter();
 		 ActionForward forward = new ActionForward();
+		 HttpSession session = request.getSession();
 		 boolean result = false;
 		 
-		 int num=Integer.parseInt(request.getParameter("haknum"));
+		 System.out.println("수정 될 정보를 받아오기위한 학번 : "+session.getAttribute("sessionHaknum"));
+		 int num=Integer.parseInt(session.getAttribute("sessionHaknum").toString()); 
 		 String pass = request.getParameter("password");
 		
 		 BoardDAOImpl boarddao=new BoardDAOImpl();
@@ -39,13 +42,19 @@ import db.member.MemberBean;
 		 
 		 try{
 				boarddata.setHaknum(num);
-				boarddata.setPassword("password");
-				boarddata.setName("name");
-				boarddata.setMajor("major");
-				boarddata.setAddress("address");
-				boarddata.setCall_num(Integer.parseInt("call_num"));
+				System.out.println("받은 학번 : " + boarddata.getHaknum());
+				boarddata.setPassword(request.getParameter("password"));
+				System.out.println("수정 될비밀번호 : " + boarddata.getPassword());
+				boarddata.setName(request.getParameter("name"));
+				System.out.println("수정 될 이름 : " + boarddata.getName());
+				boarddata.setMajor(request.getParameter("major"));
+				System.out.println("수정 될 학과 : " + boarddata.getMajor());
+				boarddata.setAddress(request.getParameter("address"));
+				System.out.println("수정 될 주소 : " + boarddata.getAddress());
+				boarddata.setCall_num(Integer.parseInt(request.getParameter("call_num")));
+				System.out.println("수정 될 번호 : " + boarddata.getCall_num());
 				boarddata.setMail(request.getParameter("mail"));
-			 
+				System.out.println("수정 될 메일 : " + boarddata.getMail());
 
 				boarddao.boardEdit(boarddata);
 				

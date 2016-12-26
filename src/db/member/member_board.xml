@@ -13,7 +13,7 @@
  	</insert> 
  	
  	<!-- 회원정보 수정 시 내용보기 -->
- 	<select id="join_content" resultType="board" parameterType="int"> 
+ 	<select id="join_content" resultType="member" parameterType="int"> 
 		select * from MEMBER where HAKNUM=#{haknum} 
  	</select>
  	
