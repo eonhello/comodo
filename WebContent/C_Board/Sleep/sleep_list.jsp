@@ -142,7 +142,9 @@
 				<input type="button" value="승인" class="confirm_btn" onclick="confirm_select('${b.s_board_num}')" style="display:inline">
 				<input type="button" value="불허" class="disapprove_btn" onclick="disapprove_select('${b.s_board_num}')" style="display:inline">
 				</c:if>
+				<c:if test="${0==sessionScope.sessionPermission }">
 				<input type="button" value="신청취소" class="cancel_btn" onclick="cancel_select('${b.s_board_num}')" style="display:inline">
+				</c:if>
 				
 				
 			</td>
@@ -205,9 +207,11 @@
 	session = <%=session.getAttribute("sessionPermission") %>
 	<%-- ${sessionScope.sessionHaknum} --%>
 	
+	<c:if test="${null!=sessionScope.sessionPermission}">
 	<a href="/sleep/Sleep_Write_Action.sl">
 		<input type="button" value="신청하기">
 	</a>
+	</c:if>
 
 	
 </body>
