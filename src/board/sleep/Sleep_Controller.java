@@ -29,68 +29,95 @@ public class Sleep_Controller extends javax.servlet.http.HttpServlet
 		System.out.println("contextPath=" + contextPath);
 		System.out.println("command=" + command);
 //
-		if (command.equals("/Sleep_Action.sl")) {
-			action = new Sleep_Action();
+		if (command.equals("/sleep/Sleep_List_Action.sl")) {
+			action = new Sleep_List_Action();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 			//forward.setPath("../C_Board/Sleep/sleep_design.jsp");
-		} /*else if (command.equals("/BoardDelete.b")) {
+		}	else if(command.equals("/sleep/Sleep_Write_Action.sl")) {
 			forward = new ActionForward();
 			forward.setRedirect(false);
-			forward.setPath("./board/qna_board_delete.jsp");
-		} else if (command.equals("/BoardModify.bo")) {
-			action = new BoardModifyView();
+			forward.setPath("/C_Board/Sleep/sleep_write.jsp");
+		}
+		else if (command.equals("/sleep/Sleep_Delete.sl")) {
+			forward = new ActionForward();
+			forward.setRedirect(false);
+			forward.setPath("/C_Board/Sleep/sleep_delete.jsp");
+		} else if (command.equals("/sleep/Sleep_Modify.sl")) {
+			action = new Sleep_Modify_View();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/BoardAddAction.bo")) {
-			action = new BoardAddAction();
+		} else if (command.equals("/sleep/Sleep_Add_Action.sl")) {
+			System.out.println("AddController 진입");
+			action = new Sleep_Add_Action();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/BoardReplyView.bo")) {
+		}/* else if (command.equals("/BoardReplyView.bo")) {
 			action = new BoardReplyView();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/BoardModifyAction.bo")) {
-			action = new BoardModifyAction();
+		} */else if (command.equals("/sleep/Sleep_Modify_Action.sl")) {
+			action = new Sleep_Modify_Action();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/BoardDeleteAction.bo")) {
-			action = new BoardDeleteAction();
+		} else if (command.equals("/sleep/Sleep_Delete_Action.sl")) {
+			action = new Sleep_Delete_Action();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/BoardList.bo")) {
+		} /*else if (command.equals("/BoardList.bo")) {
 			action = new BoardListAction();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		} else if (command.equals("/BoardDetailAction.bo")) {
-			action = new BoardDetailAction();
+		} else if (command.equals("/Sleep_Detail_Action.sl")) {
+			action = new Sleep_Detail_Action();
 			try {
 				forward = action.execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		}*/
+		}*/	else if (command.equals("/sleep/Sleep_Confirm_Action.sl")) {
+			Sleep_Confirm_Action sca = new Sleep_Confirm_Action();
+			try {
+				sca.AjaxOut(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/sleep/Sleep_Cancel_Action.sl")) {
+			Sleep_Cancel_Action cancel_a = new Sleep_Cancel_Action();
+			try {
+				cancel_a.AjaxOut(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		} else if (command.equals("/sleep/Sleep_Disapprove_Action.sl")) {
+			Sleep_Disapprove_Action sda = new Sleep_Disapprove_Action();
+			try {
+				sda.AjaxOut(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 
 		if (forward != null) {
 			if (forward.getRedirect()) { // true

@@ -4,10 +4,11 @@
 <configuration>
 
 	<typeAliases>
-		<typeAlias type="db.board.sleep.BoardBean" alias="board" />
-		<typeAlias type="db.board.free.BoardBean" alias="Fboard" />
+		<typeAlias type="db.board.free.BoardBean" alias="free" />
 		<typeAlias type="db.board.free.CommentBean" alias="comment" />
-		<typeAlias type="db.board.qna.QBoardBean" alias="Qboard" />
+		<typeAlias type="db.board.sleep.BoardBean" alias="board" />
+		
+		
 	</typeAliases>
 
 	<environments default="development">
@@ -15,7 +16,7 @@
 			<transactionManager type="JDBC" />
 			<dataSource type="POOLED">
 				<property name="driver" value="oracle.jdbc.driver.OracleDriver" />
-				<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe" />
+				<property name="url" value="jdbc:oracle:thin:@192.168.10.36:1521:xe" />
 				<property name="username" value="comodo" />
 				<property name="password" value="comodo123" />
 			</dataSource>
@@ -23,12 +24,10 @@
 	</environments>
 
 	<mappers>
-		<mapper resource="./db/board/sleep/sleep_board.xml" />
-		<!-- <mapper resource="board.xml" />-->
-		<!-- QnA --><mapper resource="./db/board/qna/Qboard.xml" />
-		<mapper resource="./db/member/member_board.xml" />
 		<mapper resource="./db/board/free/board.xml" />
 		<mapper resource="./db/board/free/comment.xml" />
+		<mapper resource="./db/member/member_board.xml" />
+		<mapper resource="./db/board/sleep/sleep_board.xml" />
 	</mappers>
 
 </configuration>
