@@ -4,7 +4,7 @@ import java.sql.Date;
 
 public class QBoardBean {
 	private int q_board_num;
-	private String q_haknum;
+	private String haknum;
 	private String q_pass;
 	private String q_subject;
 	private String q_content;
@@ -46,11 +46,11 @@ public class QBoardBean {
 	public void setQ_board_num(int q_board_num) {
 		this.q_board_num = q_board_num;
 	}
-	public String getQ_haknum() {
-		return q_haknum;
+	public String getHaknum() {
+		return haknum;
 	}
-	public void setQ_haknum(String q_haknum) {
-		this.q_haknum = q_haknum;
+	public void setHaknum(String haknum) {
+		this.haknum = haknum;
 	}
 	public String getQ_pass() {
 		return q_pass;
