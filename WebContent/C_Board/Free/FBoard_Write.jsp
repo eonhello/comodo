@@ -47,7 +47,11 @@
 	<%@include file="/nav.jsp" %> 
 	
 	<div class="container" style="margin-top:100px">
-	
+			<div class="page-header">
+				<h1>
+					자유게시판 <small>글쓰기</small>
+				</h1>
+			</div>	
 	<c:if test="${sessionScope.sessionHaknum != null }">
 	<table summary="글쓰기 전체 테이블" class="table table-bordered">
 		<form name="BoardWriteForm" method="post" action="/free/FWrite_action.fr">
@@ -57,28 +61,30 @@
    			<col width="80%">
    		</colgroup>
    	
-		<div class="container" style="margin-top:50px">
+		
 		<table summary="테이블 구성" class="table table-bordered">
-		<caption>게시판 글쓰기</caption>	
+			<tr align="center" valign="middle" >
+				<td colspan="5">자유게시판</td>
+			</tr>
     		<tr>
-				<td>작성자</td>
-				<td><input type=text name=board_name size=10 maxlength=8 value="<%=session.getAttribute("sessionName") %>" readonly></td>
+				<td  class="active">작성자</td>
+				<td><input class="form-control" style="width: 50%;"  type=text name=board_name size=10 maxlength=8 value="<%=session.getAttribute("sessionName") %>" readonly></td>
 			</tr>
 			<tr>
-				<td>학번</td>
-				<td><input type=text name=hak_num size=10 maxlength=8 value="<%=session.getAttribute("sessionHaknum") %>" readonly></td>
+				<td  class="active">학번</td>
+				<td><input class="form-control" style="width: 50%;"  type=text name=hak_num size=10 maxlength=8 value="<%=session.getAttribute("sessionHaknum") %>" readonly></td>
 			</tr>
     		<tr>
-     			<td>제 목</td>
-     			<td><input type=text name=board_subject id=board_subject size=70></td>
+     			<td  class="active">제 목</td>
+     			<td><input  class="form-control" style="width: 50%;"  type=text name=board_subject id=board_subject size=70></td>
     		</tr>
     		<tr>
-     			<td>내 용</td>
-     			<td><textarea name=board_content id=board_content rows ="10" cols="100"></textarea></td>
+     			<td class="active">내 용</td>
+     			<td><textarea  class="form-control"  name=board_content id=board_content rows ="10" cols="100"></textarea></td>
     		</tr>
     		<tr>
-     			<td>비밀번호</td> 
-     			<td><input type=password name=board_pass id=board_pass size=15 maxlength=15></td>
+     			<td class="active">비밀번호</td> 
+     			<td><input class="form-control" style="width: 50%;"  type=password name=board_pass id=board_pass size=15 maxlength=15></td>
     		</tr>
     		<tr>
      			<td colspan=2><hr size=1></td>
@@ -90,7 +96,7 @@
      			</td>
     		</tr> 
 		</table>
-		</div>
+
 	</form> 
 </table>
 

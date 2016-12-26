@@ -30,6 +30,12 @@
 
 	<!-- 게시판 리스트 -->
 	<div class="container" style="margin-top: 100px">
+			<div class="page-header">
+				<h1>
+					자유게시판 <small>리스트</small>
+				</h1>
+			</div>		
+	
 		<table align=center width=600 border="1" cellpadding="0"
 			cellspacing="0" class="table table-bordered">
 			<%
@@ -117,29 +123,58 @@
 					//}// for end
 				%>
 
+		<tr align=center height=20>
+			<td colspan=7 style=font-family:Tahoma;font-size:10pt;>
+			<nav>
+			  <ul class="pagination">
+			  	<c:if test="${page <= 1 }">
+				  	<li class="disabled">
+				      <a href="#" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				</c:if>
+				<c:if test="${page > 1 }">			
+	 			    <li>
+				      <a href="./FList.fr?page=${page-1}&keyword=${keyword}" aria-label="Previous">
+				        <span aria-hidden="true">&laquo;</span>
+				      </a>
+				    </li>
+				</c:if>
+				<c:forEach var="a" begin="${startpage}" end="${endpage}">
+					<c:if test="${a == page }">
+						<li class="active"><a href="#">${a}</a></li>
+					</c:if>
+					<c:if test="${a != page }">
+						<li><a href="./FList.fr?page=${a}&keyword=${keyword}" 
+							>${a}</a></li>
+					</c:if>
+				</c:forEach>
 
-				<tr align=center height=20>
-					<td colspan=7 style="font-family: Tahoma; font-size: 10pt;"><c:if
-							test="${page <= 1 }">
-							<input type="button" value="이전" class="btn btn-default"></> &nbsp;
-			</c:if> <!-- 뒤에 &keyword=${keyword} 붙여줘서 검색기능 페이징처리 완료 --> <c:if
-							test="${page > 1 }">
-							<a href="./FList.fr?page=${page-1}&keyword=${keyword}"
-								role="button" class="btn btn-default">이전</a>&nbsp;
-			</c:if> <c:forEach var="a" begin="${startpage}" end="${endpage}">
-							<c:if test="${a == page }">
-					[${a}]
+				<c:if test="${page >= maxpage }">
+				    <li class="disabled">
+				      <a href="#" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>				
 				</c:if>
-							<c:if test="${a != page }">
-								<a href="./FList.fr?page=${a}&keyword=${keyword}">[${a}]</a>&nbsp;
+				<c:if test="${page < maxpage }">
+				    <li>
+				      <a href="./FList.fr?page=${page+1}&keyword=${keyword}" aria-label="Next">
+				        <span aria-hidden="true">&raquo;</span>
+				      </a>
+				    </li>					
 				</c:if>
-						</c:forEach> <c:if test="${page >= maxpage }">
-							<input type="button" value="다음" class="btn btn-default"></> 
-			</c:if> <c:if test="${page < maxpage }">
-							<a href="./FList.fr?page=${page+1}&keyword=${keyword}"
-								role="button" class="btn btn-default">다음</a>
-						</c:if></td>
-				</tr>
+	
+
+			  </ul>
+			</nav>
+			</td>
+		</tr>
+
+
+
+				
 
 			</c:if>
 			<%
@@ -158,53 +193,21 @@
 				//	}
 			%>
 			<tr align="right">
-				<td colspan="5">
-					<c:if test="${sessionScope.sessionHaknum != null }">
+				<td colspan="5"><c:if
+						test="${sessionScope.sessionHaknum != null }">
 						<!-- 세션으로 받은 학번(즉,로그인을 안했을경우)이 없을 경우 글쓰기 버튼이 안보이도록 한다.  -->
 						<a href="/free/FWrite.fr" role="button" class="btn btn-success">글쓰기</a>
-					</c:if> 
-					<c:if test="${sessionScope.sessionHaknum == null }">
+					</c:if> <c:if test="${sessionScope.sessionHaknum == null }">
 						<!-- 세션으로 받은 학번(즉,로그인을 안했을경우)이 없을 경우 글쓰기 버튼이 안보이도록 한다.  -->
 						<a href="/Member/Login/LoginMain.jsp" role="button"
 							class="btn btn-success">글쓰기</a>
-					</c:if>
-					</td>
+					</c:if></td>
 			</tr>
-			
-		
-		<!-- 검색 부분 -->
-		<div id="bbsfind">
-		  <script>
-		   function find_check(){
-			   if($.trim($("#searchData").val())==""){
-				   alert("검색이름을 입력하세요!");
-				   $("#find_name").val("").focus();
-				   return false;
-			   }
-		   }
-		  </script>
-		  <form action="/free/FList.fr"
-		  onsubmit="return find_check()" class="form-inline">
-		   <table>
-		    <tr>
-		     <td>
- 		      <select name="keyField" class="form-control">
-					<option value="0">검색항목</option>
-					<option value="id">작성자</option>
-					<option value="subject">제목</option> 
-					<option value="content">내용</option>
-		      </select> 
-		     </td>
-		     <td  class="form-horizontal">
-		      <input name="keyword" id="searchData" size="18" class="form-control"/>
-		      <input type="submit" value="검색" class="btn btn-default"  />
-		     </td>
-		    </tr>
-		   </table>		 
-		  </form>
-		</div>			
-			
-<!-- 			<form name="serach" method="post" action="/free/FList.fr">
+
+
+
+
+			<!-- 			<form name="serach" method="post" action="/free/FList.fr">
 				<select name="keyField">
 					<option value="0">검색항목</option>
 					<option value="id">작성자</option>
@@ -216,6 +219,36 @@
 			</form> -->
 
 		</table>
+
+		<!-- 검색 부분 -->
+		<div id="bbsfind">
+			<script>
+				function find_check() {
+					if ($.trim($("#searchData").val()) == "") {
+						alert("검색이름을 입력하세요!");
+						$("#find_name").val("").focus();
+						return false;
+					}
+				}
+			</script>
+			<form action="/free/FList.fr" onsubmit="return find_check()"
+				class="form-inline">
+				<table>
+					<tr>
+						<td><select name="keyField" class="form-control">
+								<option value="0">검색항목</option>
+								<option value="id">작성자</option>
+								<option value="subject">제목</option>
+								<option value="content">내용</option>
+						</select></td>
+						<td class="form-horizontal"><input name="keyword"
+							id="searchData" size="18" class="form-control" /> <input
+							type="submit" value="검색" class="btn btn-default" /></td>
+					</tr>
+				</table>
+			</form>
+		</div>
+
 	</div>
 </body>
 </html>

@@ -43,53 +43,51 @@ body {
 	<%@include file="/nav.jsp"%>
 
 	<div class="container" style="margin-top: 100px">
-
+			<div class="page-header">
+				<h1>
+					자유게시판 <small>수정하기</small>
+				</h1>
+			</div>	
 		<c:if test="${sessionScope.sessionHaknum != null }">
-			<table summary="글수정 전체 테이블">
+
 				<form action="/free/FModify_action.fr" method="post"
 					name="modifyform">
 					<input type="hidden" name="BOARD_NUM"
 						value="${boarddata.board_num}"> <input type="hidden"
 						name=page value="${page}">
 
-					<colgroup>
-						<col width="20%">
-						<col width="80%">
-					</colgroup>
 
 
-					<table summary="테이블 구성">
-						<caption>글 수정하기</caption>
+					<table summary="테이블 구성" class="table table-bordered">
 						<tr>
-							<td>작성자</td>
-							<td><input type=text name=name size=10 maxlength=8
+							<td  class="active">작성자</td>
+							<td><input  class="form-control" style="width: 50%;" type=text name=name size=10 maxlength=8
 								value="${boarddata.board_name}" readonly></td>
 						</tr>
 						<tr>
-							<td>제 목</td>
-							<td><input type=text name=subject size=70
+							<td class="active">제 목</td>
+							<td><input class="form-control" style="width: 50%;" type=text name=subject size=70
 								value="${boarddata.board_subject}"></td>
 						</tr>
 						<tr>
-							<td>내 용</td>
-							<td><textarea name=content rows="10" cols="100">${boarddata.board_content}</textarea></td>
+							<td class="active">내 용</td>
+							<td><textarea class="form-control" name=content rows="10" cols="100">${boarddata.board_content}</textarea></td>
 						</tr>
 						<tr>
-							<td>비밀번호</td>
-							<td><input type=password name=password size=15 maxlength=15></td>
+							<td class="active">비밀번호</td>
+							<td><input class="form-control" style="width: 50%;" type=password name=password size=15 maxlength=15></td>
 						</tr>
 						<tr>
 							<td colspan=2><hr size=1></td>
 						</tr>
 						<tr>
 							<td colspan="2"><div align="center">
-									<input type="submit" value="수정 완료">&nbsp;&nbsp; <input
-										type=reset value="다시 수정"> <input type=button
-										value="취소" onClick="history.go(-1)"></td>
+									<input  class="btn btn-success" type="submit" value="수정 완료">&nbsp;&nbsp; 
+									<input class="btn btn-warning" type=button value="취소" onClick="history.go(-1)"></td>
 						</tr>
 					</table>
 				</form>
-			</table>
+
 		</c:if>
 
 		<c:if test="${sessionScope.sessionHaknum == null }">

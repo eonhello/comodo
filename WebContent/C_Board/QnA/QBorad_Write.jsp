@@ -15,7 +15,7 @@
 
 
 
-	<title>MVC 게시판</title>
+	<title>QnA 게시판</title>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	
 	<script>
@@ -57,7 +57,7 @@
 <div class="container" style="margin-top:100px">
 	<table cellpadding="0" cellspacing="0" align=center class="table table-bordered">
 		<tr align="center" valign="middle" >
-			<td colspan="5">MVC 게시판</td>
+			<td colspan="5">QnA게시판</td>
 		</tr>
 	<!-- 	<tr>
 			<td style="font-family:돋음; font-size:12" height="16">
@@ -73,7 +73,7 @@
 				<div align="center">비밀번호</div>
 			</td>
 			<td>
-				<input name="BOARD_PASS" id="board_pass" type="password" size="10" maxlength="10" 
+				<input class="form-control" style="width: 50%;" name="BOARD_PASS" id="board_pass" type="password" size="10" maxlength="10" 
 					value=""/>
 			</td>
 		</tr>
@@ -82,7 +82,7 @@
 				<div align="center">제 목</div>
 			</td>
 			<td>
-				<input name="BOARD_SUBJECT" id="board_subject" type="text" size="50" maxlength="100" 
+				<input class="form-control" style="width: 50%;" name="BOARD_SUBJECT" id="board_subject" type="text" size="50" maxlength="100" 
 					value=""/>
 			</td>
 		</tr>
@@ -91,7 +91,7 @@
 				<div align="center">내 용</div>
 			</td>
 			<td>
-				<textarea name="BOARD_CONTENT" id="board_content" cols="67" rows="15"></textarea>
+				<textarea class="form-control"  name="BOARD_CONTENT" id="board_content" cols="67" rows="15"></textarea>
 			</td>
 		</tr>
 		<tr>
@@ -109,8 +109,8 @@
 		<tr><td colspan="2">&nbsp;</td></tr>
 		<tr align="center" valign="middle">
 			<td colspan="5">			
-				<input type=submit value="등록" class="btn btn-default">
-				<input type=reset value="취소" class="btn btn-default">
+				<input type=submit value="등록" class="btn btn-success">
+				<input type=reset value="취소" class="btn btn-warning">
 			</td>
 		</tr>
 	</table>

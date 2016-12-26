@@ -12,7 +12,7 @@
 <%-- 			<% session.setAttribute("sessionHaknum", request.getAttribute("sessionHaknum")); --%>
 // 				session.setAttribute("sessionName", request.getAttribute("sessionName"));
 // 				session.setAttribute("sessionPermission", request.getAttribute("sessionPermission"));
-<%-- 			%> --%>
+<%-- 	1		%> --%>
 
 
 

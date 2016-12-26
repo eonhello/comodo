@@ -19,7 +19,7 @@
 	location.href= referrer;
 	
 
-/* 	history.go(-1); */
+/* 	history.go(-1);1 */
 	
 	</script>		
 </body>

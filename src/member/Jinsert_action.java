@@ -25,11 +25,11 @@ public class Jinsert_action implements Action {
 		   		boarddata.setPassword(request.getParameter("password"));
 		   		boarddata.setName(request.getParameter("name"));
 		   		boarddata.setMajor(request.getParameter("major"));
-		   		boarddata.setAddress(request.getParameter("Address"));
+		   		boarddata.setAddress(request.getParameter("address"));
 		   		boarddata.setCall_num(Integer.parseInt(request.getParameter("call_num")));
 		   		boarddata.setMail(request.getParameter("mail"));
 		   		
-/*		   		// 메일에서 @앞 값과 뒤의 값을 하나로 묶어서 데이터 베이스에 들어가게 하기위한 과정
+/*		   		// 메일에서 @앞 값과 뒤의 값을 하나로 묶어서 데이터 베이스에 들어가게 하기위한 과정 
 		   		String mail1 = request.getParameter("mail");
 		   		String mail2 = request.getParameter("mail2");
 		   		mail1 = mail1 +  "@" + mail2;
