@@ -41,6 +41,9 @@ public class MemberBean {
 		return address;
 	}
 	public void setAddress(String address) {
+
+		address = address;
+
 		this.address = address;
 	}
 	public int getCall_num() {

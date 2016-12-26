@@ -73,7 +73,7 @@
 </head>
 <body>
 
-<form action="/GitTest/Sleep_Add_Action.sl" method="post" name="boardform">
+<form action="/sleep/Sleep_Add_Action.sl" method="post" name="boardform">
 <table cellpadding="0" cellspacing="0" align=center border=1>
 	<tr align="center" valign="middle">
 		<td colspan="5">외박신청 게시판</td>
@@ -84,7 +84,7 @@
 		</td>
 		<td>
 			<input name="S_BOARD_NAME" id="board_name" type="text" size="10" maxlength="10" 
-				value=""  />
+				value="${sessionScope.sessionName }"  readonly/>
 		</td>
 	</tr>
 	<!-- 학번 -->
@@ -94,19 +94,11 @@
 		</td>
 		<td>
 			<input name="S_BOARD_HAKNUM" id="S_board_haknum" type="text" size="10" maxlength="10" 
-				value=""   />
+				value="${sessionScope.sessionHaknum }"  readonly/>
 		</td>
 	</tr>
 
-	<tr>
-		<td style="font-family:돋음; font-size:12" height="16">
-			<div align="center">비밀번호</div>
-		</td>
-		<td>
-			<input name="S_BOARD_PASSWORD" id="s_board_password" type="password" size="10" maxlength="10" 
-				value=""/>
-		</td>
-	</tr>
+	
 	<!-- 학과 -->
 	<tr>
 		<td style="font-family:돋음; font-size:12" height="16">

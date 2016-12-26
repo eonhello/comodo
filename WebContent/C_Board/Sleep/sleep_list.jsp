@@ -121,7 +121,7 @@
 				
 			</td>
 <%-- 			<td>${b.s_haknum }</td> --%>
-			<td>${sessionScope.sessionHaknum }</td>
+			<td>${b.haknum }</td>
 			<td>${b.s_name }</td>
 			<td>${b.s_major }</td>
 			<td>${b.s_subject }</td>

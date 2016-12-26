@@ -60,6 +60,7 @@ import db.board.sleep.BoardDAOImpl;
 		Iterator iterator = boardlist.iterator();
 		request.setAttribute("boardlist", boardlist);		
 		
+		
 		ActionForward forward= new ActionForward();
 	 	forward.setRedirect(false);
  		forward.setPath("/C_Board/Sleep/sleep_list.jsp");

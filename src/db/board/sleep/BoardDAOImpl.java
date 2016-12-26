@@ -36,7 +36,7 @@ public class BoardDAOImpl {
 			System.out.println("insert1");
 			
 			System.out.println("게시글 번호 = "+board.getS_board_num());	//게시글 번호
-			System.out.println("학번 = "+board.getS_haknum());	//학번
+			System.out.println("학번 = "+board.getHaknum());	//학번
 			System.out.println("이름 = "+board.getS_name());	//이름
 			System.out.println("전공 = "+board.getS_major());	//전공
 			System.out.println("제목 = "+board.getS_subject());	//제목
