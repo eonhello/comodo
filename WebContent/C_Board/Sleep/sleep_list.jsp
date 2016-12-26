@@ -121,7 +121,7 @@
 				
 			</td>
 <%-- 			<td>${b.s_haknum }</td> --%>
-			<td>${b.s_board_num }</td>
+			<td>${sessionScope.sessionHaknum }</td>
 			<td>${b.s_name }</td>
 			<td>${b.s_major }</td>
 			<td>${b.s_subject }</td>
@@ -130,7 +130,7 @@
 <%-- 			<td>${b.s_start_date }</td> --%>
 			<td><fmt:formatDate value="${b.s_start_date}" type="date"/></td>
 			<td><fmt:formatDate value="${b.s_end_date}" type="date"/></td>
-			<td><fmt:formatDate value="${b.s_board_date}" type="date"/></td>
+			<td><fmt:formatDate value="${b.s_board_date}" type="both"/></td>
 			<td><c:if test="${1==b.s_confirm }">승인됨</c:if>
 				<c:if test="${2==b.s_confirm }">불허됨</c:if></td>
 			<td>${b.s_confirm_date }</td>
@@ -142,7 +142,9 @@
 				<input type="button" value="승인" class="confirm_btn" onclick="confirm_select('${b.s_board_num}')" style="display:inline">
 				<input type="button" value="불허" class="disapprove_btn" onclick="disapprove_select('${b.s_board_num}')" style="display:inline">
 				</c:if>
+				<c:if test="${0==sessionScope.sessionPermission }">
 				<input type="button" value="신청취소" class="cancel_btn" onclick="cancel_select('${b.s_board_num}')" style="display:inline">
+				</c:if>
 				
 				
 			</td>
@@ -205,9 +207,11 @@
 	session = <%=session.getAttribute("sessionPermission") %>
 	<%-- ${sessionScope.sessionHaknum} --%>
 	
+	<c:if test="${0==sessionScope.sessionPermission}">
 	<a href="/sleep/Sleep_Write_Action.sl">
 		<input type="button" value="신청하기">
 	</a>
+	</c:if>
 
 	
 </body>

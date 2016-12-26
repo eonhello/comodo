@@ -31,7 +31,7 @@
 		<!-- .mem 컨트롤러로 보내자 -->
 		<form action="/Login.mem" method="post">
 		session = <%=session.getAttribute("sessionHaknum") %><br /><br />
-			ID = <input type="text" name="haknum"/><br /><br />
+			학번 = <input type="text" name="haknum"/><br /><br />
 			PW = <input type="password" name="password"/><br /><br />
 			<% //session.setAttribute("sessionId", true);%> 
 			<input type="hidden" name="referrer" id="referrer" value="">
