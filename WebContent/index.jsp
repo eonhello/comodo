@@ -34,7 +34,7 @@
 <body>
 
 
-	<%@include file="./nav.jsp" %>
+	<%@include file="/nav.jsp" %>
      
      
      <div class="container">

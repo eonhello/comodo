@@ -51,7 +51,7 @@
 					<li id="noti"><a href="#about">공지사항</a></li>
 					<li id="sleep"><a href="#contact">외출/외박</a></li>
 					<li id="free" ><a href="/free/FWrite.fr">자유게시판</a></li>
-					<li id="qna"  class="active" ><a href="/qna/QnA_List.qa">QnA</a></li>
+					<li id="qna" class="active"><a href="/qna/QnA_List.qa">QnA</a></li>
 					<li id="fac" ><a href="#contact">시설관리</a></li>	
 				</c:when>
 				<c:when test="${fn:contains(menuUrl,'Fac')}">
