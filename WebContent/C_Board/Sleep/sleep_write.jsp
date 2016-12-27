@@ -11,7 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/assets/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
- 
+ 	<link href="/C_Board/css/layouts/pure_main.css" rel="stylesheet">
     
     <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
@@ -28,18 +28,13 @@
 	<script>
 		$(document).ready(function(){
 			$("form").submit(function(){
-				if($("#s_board_password").val()==""){
-					alert("비밀번호를 입력 하세요.");
-					$("#s_board_password").focus();
-					return false;
-				}
 				if($("#s_board_subject").val()==""){
 					alert("제목을 입력 하세요.");
 					$("#s_board_subject").focus();
 					return false;
 				}
 				if($("#s_board_content").val()==""){
-					alert("내용을 입력 하세요.");
+					alert("행선지를 입력 하세요.");
 					$("#s_board_content").focus();
 					return false;
 				}	
@@ -81,7 +76,7 @@
 			});
 		});
 	</script>
-	
+	<link rel="stylesheet" type="text/css" href="/C_Board/Sleep/style.css">
 </head>
 <body>
 <!-- 메뉴  -->
@@ -91,16 +86,16 @@
 
 
 <form action="/sleep/Sleep_Add_Action.sl" method="post" name="boardform">
-<table cellpadding="0" cellspacing="0" align=center border=1>
+<table cellpadding="0" cellspacing="0" align=center class=responstable>
 	<tr align="center" valign="middle">
-		<td colspan="5">외박신청 게시판</td>
+		<th colspan="5">외박신청 게시판</th>
 	</tr>
 	<tr>
-		<td style="font-family:돋음; font-size:12" height="16">
+		<td style="font-family:돋음; font-size:12" height="16" width="25%">
 			<div align="center">글쓴이</div>
 		</td>
 		<td>
-			<input name="S_BOARD_NAME" id="board_name" type="text" size="10" maxlength="10" 
+			<input name="S_BOARD_NAME" id="board_name" type="text" size="10" maxlength="10" style="background-color:transparent;text-align:center;"
 				value="${sessionScope.sessionName }"  readonly/>
 		</td>
 	</tr>
@@ -110,7 +105,7 @@
 			<div align="center">학번</div>
 		</td>
 		<td>
-			<input name="S_BOARD_HAKNUM" id="S_board_haknum" type="text" size="10" maxlength="10" 
+			<input name="S_BOARD_HAKNUM" id="S_board_haknum" type="text" size="10" maxlength="10" style="background-color:transparent;text-align:center;"
 				value="${sessionScope.sessionHaknum }"  readonly/>
 		</td>
 	</tr>
@@ -124,7 +119,7 @@
 		<td>
 			<!--<input name="S_BOARD_MAJOR" id="s_board_major" type="text" size="10" maxlength="10" 
 				value=""/>-->
-			<select name="S_BOARD_MAJOR" id="s_board_major">
+			<select name="S_BOARD_MAJOR" id="s_board_major" style="width:150px;height:27px;border:1px solid #006666;">
 				<option value="default" selected="true">선택하세요.</option>
 				<option value="컴퓨터공학과">컴퓨터공학과</option>
 				<option value="경영학과">경영학과</option>
@@ -139,7 +134,7 @@
 			<div align="center">제 목</div>
 		</td>
 		<td>
-			<input name="S_BOARD_SUBJECT" id="s_board_subject" type="text" size="50" maxlength="100" 
+			<input name="S_BOARD_SUBJECT" id="s_board_subject" type="text" size="50" maxlength="100" style="background-color:transparent;width:400px;height:27px;border:1px solid #006666;"
 				value=""/>
 		</td>
 	</tr>
@@ -159,10 +154,11 @@
 	</tr>
 	<tr>
 		<td style="font-family:돋음; font-size:12">
-			<div align="center">내 용</div>
+			<div align="center">행선지</div>
 		</td>
 		<td>
-			<textarea name="S_BOARD_CONTENT" id="s_board_content" cols="67" rows="15"></textarea>
+			
+			<input name="S_BOARD_CONTENT" id="s_board_content" type="text" size="50" maxlength="100" value="" style="background-color:transparent;width:400px;height:27px;border:1px solid #006666;"/>
 		</td>
 	</tr>
 	<tr>
@@ -170,20 +166,15 @@
 			<div align="center">외박날짜</div>
 		</td>
 		<td>
-			시작날짜 : <input type="textfield" name="S_START_DATE" id="s_start_date">
-			종료날짜 : <input type="textfield" name="S_END_DATE" id="s_end_date">
+			시작날짜 : <input type="textfield" name="S_START_DATE" id="s_start_date" style="background-color:transparent;width:150px;height:27px;border:1px solid #006666;">
+			종료날짜 : <input type="textfield" name="S_END_DATE" id="s_end_date" style="background-color:transparent;width:150px;height:27px;border:1px solid #006666;">
 		</td>
 	</tr>
 
-	<tr>
-		<td colspan="2" style="height:1px;">
-		</td>
-	</tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	<tr align="center" valign="middle" bgcolor="#FF00CC">
+	<tr align="center" valign="middle">
 		<td colspan="5">			
-			<input type=submit value="등록">
-			<input type=reset value="취소">
+			<input type=submit value="등록" class="secondary-button">
+			<input type=reset value="취소" class="secondary-button">
 		</td>
 	</tr>
 </table>

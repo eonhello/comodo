@@ -18,6 +18,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/assets/bootstrap-3.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/C_Board/css/layouts/pure_main.css" rel="stylesheet">
  
     
     <!-- jQuery (부트스트랩의 자바스크립트 플러그인을 위해 필요합니다) -->
@@ -99,35 +100,26 @@
 	
 	
 	</script>
-	
+	<link rel="stylesheet" type="text/css" href="/C_Board/Sleep/style.css">
 
 </head>
 <body>
 <!-- 메뉴  -->
 	<%@include file="/nav.jsp" %>
-<div class="container" style="margin-top:100px">
+<div id="container" style="margin-top:80px">
 
-	<table>
-	<tr>
-		<td width="50" valign="top">
-		</td>
-		<td>
-	<table border="1">
-		<tr align="center">
-			<td>신청 번호
-			</td>
-			<td>학번</td>
-			<td>이름</td>
-			<td>학과</td>
-			<td>제목</td>
-			<td>신청 구분</td>
-			<td>내용(행선지)</td>
-			<td>외박 시작일</td>
-			<td>외박 종료일</td>
-			<td>게시날짜</td>
-			<td>승인 여부</td>
-			<td>승인 일시</td>
-			<td>취소 여부</td>
+	
+	<table class="responstable">
+		<tr>
+			<th width=20>번호</th>
+			<th width="11%">신청자 정보</th>
+			<th width="42%">외박 정보</th>
+			
+			
+			
+			<th>승인 여부</th>
+			<th>취소 여부</th>
+			<th>승인 or 취소</th>
 		</tr>
 		
 		<c:set var="n" value="0"/>
@@ -138,29 +130,33 @@
 				
 			</td>
 <%-- 			<td>${b.s_haknum }</td> --%>
-			<td>${b.haknum }</td>
-			<td>${b.s_name }</td>
-			<td>${b.s_major }</td>
-			<td>${b.s_subject }</td>
-			<td>${b.s_sleep_type }</td>
-			<td>${b.s_content }</td>
-<%-- 			<td>${b.s_start_date }</td> --%>
-			<td><fmt:formatDate value="${b.s_start_date}" type="date"/></td>
-			<td><fmt:formatDate value="${b.s_end_date}" type="date"/></td>
-			<td><fmt:formatDate value="${b.s_board_date}" type="both"/></td>
-			<td><c:if test="${1==b.s_confirm }">승인됨</c:if>
-				<c:if test="${2==b.s_confirm }">불허됨</c:if></td>
-			<td>${b.s_confirm_date }</td>
-			<td><c:if test="${1==b.s_cancel }">취소됨</c:if>
+			<td>학번 : ${b.haknum }<br>
+			이름 : ${b.s_name }<br>
+			${b.s_major }</td>
+			<td>	<!-- 여기부터 외박정보 나누기 -->
+				<div style="float:left;">${b.s_sleep_type }</div>
+				<div style="float:right;">${b.s_content }</div><br><br>
+				<div style="float:left;font: bold 1.2em/1.0em 나눔고딕코딩;">${b.s_subject }</div>
+					
+				<div style="float:right;font: bold 1.2em/1.0em 나눔고딕코딩;"><fmt:formatDate value="${b.s_start_date}" type="date"/> ~ 
+				<fmt:formatDate value="${b.s_end_date}" type="date"/></div><br><br>
+				<div style="float:left;">
+				신청일 : 
+					<fmt:formatDate value="${b.s_board_date}" type="both"/></div>
+			</td>
+			<td><c:if test="${1==b.s_confirm }"><div style="font: bold 1.2em/1.0em 나눔고딕코딩;">승인됨</div><br></c:if>
+				<c:if test="${2==b.s_confirm }">불허됨<br></c:if>
+			일시 : ${b.s_confirm_date }</td>
+			<td width="10%"><c:if test="${1==b.s_cancel }"><div style="color:red;font: bold 1.2em/1.0em 나눔고딕코딩;">취소됨</div></c:if>
 				<c:if test="${0==b.s_cancel }"></c:if></td>
-			<td>
+			<td width="10%">
 				<div id="n_select"><c:set var="n" value="${b.s_board_num}"/></div>
 				<c:if test="${1==sessionScope.sessionPermission }">
-				<input type="button" value="승인" class="confirm_btn" onclick="confirm_select('${b.s_board_num}')" style="display:inline">
-				<input type="button" value="불허" class="disapprove_btn" onclick="disapprove_select('${b.s_board_num}')" style="display:inline">
+				<input type="button" value="승인" class="secondary-button" onclick="confirm_select('${b.s_board_num}')">
+				<input type="button" value="불허" class="secondary-button" onclick="disapprove_select('${b.s_board_num}')">
 				</c:if>
 				<c:if test="${0==sessionScope.sessionPermission }">
-				<input type="button" value="신청취소" class="cancel_btn" onclick="cancel_select('${b.s_board_num}')" style="display:inline">
+				<input type="button" value="신청취소" class="secondary-button" onclick="cancel_select('${b.s_board_num}')" style="display:inline">
 				</c:if>
 				
 				
@@ -169,7 +165,7 @@
 		</c:forEach>
 		
 		<tr align=center height=20>
-		<td colspan=7 style=font-family:Tahoma;font-size:10pt;>
+		<td colspan=14 style=font-family:Tahoma;font-size:10pt;>
 		
 			
 			<c:if test="${page <= 1 }">
@@ -217,16 +213,14 @@
 		</td>
 	</tr>
 	</table>	
-	</td>
-	</tr>
-	</table>
+
 	count = ${listcount }
 	session = <%=session.getAttribute("sessionPermission") %>
 	<%-- ${sessionScope.sessionHaknum} --%>
 	
 	<c:if test="${0==sessionScope.sessionPermission}">
 	<a href="/sleep/Sleep_Write_Action.sl">
-		<input type="button" value="신청하기">
+		<input type="button" class="secondary-button" style="font: bold 1.2em/1.0em 나눔고딕코딩;color:ff3300;" value="신청하기">
 	</a>
 	</c:if>
 

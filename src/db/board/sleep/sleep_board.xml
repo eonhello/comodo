@@ -68,6 +68,9 @@
  		s_confirm=#{s_confirm}
  		where s_board_num=#{s_board_num}
  	</update> 
+ 	<update id="board_confirm_date" parameterType="board">
+ 		update sleep_tab set s_confirm_date=sysdate where s_board_num=${s_board_num}
+ 	</update>
  	
  	<!-- 외박불허 -->
  	<update id="board_disapprove" parameterType="board"> 

@@ -108,7 +108,16 @@ public class BoardDAOImpl {
 		System.out.println("승인 index = "+board.getS_board_num());
 		session.update("sleep_board.board_confirm", board);
 		//쿼리문 두번날릴수있으면 승인일시에 insert 해보자
+		boardConfirmDate(board);
 	}
+	
+	public void boardConfirmDate(BoardBean board) throws SQLException{
+		SqlSession session=null;
+		session=getSession();
+		System.out.println("일시 index = "+board.getS_board_num());
+		session.update("sleep_board.board_confirm_date", board);
+	}
+	
 	//외박 불허
 		public void boardDisapprove(BoardBean board) throws SQLException{
 			SqlSession session=null;
