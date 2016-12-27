@@ -111,13 +111,13 @@
 	
 	<table class="responstable">
 		<tr>
-			<th width=20>번호</th>
+			<th width="5%">번호</th>
 			<th width="11%">신청자 정보</th>
-			<th width="42%">외박 정보</th>
+			<th width="30%">외박 정보</th>
 			
 			
 			
-			<th>승인 여부</th>
+			<th width="15%">승인 여부</th>
 			<th>취소 여부</th>
 			<th>승인 or 취소</th>
 		</tr>
