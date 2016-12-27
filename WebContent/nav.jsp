@@ -74,7 +74,7 @@
                         <span class="fa fa-bars"></span>
                     </button>
                     <a class="navbar-brand" href="/index.jsp">
-                         <img id="logo-header" src="assets/img/comodo.png" alt="Logo" style="width:23%; height:auto;">
+                         <img id="logo-header" src="/assets/img/comodo.png" alt="Logo" style="width:23%; height:auto;">
                        
                     </a>
                 </div>
@@ -116,7 +116,7 @@
 	                        <!-- End 공지사항 -->
 	                        <!-- 공지사항 -->
 	                        <li>
-	                            <a href="javascript:void(0);" >
+	                            <a href="/BoardList.bo" >
 	                                	시설관리
 	                            </a>
 	                        </li>
@@ -153,7 +153,7 @@
 	                        <!-- End 공지사항 -->
 	                        <!-- 공지사항 -->
 	                        <li>
-	                            <a href="javascript:void(0);" >
+	                            <a href="/BoardList.bo" >
 	                                	시설관리
 	                            </a>
 	                        </li>
@@ -190,7 +190,7 @@
 	                        <!-- End 공지사항 -->
 	                        <!-- 공지사항 -->
 	                        <li>
-	                            <a href="javascript:void(0);" >
+	                            <a href="/BoardList.bo" >
 	                                	시설관리
 	                            </a>
 	                        </li>
@@ -227,7 +227,7 @@
 	                        <!-- End 공지사항 -->
 	                        <!-- 공지사항 -->
 	                        <li>
-	                            <a href="javascript:void(0);" >
+	                            <a href="/BoardList.bo" >
 	                                	시설관리
 	                            </a>
 	                        </li>
@@ -264,7 +264,7 @@
 	                        <!-- End 공지사항 -->
 	                        <!-- 공지사항 -->
 	                        <li class="active">
-	                            <a href="javascript:void(0);" >
+	                            <a href="/BoardList.bo" >
 	                                	시설관리
 	                            </a>
 	                        </li>
@@ -302,7 +302,7 @@
 	                        <!-- End 공지사항 -->
 	                        <!-- 공지사항 -->
 	                        <li>
-	                            <a href="javascript:void(0);" >
+	                            <a href="/BoardList.bo" >
 	                                	시설관리
 	                            </a>
 	                        </li>
