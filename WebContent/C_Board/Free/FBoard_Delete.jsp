@@ -48,14 +48,12 @@ body {
 				<br>
 				<br>
 
-				<table width=50% cellspacing=0 cellpadding=3>
+<!-- 				<table width=50% cellspacing=0 cellpadding=3>
 					<tr>
 						<td bgcolor=#dcdcdc height=21 align=center>작성자의 비밀번호를 입력해
 							주세요.</td>
 					</tr>
-				</table>
-
-
+				</table> -->
 
 
 				<table width=70% cellspacing=0 cellpadding=2>
@@ -67,15 +65,14 @@ body {
 							<td align=center>
 								<table align=center border=0 width=91%>
 									<tr>
-										<td align=center><input type=password name="password"
-											size=17 maxlength=15></td>
+										<td align=center>정말 삭제하시겠습니까?</td>
 									</tr>
 									<tr>
 										<td><hr size=1 color=#eeeeee></td>
 									</tr>
 									<tr>
 										<td align=center><input type="submit" value="삭제완료">
-											<input type=button value="뒤로" onClick="history.go(-1)">
+											<input type=button value="취소" onClick="history.go(-1)">
 										</td>
 									</tr>
 								</table>
