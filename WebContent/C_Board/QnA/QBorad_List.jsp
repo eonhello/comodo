@@ -30,6 +30,13 @@
 
 
 <div class="container" style="margin-top:100px">
+
+			<div class="page-header">
+				<h1>
+					QnA게시판 <small>리스트</small>
+				</h1>
+			</div>		
+
 	<table align="center"  border="1" 
 		cellpadding="0" cellspacing="0" class="table table-bordered">	
 	<!-- 레코드가 있으면 -->

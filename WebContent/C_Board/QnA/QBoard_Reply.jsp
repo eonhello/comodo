@@ -60,6 +60,15 @@
 <input type="hidden" name="BOARD_RE_SEQ" value="${boarddata.q_re_seq}">
 <input type="hidden" name="page" value="${page}">
 <div class="container" style="margin-top:100px">
+			<div class="page-header">
+				<h1>
+					QnA게시판 <small>답변달기</small>
+				</h1>
+			</div>	
+
+
+
+
 	<table align="center"  border="1" cellpadding="0" cellspacing="0" class="table table-bordered">
 		<tr align="center" valign="middle">
 			<td colspan="5">MVC 게시판</td>

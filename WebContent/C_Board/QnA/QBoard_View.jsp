@@ -30,6 +30,13 @@
 
 <!-- 게시판 수정 -->
 <div class="container" style="margin-top:100px">
+			<div class="page-header">
+				<h1>
+					QnA게시판 <small>상세보기</small>
+				</h1>
+			</div>	
+
+
 	<table cellpadding="0" cellspacing="0" align=center border=1 class="table table-bordered">
 		<tr align="center" valign="middle">
 			<td colspan="5">QnA 게시판</td>

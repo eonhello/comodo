@@ -55,6 +55,14 @@
 <form action="/qna/QnA_AddAction.qa" method="post" 
 	enctype="multipart/form-data" name="boardform">
 <div class="container" style="margin-top:100px">
+
+			<div class="page-header">
+				<h1>
+					QnA게시판 <small>글쓰기</small>
+				</h1>
+			</div>		
+	<c:if test="${sessionScope.sessionHaknum != null }">
+
 	<table cellpadding="0" cellspacing="0" align=center class="table table-bordered">
 		<tr align="center" valign="middle" >
 			<td colspan="5">QnA게시판</td>
@@ -114,6 +122,14 @@
 			</td>
 		</tr>
 	</table>
+	
+	</c:if>
+	
+	<c:if test="${sessionScope.sessionHaknum == null }">
+	<%@ include file="/Member/Login/LoginMain.jsp" %>
+	</c:if>	
+	
+	
 </div>
 </form>
 
