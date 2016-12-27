@@ -107,7 +107,7 @@
 			
 			<td style="font-family:Tahoma;font-size:10pt;">
 				<div align="center"><%--bl.getBOARD_NAME() --%></div>
-						${b.haknum}
+						${b.name}
 			</td>
 			<td style="font-family:Tahoma;font-size:10pt;">
 				<div align="center"><%--bl.getBOARD_DATE() --%></div>
@@ -217,7 +217,12 @@
 				<c:if test="${!search.equals('')}">
 					<a href="./QnA_List.qa" role="button" class="btn btn-default">전체목록보기</a>
 				</c:if>					
-		   		 <a href="./QnA_Write.qa" role="button" class="btn btn-success" >글쓰기</a>	 
+		   		 
+		   		<c:if test="${sessionScope.sessionHaknum != null }">
+					<a href="./QnA_Write.qa" role="button" class="btn btn-success">글쓰기</a>
+				</c:if> <c:if test="${sessionScope.sessionHaknum == null }">
+					<a href="/Member/Login/LoginMain.jsp" role="button"	class="btn btn-success">글쓰기</a>
+				</c:if></td>
 		   		<!-- <input type="button" href="./QnA_Write.qa" value="글쓰기" class="btn btn-default" >  	 -->	
 			</td>
 		</tr>

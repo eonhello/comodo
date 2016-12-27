@@ -36,9 +36,9 @@
 			 	var referrer =  document.referrer;
 			 	//alert(referrer);
 			 	if(referrer == '/Login.mem' || referrer == 'null' || referrer == ''){
-	           		$('#referrer').val(document.referrer);
-			 	}else{
 			 		$('#referrer').val('/index.jsp');
+			 	}else{
+			 		$('#referrer').val(document.referrer);
 			 	}
 		 });
 				/* var referrer =  document.referrer;//이전페이지 url 받기 */

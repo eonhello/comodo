@@ -13,7 +13,6 @@ import db.board.qna.QBoardDAOImpl;
 
 public class QnA_AddAction implements Action {
 	 public ActionForward execute(HttpServletRequest request,HttpServletResponse response) throws Exception{
-		System.out.println("ddddd");
 		QBoardDAOImpl boarddao=new QBoardDAOImpl();
 	   	QBoardBean boarddata=new QBoardBean();
 	   	
@@ -37,7 +36,8 @@ public class QnA_AddAction implements Action {
    					new DefaultFileRenamePolicy());
    			
    			//boarddata.setQboard_name(multi.getParameter("BOARD_NAME").trim());
-   			boarddata.setQ_pass(multi.getParameter("BOARD_PASS").trim());
+   			//boarddata.setQ_pass(multi.getParameter("BOARD_PASS").trim());
+   			boarddata.setHaknum(multi.getParameter("BOARD_HAKNUM").trim());
 	   		boarddata.setQ_subject(multi.getParameter("BOARD_SUBJECT").trim());
 	   		boarddata.setQ_content(multi.getParameter("BOARD_CONTENT").trim());
 	   		boarddata.setQ_file(multi.getFilesystemName((String)multi.getFileNames().nextElement()));

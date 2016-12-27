@@ -6,6 +6,7 @@ public class QBoardBean {
 	private int q_board_num;
 	private String haknum;
 	private String q_pass;
+	private String name;
 	private String q_subject;
 	private String q_content;
 	private String q_file;
@@ -20,26 +21,6 @@ public class QBoardBean {
 	private String search;
 	private int page;
 	private String find_field;
-	
-	
-	public String getFind_field() {
-		return find_field;
-	}
-	public void setFind_field(String find_field) {
-		this.find_field = find_field;
-	}
-	public String getSearch() {
-		return search;
-	}
-	public void setSearch(String search) {
-		this.search = search;
-	}
-	public int getPage() {
-		return page;
-	}
-	public void setPage(int page) {
-		this.page = page;
-	}
 	public int getQ_board_num() {
 		return q_board_num;
 	}
@@ -57,6 +38,12 @@ public class QBoardBean {
 	}
 	public void setQ_pass(String q_pass) {
 		this.q_pass = q_pass;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getQ_subject() {
 		return q_subject;
@@ -118,6 +105,24 @@ public class QBoardBean {
 	public void setQboard_chack(int qboard_chack) {
 		Qboard_chack = qboard_chack;
 	}
-
+	public String getSearch() {
+		return search;
+	}
+	public void setSearch(String search) {
+		this.search = search;
+	}
+	public int getPage() {
+		return page;
+	}
+	public void setPage(int page) {
+		this.page = page;
+	}
+	public String getFind_field() {
+		return find_field;
+	}
+	public void setFind_field(String find_field) {
+		this.find_field = find_field;
+	}
+	
 
 }

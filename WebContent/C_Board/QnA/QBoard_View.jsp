@@ -39,41 +39,32 @@
 
 	<table cellpadding="0" cellspacing="0" align=center border=1 class="table table-bordered">
 		<tr align="center" valign="middle">
-			<td colspan="5">QnA 게시판</td>
+			<td colspan="6">QnA 게시판</td>
 		</tr>
-		
-		<tr>
-			<td style="font-family:돋음; font-size:12; width:15%" class="active">
-				<div align="center">제 목&nbsp;&nbsp;</div>
-			</td>
-			
-			<td style="font-family:돋음; font-size:12">
-			<%--board.getBOARD_SUBJECT()--%>
-			${boarddata.q_subject}		
-			</td>
-		</tr>
-		
-		<!-- <tr bgcolor="cccccc">
-			<td colspan="2" style="height:1px;">
-			</td>
-		</tr> -->
-		
-		<tr>
-			<td style="font-family:돋음; font-size:12" class="active">
-				<div align="center">내 용</div>
-			</td>
-			<td style="font-family:돋음; font-size:12">
-				
-						<%-- <pre><%=board.getBOARD_CONTENT() %></pre> --%>
-						<pre>${boarddata.q_content}</pre>
 
-			</td>
-		</tr>
+
+						<tr>
+							<td align=center class="active" >작성자</td>
+							<td align="center">${boarddata.name}</td>
+							<td align=center class="active">작성일</td>
+							<td align="center">${boarddata.q_reg_date}</td>
+							<td align=center class="active">조회수</td>
+							<td align="center">${boarddata.q_readcount}</td>
+						</tr>
+						<tr>
+							<td align=center class="active"> 제 목</td>
+							<td colspan=6 align="center">
+								${boarddata.q_subject}</td>
+						</tr>
+						<tr>
+							<td colspan=6 align="center"><br><xmp>${boarddata.q_content}</xmp><br><br><br></td>
+						</tr>
+	
 		<tr>
-			<td style="font-family:돋음; font-size:12" class="active">
+			<td style="font-family:돋음; font-size:12" class="active"  colspan="1">
 				<div align="center">첨부파일</div>
 			</td>
-			<td style="font-family:돋음; font-size:12">
+			<td style="font-family:돋음; font-size:12"  colspan="5">
 			
 			<%--if(!(board.getBOARD_FILE()==null)){ --%>		
 			<%-- <a href="/Model2_Board11/board/file_down.jsp?file_name=<%=board.getBOARD_FILE()%>">
@@ -91,29 +82,31 @@
 		</tr>
 		
 		<tr bgcolor="cccccc">
-			<td colspan="2" style="height:1px;"></td>
+			<td colspan="6" style="height:1px;"></td>
 		</tr>
-		<tr><td colspan="2">&nbsp;</td></tr>
+		<tr><td colspan="6">&nbsp;</td></tr>
 	
 		<tr align="center" valign="middle">
-			<td colspan="5">
+			<td colspan="6">
 				<font size=2>
 	
-				<c:if test="${boarddata.q_re_lev < 1}">
-		  			<a href="./QnA_ReplyView.qa?num=${boarddata.q_board_num}&page=${page}" role="button" class="btn btn-default" >
-					답변</a>&nbsp;&nbsp;
+				<c:if test="${sessionScope.sessionPermission == 1 }" >
+					<c:if test="${boarddata.q_re_lev < 1}">
+			  			<a href="./QnA_ReplyView.qa?num=${boarddata.q_board_num}&page=${page}" role="button" class="btn btn-default" >
+						답변</a>&nbsp;&nbsp;
+					</c:if>
+					<c:if test="${boarddata.q_re_lev >= 1}">
+			  			<a href="./QnA_ReplyView.qa?num=${boarddata.q_board_num}&page=${page}" role="button" class="btn btn-default" disabled="disabled">
+						답변</a>&nbsp;&nbsp;
+					</c:if>
 				</c:if>
-				<c:if test="${boarddata.q_re_lev >= 1}">
-		  			<a href="./QnA_ReplyView.qa?num=${boarddata.q_board_num}&page=${page}" role="button" class="btn btn-default" disabled="disabled">
-					답변</a>&nbsp;&nbsp;
-				</c:if>
-				
+				<c:if test="${sessionScope.sessionHaknum == boarddata.haknum }">				
 				<a href="./QnA_Modify.qa?num=${boarddata.q_board_num}&page=${page}" role="button" class="btn btn-default">
 				수정</a>&nbsp;&nbsp; 
 				
 				<a href="./QnA_Delete.qa?num=${boarddata.q_board_num}&page=${page}" role="button" class="btn btn-default">
 				삭제</a>&nbsp;&nbsp;
-				
+				</c:if>
 				<a href="./QnA_List.qa?page=${page}" role="button" class="btn btn-default">목록</a>&nbsp;&nbsp;			
 				</font>
 			</td>

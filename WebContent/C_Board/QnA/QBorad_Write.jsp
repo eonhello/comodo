@@ -55,13 +55,13 @@
 <form action="/qna/QnA_AddAction.qa" method="post" 
 	enctype="multipart/form-data" name="boardform">
 <div class="container" style="margin-top:100px">
-
+	<c:if test="${sessionScope.sessionHaknum != null }">
 			<div class="page-header">
 				<h1>
 					QnA게시판 <small>글쓰기</small>
 				</h1>
 			</div>		
-	<c:if test="${sessionScope.sessionHaknum != null }">
+
 
 	<table cellpadding="0" cellspacing="0" align=center class="table table-bordered">
 		<tr align="center" valign="middle" >
@@ -76,7 +76,7 @@
 					value=""/>
 			</td>
 		</tr> -->
-		<tr>
+<!-- 		<tr>
 			<td style="font-family:돋음; font-size:12;width:15%">
 				<div align="center">비밀번호</div>
 			</td>
@@ -84,9 +84,22 @@
 				<input class="form-control" style="width: 50%;" name="BOARD_PASS" id="board_pass" type="password" size="10" maxlength="10" 
 					value=""/>
 			</td>
+		</tr> -->
+		<tr>
+				<td style="font-family:돋음; font-size:12" height="16" class="active">
+					<div align="center">작성자</div>
+				</td>
+				<td><input class="form-control" style="width: 50%;"  type=text name=board_name size=10 maxlength=8 value="<%=session.getAttribute("sessionName") %>" readonly></td>
 		</tr>
 		<tr>
-			<td style="font-family:돋음; font-size:12" height="16">
+				<td style="font-family:돋음; font-size:12" height="16" class="active">
+					<div align="center">학번</div>
+				</td>
+				<td><input class="form-control" style="width: 50%;"  type=text name="BOARD_HAKNUM" size=10 maxlength=8 value="<%=session.getAttribute("sessionHaknum") %>" readonly></td>
+		</tr>		
+		
+		<tr>
+			<td style="font-family:돋음; font-size:12" height="16"  class="active">
 				<div align="center">제 목</div>
 			</td>
 			<td>
@@ -95,7 +108,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td style="font-family:돋음; font-size:12">
+			<td style="font-family:돋음; font-size:12"  class="active">
 				<div align="center">내 용</div>
 			</td>
 			<td>
@@ -103,7 +116,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td style="font-family:돋음; font-size:12">
+			<td style="font-family:돋음; font-size:12"  class="active">
 				<div align="center">파일 첨부</div>
 			</td>
 			<td>
@@ -124,10 +137,10 @@
 	</table>
 	
 	</c:if>
-	
 	<c:if test="${sessionScope.sessionHaknum == null }">
 	<%@ include file="/Member/Login/LoginMain.jsp" %>
-	</c:if>	
+	</c:if>		
+
 	
 	
 </div>

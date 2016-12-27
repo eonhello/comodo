@@ -193,12 +193,10 @@
 				//	}
 			%>
 			<tr align="right">
-				<td colspan="5"><c:if
-						test="${sessionScope.sessionHaknum != null }">
-						<!-- 세션으로 받은 학번(즉,로그인을 안했을경우)이 없을 경우 글쓰기 버튼이 안보이도록 한다.  -->
+				<td colspan="5">
+					<c:if test="${sessionScope.sessionHaknum != null }">
 						<a href="/free/FWrite.fr" role="button" class="btn btn-success">글쓰기</a>
 					</c:if> <c:if test="${sessionScope.sessionHaknum == null }">
-						<!-- 세션으로 받은 학번(즉,로그인을 안했을경우)이 없을 경우 글쓰기 버튼이 안보이도록 한다.  -->
 						<a href="/Member/Login/LoginMain.jsp" role="button"
 							class="btn btn-success">글쓰기</a>
 					</c:if></td>

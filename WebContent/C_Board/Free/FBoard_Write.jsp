@@ -45,14 +45,14 @@
 <body>
 	<!-- 메뉴  -->
 	<%@include file="/nav.jsp" %> 
-	
+	<c:if test="${sessionScope.sessionHaknum != null }">	
 	<div class="container" style="margin-top:100px">
 			<div class="page-header">
 				<h1>
 					자유게시판 <small>글쓰기</small>
 				</h1>
 			</div>	
-	<c:if test="${sessionScope.sessionHaknum != null }">
+
 	<table summary="글쓰기 전체 테이블" class="table table-bordered">
 		<form name="BoardWriteForm" method="post" action="/free/FWrite_action.fr">
 													

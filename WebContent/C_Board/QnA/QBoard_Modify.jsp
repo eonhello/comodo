@@ -56,6 +56,7 @@
 <input type="hidden" name="BOARD_NUM" value="${boarddata.q_board_num}">
 <input type="hidden" name=page value="${page}">
 <div class="container" style="margin-top:100px">
+	<c:if test="${sessionScope.sessionHaknum != null }">
 			<div class="page-header">
 				<h1>
 					QnA게시판 <small>수정하기</small>
@@ -67,8 +68,23 @@
 		<tr align="center" valign="middle">
 			<td colspan="5">QnA 게시판</td>
 		</tr>
+		
 		<tr>
-			<td height="16" style="font-family:돋음; font-size:12">
+				<td style="font-family:돋음; font-size:12" height="16" class="active">
+					<div align="center">작성자</div>
+				</td>
+				<td><input class="form-control" style="width: 50%;"  type=text name=board_name size=10 maxlength=8 value="<%=session.getAttribute("sessionName") %>" readonly></td>
+		</tr>
+		<tr>
+				<td style="font-family:돋음; font-size:12" height="16" class="active">
+					<div align="center">학번</div>
+				</td>
+				<td><input class="form-control" style="width: 50%;"  type=text name="BOARD_HAKNUM" size=10 maxlength=8 value="<%=session.getAttribute("sessionHaknum") %>" readonly></td>
+		</tr>		
+		
+		
+		<tr>
+			<td height="16" style="font-family:돋음; font-size:12"  class="active">
 				<div align="center">제 목</div>
 			</td>
 			<td>
@@ -77,7 +93,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td style="font-family:돋음; font-size:12">
+			<td style="font-family:돋음; font-size:12"  class="active">
 				<div align="center">내 용</div>
 			</td>
 			<td>
@@ -97,7 +113,7 @@
 		
 		<c:if test="${!empty boarddata.q_file}">
 		<tr>
-			<td style="font-family:돋음; font-size:12">
+			<td style="font-family:돋음; font-size:12"  class="active">
 				<div align="center">파일 첨부</div>
 			</td>
 			<td>
@@ -107,14 +123,14 @@
 		</c:if>
 		
 		
-		<tr>
+<!-- 		<tr>
 			<td height="16" style="font-family:돋음; font-size:12">
 				<div align="center">비밀번호</div>
 			</td>
 			<td>
 				<input name="BOARD_PASS" id="board_pass" type="password">
 			</td>
-		</tr>
+		</tr> -->
 		
 		<tr bgcolor="cccccc">
 			<td colspan="2" style="height:1px;">
@@ -131,6 +147,12 @@
 			</td>
 		</tr>
 	</table>
+	
+	</c:if>
+	<c:if test="${sessionScope.sessionHaknum == null }">
+	<%@ include file="/Member/Login/LoginMain.jsp" %>
+	</c:if>		
+	
 </div>
 </form>
 <!-- 게시판 수정 -->

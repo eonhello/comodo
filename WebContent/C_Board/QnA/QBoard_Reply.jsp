@@ -53,13 +53,14 @@
 	<%@include file="/nav.jsp" %>
 
 
-<form action="/qna/QnA_ReplyAction.qa" method="post" name="boardform">
+<form action="/qna/QnA_ReplyAction.qa" enctype="multipart/form-data" method="post" name="boardform">
 <input type="hidden" name="BOARD_NUM" value="${boarddata.q_board_num}">
 <input type="hidden" name="BOARD_RE_REF" value="${boarddata.q_re_ref}">
 <input type="hidden" name="BOARD_RE_LEV" value="${boarddata.q_re_lev}">
 <input type="hidden" name="BOARD_RE_SEQ" value="${boarddata.q_re_seq}">
 <input type="hidden" name="page" value="${page}">
 <div class="container" style="margin-top:100px">
+	<c:if test="${sessionScope.sessionHaknum != null }">
 			<div class="page-header">
 				<h1>
 					QnA게시판 <small>답변달기</small>
@@ -71,18 +72,22 @@
 
 	<table align="center"  border="1" cellpadding="0" cellspacing="0" class="table table-bordered">
 		<tr align="center" valign="middle">
-			<td colspan="5">MVC 게시판</td>
+			<td colspan="5">QnA 게시판</td>
 		</tr>
 		<tr>
-			<td style="font-family:돋음; font-size:12;width:15%" >
-				<div align="center">글쓴이</div>
-			</td>
-			<td>
-				<input name="BOARD_NAME" id="board_name" type="text"/>
-			</td>
+				<td style="font-family:돋음; font-size:12" height="16" class="active">
+					<div align="center">작성자</div>
+				</td>
+				<td><input class="form-control" style="width: 50%;"  type=text name=board_name size=10 maxlength=8 value="<%=session.getAttribute("sessionName") %>" readonly></td>
 		</tr>
 		<tr>
-			<td style="font-family:돋음; font-size:12" height="16">
+				<td style="font-family:돋음; font-size:12" height="16" class="active">
+					<div align="center">학번</div>
+				</td>
+				<td><input class="form-control" style="width: 50%;"  type=text name="BOARD_HAKNUM" size=10 maxlength=8 value="<%=session.getAttribute("sessionHaknum") %>" readonly></td>
+		</tr>
+		<tr>
+			<td style="font-family:돋음; font-size:12" height="16"  class="active">
 				<div align="center">제 목</div>
 			</td>
 			<td>
@@ -91,21 +96,32 @@
 			</td>
 		</tr>
 		<tr>
-			<td style="font-family:돋음; font-size:12">
+			<td style="font-family:돋음; font-size:12"  class="active">
 				<div align="center">내 용</div>
 			</td>
 			<td>
 				<textarea name="BOARD_CONTENT" id="board_content" cols="67" rows="15"></textarea>
 			</td>
 		</tr>
+		
 		<tr>
+			<td style="font-family:돋음; font-size:12"  class="active">
+				<div align="center">파일 첨부</div>
+			</td>
+			<td>
+				<input name="BOARD_FILE" type="file" class="btn btn-default"/>
+			</td>
+		</tr>		
+		
+		
+		<!-- <tr>
 			<td style="font-family:돋음; font-size:12">
 				<div align="center">비밀번호</div>
 			</td>
 			<td>
 				<input name="BOARD_PASS" id="board_pass" type="password">
 			</td>
-		</tr>
+		</tr> -->
 		
 		<tr bgcolor="cccccc">
 			<td colspan="2" style="height:1px;">
@@ -120,6 +136,12 @@
 			</td>
 		</tr>
 	</table>
+
+	</c:if>
+	<c:if test="${sessionScope.sessionHaknum == null }">
+	<%@ include file="/Member/Login/LoginMain.jsp" %>
+	</c:if>		
+	
 </div>
 </form>
 

@@ -45,8 +45,8 @@
 			q_reg_date)
 		 values(
 		 	q_board_num.nextval,
-		 	1,
-		 	#{q_pass},
+		 	#{haknum},
+		 	'1',
 		 	#{q_subject},
 			#{q_content},
 			0,
@@ -70,7 +70,7 @@
 	<select id="Qboard_list"  parameterType="int"  resultType="Qboard">
 	    <![CDATA[
 		select 
-			* 
+			q.*,m.name 
 		from 
 			 (select 
 			 	rownum rnum,
@@ -95,11 +95,13 @@
 		  	  		q_re_ref desc,
 		  	  		q_re_seq asc
 		  	  	)
-		  	 ) 
+		  	 ) q , MEMBER m
 	   	 where 
 	   	 	rnum >= ((#{page}-1) * 10+1)  
 	   	 and 
 	   	 	rnum <= (#{page} * 10)
+	   	 and 
+	   	 	q.haknum = m.haknum
 		]]>
 	</select>
 	
@@ -116,11 +118,13 @@
 	<!-- 게시판 내용보기 -->
 	<select id="Qboard_cont" resultType="Qboard" parameterType="int">
 		select 
-			* 
+			q.*, m.name 
 		from 
-			qna_tab 
+			qna_tab q, MEMBER m
 		where 
 			q_board_num=#{q_board_num}
+		and 
+	   	 	q.haknum = m.haknum
 	</select>	
 	
 	<!-- 게시물 삭제 -->
@@ -172,8 +176,8 @@
 		)
 		values(
 			q_board_num.nextval,
-		 	1,
-		 	#{q_pass},
+		 	#{haknum},
+		 	'1',
 		 	#{q_subject},
 			#{q_content},
 			0,
@@ -224,7 +228,7 @@
 	<select id="Qboard_Search_list"  parameterType="db.board.qna.QBoardBean"  resultType="Qboard">
 	    <![CDATA[
 		select 
-			* 
+			q.*,m.name 
 		from 
 			 (select 
 			 	rownum rnum,
@@ -273,11 +277,13 @@
 		  	  		q_re_ref desc,
 		  	  		q_re_seq asc
 		  	  	)
-		  	 ) 
+		  	 ) q , MEMBER m
 	   	 where 
 	   	 	rnum >= ((#{page}-1) * 10+1)  
 	   	 and 
 	   	 	rnum <= (#{page} * 10)
+	   	 	   	 and 
+	   	 	q.haknum = m.haknum	
 		]]>
 	</select>
 </mapper>
