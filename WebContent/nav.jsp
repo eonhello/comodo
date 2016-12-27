@@ -74,7 +74,7 @@
                         <span class="fa fa-bars"></span>
                     </button>
                     <a class="navbar-brand" href="/index.jsp">
-                         <img id="logo-header" src="assets/img/comodo.png" alt="Logo" style="width:23%; height:auto;">
+                         <img id="logo-header" src="/assets/img/comodo.png" alt="Logo" style="width:23%; height:auto;">
                        
                     </a>
                 </div>
