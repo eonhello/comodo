@@ -47,7 +47,7 @@ public class Jinsert_action implements Action {
 		   		boarddao.joinInsert(boarddata);
 				System.out.println("리스트로 값을 보내준다");
 		   		forward.setRedirect(true);
-		   		forward.setPath("./mem/Main.mem"); 	
+		   		forward.setPath("/"); 	
 		   		return forward;
 		   		
 	  		}catch(Exception ex){

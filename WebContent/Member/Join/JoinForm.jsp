@@ -18,7 +18,139 @@
 
 
 <title>회원가입 화면</title>
-<script type="text/javascript">
+<script>
+
+
+	$(document).ready(function(){
+		/* haknum password passwordcheck name Address email call_num */
+/* 	    $('#haknum').blur( function(){
+			hakCheck();   	
+	    }); */
+	    $('#haknum').keyup( function(){
+			hakCheck();   	
+	    });
+	    $('#haknumCheck').click(function(){
+	    	hakCheck();
+	    })
+		
+	    $('#password').keyup( function(){
+			pass1Check();   	
+	    });
+	    $('#passwordcheck').keyup( function(){
+			pass2Check();   	
+	    });	    
+	    
+	    $('#name').keyup( function(){
+	    	nameCheck();   	
+	    });	 
+	    
+	    $('#email').keyup( function(){
+	    	emailCheck();   	
+	    });	 	    
+
+	    $('#call_num').keyup( function(){
+	    	call_numCheck();   	
+	    });	 	    
+/* 	   	$('#haknumText').attr('class','text-danger')
+        $('#haknumText').html( '실패 ' );
+    	
+    	$('#haknumText').attr('class','text-success')
+        $('#haknumText').html( '성공 ' );	 */ 
+        
+/* 		$("#btn_join").click(function() {
+			
+			
+		} */
+	})
+
+ 	function hakCheck(){
+    	var regHaknum = /^[0-9]*$/;
+    	
+    	if($('#haknum').val() ==""){
+	    	$('#haknumText').attr('class','text-danger')
+	        $('#haknumText').html( '학번을 입력해주세요. ' );	    		
+    	}else if( !regHaknum.test( $('#haknum').val() ) ){
+    		$('#haknumText').attr('class','text-danger')
+	        $('#haknumText').html( '학번은 숫자로만 입력해주세요. ' );
+    	}else if( $('#haknum').val().length != 8 ){
+    		$('#haknumText').attr('class','text-danger')
+	        $('#haknumText').html( '학번은 8자리 입니다. ' );
+    	}else {
+	    	$('#haknumText').attr('class','text-success')
+	        $('#haknumText').html( '올바른 학번입니다.' );	
+    	}
+	}
+ 	function pass1Check(){
+ 		var regPass = /^.*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z]).*$/;
+    	
+    	if($('#password').val() ==""){
+	    	$('#pass1Text').attr('class','text-danger')
+	        $('#pass1Text').html( '비밀번호를 입력해주세요. ' );	    		
+    	}else if( !regPass.test( $('#password').val() ) ){
+    		$('#pass1Text').attr('class','text-danger')
+	        $('#pass1Text').html( '영문,숫자 포함 8자 이상 20자 이하로 입력해주세요. ' );
+    	}else {
+	    	$('#pass1Text').attr('class','text-success')
+	        $('#pass1Text').html( '사용가능한 비밀번호입니다.' );	
+    	}
+	}
+ 	function pass2Check(){
+ 		
+    	
+    	if($('#password').val() != $('#passwordcheck').val()){
+	    	$('#pass2Text').attr('class','text-danger')
+	        $('#pass2Text').html( '비밀번호를 확인해주세요.' );	    		
+    	}else {
+	    	$('#pass2Text').attr('class','text-success')
+	        $('#pass2Text').html( '비밀번호 일치입니다.' );	
+    	}
+	}
+ 
+  	function nameCheck(){
+ 		var regName = /^[가-힝]{2,24}$/;
+    	
+    	if($('#name').val() ==""){
+	    	$('#nameText').attr('class','text-danger')
+	        $('#nameText').html( '이름을 입력해주세요. ' );	    		
+    	}else if( !regName.test( $('#name').val() ) ){
+    		$('#nameText').attr('class','text-danger')
+	        $('#nameText').html( '한글만 2자 이상 입력해주세요.' );
+    	}else {
+	    	$('#nameText').attr('class','text-success')
+	        $('#nameText').html( '사용가능한 이름입니다.' );	
+    	}
+	}
+  	
+  	function emailCheck(){
+ 		var regEmail = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+    	
+    	if($('#email').val() ==""){
+	    	$('#emailText').attr('class','text-danger')
+	        $('#emailText').html( '이메일을 입력해주세요. ' );	    		
+    	}else if( !regEmail.test( $('#email').val() ) ){
+    		$('#emailText').attr('class','text-danger')
+	        $('#emailText').html( '이메일 형식에 맞게 입력해주세요.' );
+    	}else {
+	    	$('#emailText').attr('class','text-success')
+	        $('#emailText').html( '사용가능한 이메일입니다.' );	
+    	}
+	}  	
+ 
+  	function call_numCheck(){
+ 		var regCall_num = /^[0-9]{11,11}$/;
+    	
+    	if($('#call_num').val() ==""){
+	    	$('#call_numText').attr('class','text-danger')
+	        $('#call_numText').html( '핸드폰번호를 입력해주세요. ' );	    		
+    	}else if( !regCall_num.test( $('#call_num').val() ) ){
+    		$('#call_numText').attr('class','text-danger')
+	        $('#call_numText').html( '숫자로만 11자리로 입력해주세요.' );
+    	}else {
+	    	$('#call_numText').attr('class','text-success')
+	        $('#call_numText').html( '사용가능한 핸드폰번호입니다.' );	
+    	}
+	} 
+	
 	// 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
 	/* 		function checkValue()
 	 {
@@ -54,23 +186,23 @@
 
 		<div class="col-md-12">
 			<div class="page-header">
-				<h1 align = "center">
-					회원가입
+				<h1>
+					회원가입 <small></small>
 				</h1>
 			</div>
-			<form class="form-horizontal" method="post" action="/joinInsert.mem" >
+			<form class="form-horizontal">
 				<div class="form-group">
 					<label class="col-sm-3 control-label" for="inputNumberCheck">학번</label>
 					<div class="col-sm-6">
 						<div class="input-group">
 							<input class="form-control" id="haknum" name="haknum" type="text"
 								placeholder="중복체크"> <span class="input-group-btn">
-								<button class="btn btn-success" type="button">
-									인증번호 확인<i class="fa fa-edit spaceLeft"></i>
+								<button class="btn btn-success" id="haknumCheck" type="button">
+									중복확인<i class="fa fa-edit spaceLeft"></i>
 								</button>
 							</span>
 						</div>
-						<p class="help-block">중복 체크를 해주세요.</p>
+						<p class="text-muted" id="haknumText">숫자로 8글자</p>
 					</div>
 				</div>
 			
@@ -80,27 +212,29 @@
 						<input class="form-control" id="password" name="password" 
 							type="password"
 							placeholder="비밀번호">
-						<p class="help-block">숫자, 특수문자 포함 8자 이상</p>
+						<p class="text-muted" id="pass1Text">영문,숫자 포함 8자 이상 20자 이하</p>
 					</div>
 				</div>
+				
 				<div class="form-group">
 					<label class="col-sm-3 control-label" for="inputPasswordCheck">비밀번호
 						확인</label>
 					<div class="col-sm-6">
-						<input class="form-control" id="passwordㅊheck" name="passwordㅊheck"
+						<input class="form-control" id="passwordcheck" name="passwordcheck"
 							type="password" placeholder="비밀번호 확인">
-						<p class="help-block">비밀번호를 한번 더 입력해주세요.</p>
+						<p class="text-muted" id="pass2Text">비밀번호를 한번 더 입력해주세요.</p>
 					</div>
 				</div>
-				
+			
 				<div class="form-group">
 					<label class="col-sm-3 control-label" for="inputName">이름</label>
 					<div class="col-sm-6">
 						<input class="form-control" id="name" name="name" type="text"
 							placeholder="이름">
+						<p class="text-muted" id="nameText">한글만 2자이상</p>
 					</div>
 				</div>				
-				
+					
 				<div class="form-group">
 					<label class="col-sm-3 control-label" for="inputName">학과</label>
 					<div class="col-sm-6">
@@ -115,23 +249,34 @@
 							
 					</div>
 				</div>					
-
+			
 				<div class="form-group">
 					<label class="col-sm-3 control-label" for="inputName">주소</label>
 					<div class="col-sm-6">
-						<input class="form-control" id="address" name="address" type="text"
+						<input class="form-control" id="Address" name="Address" type="text"
 							placeholder="주소">
 					</div>
 				</div>	
 				
 				
-				
+					
 				<div class="form-group">
-					<label class="col-sm-3 control-label" for="mail">이메일</label>
+					<label class="col-sm-3 control-label" for="email">이메일</label>
 					<div class="col-sm-6">
-						<input class="form-control" id="mail" name="mail" type="email"
-							placeholder="이메일">							
+						<input class="form-control" id="email" name="email" type="text"
+							placeholder="이메일">		
+						<p class="text-muted" id="emailText">이메일 형식에 맞게 입력해주세요.</p>						
 					</div>		
+					
+<!-- 					<div class="col-sm-3">
+						<select class="form-control" id="email2" name="email2" type="text"
+							placeholder="학과">
+							<option value="naver.com">@naver.com</option>
+							<option value="daum.net">@daum.net</option>
+							<option value="gmail.com">@gmail.com</option>
+							<option value="nate.com">@nate.com</option>								
+						</select>									
+					</div> -->
 				</div>
 
 				<div class="form-group">
@@ -139,6 +284,7 @@
 					<div class="col-sm-6">
 						<input class="form-control" id="call_num" name="call_num" type="text"
 							placeholder="핸드폰번호">
+						<p class="text-muted" id="call_numText">이메일 형식에 맞게 입력해주세요.</p>	
 					</div>
 				</div>	
 								
@@ -188,7 +334,7 @@
 
 				<div class="form-group">
 					<div class="col-sm-12 text-center">
-						<button class="btn btn-primary" type="submit">
+						<button class="btn btn-primary" id="btn_join" type="submit">
 							회원가입<i class="fa fa-check spaceLeft"></i>
 						</button>
 						<button class="btn btn-danger" type="submit">

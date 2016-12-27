@@ -109,7 +109,7 @@
 <div id="container" style="margin-top:80px">
 
 	
-	<table class="responstable">
+	<table class="responstable" style="margin-left: auto; margin-right: auto;">
 		<tr>
 			<th width="5%">번호</th>
 			<th width="11%">신청자 정보</th>

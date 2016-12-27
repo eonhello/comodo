@@ -43,9 +43,12 @@
                 <ul class="loginbar pull-right">
                 
 					<c:if test="${empty sessionScope.sessionHaknum}">
+						<li class="topbar-devider"></li>   
+	                    <li><a href="/joinForm.mem">회원가입</a></li> 
 	                    <li class="topbar-devider"></li>   
 	                    <li><a href="/Member/Login/LoginMain.jsp">로그인</a></li>  					
-					</c:if>          
+					</c:if>         
+					 
 					<c:if test="${!empty sessionScope.sessionHaknum}">
 	                    <li class="topbar-devider"></li>   
 	                    <li><a href="/memModify.mem">회원정보</a></li>  
