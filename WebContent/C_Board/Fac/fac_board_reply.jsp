@@ -7,7 +7,13 @@
 
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>시설 안내</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="./ckeditor/ckeditor.js"></script>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	
 	<script>
@@ -38,76 +44,50 @@
 	</script>
 </head>
 <body>
-
-<form action="/GitTest_Fac/BoardReplyAction.bo" method="post" name="boardform">
+<div class="container">
+<form action="/GitTest_Fac/BoardReplyAction.bo" method="post" name="boardform" class="form-horizontal" role="form">
 <input type="hidden" name="FAC_BOARD_NUM" value="${boarddata.fac_board_num}">
 <input type="hidden" name="FAC_BOARD_REF" value="${boarddata.fac_board_ref}">
 <input type="hidden" name="FAC_BOARD_RE_LEVEL" value="${boarddata.fac_board_re_level}">
 <input type="hidden" name="FAC_BOARD_RE_STEP" value="${boarddata.fac_board_re_step}">
 <input type="hidden" name="page" value="${page}">
 
-<table cellpadding="0" cellspacing="0" align=center border=1>
-	<tr align="center" valign="middle">
-		<td colspan="5">시설 안내</td>
-	</tr>
-	<tr>
-		<td style="font-family:돋음; font-size:12" height="16">
-			<div align="center">이름</div>
-		</td>
-		<td>
-			<input name="FAC_BOARD_NAME" id="fac_board_name" type="text"/>
-		</td>
-	</tr>
-	<tr>
-		<td style="font-family:돋음; font-size:12">
-			<div align="center">이메일주소</div>
-		</td>
-		<td>
-			<input name="FAC_BOARD_EMAIL" id="fac_board_email" type="text" size="50"
-				maxlength="100" value=""/>
-		</td>
-	</tr>
-	<tr>
-		<td style="font-family:돋음; font-size:12" height="16">
-			<div align="center">제 목</div>
-		</td>
-		<td>
-			<input name="FAC_BOARD_SUBJECT" id="fac_board_subject" type="text" size="50" 
-				maxlength="100" value=""/>
-		</td>
-	</tr>
-	<tr>
-		<td style="font-family:돋음; font-size:12">
-			<div align="center">내 용</div>
-		</td>
-		<td>
-			<textarea name="FAC_BOARD_CONTENT" id="fac_board_content" cols="67" rows="15"></textarea>
-		</td>
-	</tr>
-<!-- <tr>
-		<td style="font-family:돋음; font-size:12">
-			<div align="center">이메일주소</div>
-		</td>
-		<td>
-			<input name="FAC_BOARD_EMAIL" id="fac_board_email" type="text" size="50"
-				maxlength="100" value="Re: ${boarddata.fac_board_email}"/>
-		</td>
-	</tr> -->
-	
-	<tr bgcolor="cccccc">
-		<td colspan="2" style="height:1px;">
-		</td>
-	</tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	
-	<tr align="center" valign="middle">
-		<td colspan="5">
-		    <input type=submit value="등록">
-			<input type=button value="취소" onClick="history.go(-1)">		    
-		</td>
-	</tr>
-</table>
-</form>
+<fieldset>
+	<legend>시설 안내</legend>
+<div class="form-group">
+	<label for="name" class="col-xs-2 col-lg-2 control-label">작성자</label>
+	<div class="col-xs-10 col-lg-10"> 
+		<input name="FAC_BOARD_NAME" id="fac_board_name" type="text" class="form-control" placeholder="이름"> 
+	</div>
 
+</div>
+<div class="form-group">   
+            <label for="email" class="col-xs-2 col-lg-2 control-label">이메일</label>
+            <div class="col-xs-10 col-lg-10">
+                <input name="FAC_BOARD_EMAIL" id="fac_board_email" type="email" class="form-control" placeholder="이메일"> 
+            </div>
+</div>
+<div class="form-group">   
+            <label for="email" class="col-xs-2 col-lg-2 control-label">제목</label>
+            <div class="col-xs-10 col-lg-10">
+                <input name="FAC_BOARD_SUBJECT" id="fac_board_subject" type="text" class="form-control" placeholder="제목"> 
+            </div>
+</div>
+<div class="form-group">   
+            <label for="email" class="col-xs-2 col-lg-2 control-label">내용</label>
+            <div class="col-xs-10 col-lg-10">
+                <textarea name="FAC_BOARD_CONTENT" id="fac_board_content" rows="5" class="form-control"></textarea>
+            </div>
+</div>
+<div class="form-group">     
+	<div class="col-xs-offset-2 col-xs-10 col-lg-offset-2 col-lg-10 "> 
+        <input type="submit" class="btn btn-info" value="등록">&nbsp;&nbsp;
+		<input type="button" class="btn btn-default" value="취소" onClick="history.go(-1)">
+	</div>
+</div>  
+
+</fieldset>
+</form>
+</div>
 </body>
 </html>

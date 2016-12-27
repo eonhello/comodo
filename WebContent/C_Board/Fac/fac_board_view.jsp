@@ -9,7 +9,14 @@
 
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>시설 안내</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="./ckeditor/ckeditor.js"></script>
+	
 	<script language = "javascript">
 	function viewLarge(a, b){
 		document.getElementById(b).getElementsByTagName("img")[0].src = a.href;
@@ -27,7 +34,9 @@
 
 <body>
 <!-- 게시판 수정 -->
-<table cellpadding="0" cellspacing="0" align=center border=1>
+<div class="container">
+<br><br>
+<table class="table table-bordered table-condensed" cellpadding="0" cellspacing="0" align=center border=1>
 	<tr align="center" valign="middle">
 		<td colspan="5">시설 안내</td>
 	</tr>
@@ -64,11 +73,11 @@
 		<!-- 작은 이미지 누르면 커짐 -->
 		<div align="center" style="height:auto;">
 		<c:if test="${boarddata.fac_board_re_level eq 0}">
-			<a href="/GitTest_Fac/C_Board/Fac/file_down.jsp?file_name=${boarddata.fac_board_filename}" onclick="viewLarge(this, 'bigimg'); return false;">
+			<a href="/C_Board/Fac/file_down.jsp?file_name=${boarddata.fac_board_filename}" onclick="viewLarge(this, 'bigimg'); return false;">
 				<img src="boardUpload/${boarddata.fac_board_filename}" width = 400 height = 400 />
 				<br>[크게 보기]<br>
 				<c:if test="${!empty boarddata.fac_board_filename}">
-				<a href="/GitTest_Fac/C_Board/Fac/file_down.jsp?file_name=${boarddata.fac_board_filename}">
+				<a href="/C_Board/Fac/file_down.jsp?file_name=${boarddata.fac_board_filename}">
 				[다운로드]</a>
 			</c:if>		
 			</a>
@@ -86,14 +95,7 @@
 			<div align="center">내 용</div>
 		</td>
 		<td style="font-family:돋음; font-size:12">
-			<table border=1 width=490 height=200 style="table-layout:fixed">
-				<tr>
-					<td valign=top style="font-family:돋음; font-size:12">
-					<%-- <pre><%=board.getBOARD_CONTENT() %></pre> --%>
-					<pre>${boarddata.fac_board_content}</pre>
-					</td>
-				</tr>
-			</table>
+			<div><pre>${boarddata.fac_board_content}</pre></div>
 		</td>
 	</tr>
 	<tr bgcolor="cccccc">
@@ -104,20 +106,24 @@
 	<tr align="center" valign="middle">
 		<td colspan="5">
 			<font size=2>
-			<a href="./BoardReplyView.bo?num=${boarddata.fac_board_num}&page=${page}">
+			<c:if test="${sessionScope.sessionHaknum}">
+				<a href="./BoardReplyView.bo?num=${boarddata.fac_board_num}&page=${page}">
 			[답변]</a>&nbsp;&nbsp;
-			
-			<a href="./BoardModify.bo?num=${boarddata.fac_board_num}&page=${page}">
+			</c:if>
+			<c:if test="${sessionScope.sessionHaknum}">
+				<a href="./BoardModify.bo?num=${boarddata.fac_board_num}&page=${page}">
 			[수정]</a>&nbsp;&nbsp;
-			
-			<a href="./BoardDelete.bo?num=${boarddata.fac_board_num}&page=${page}">
+			</c:if>
+			<c:if test="${sessionScope.sessionHaknum}">
+				<a href="./BoardDelete.bo?num=${boarddata.fac_board_num}&page=${page}">
 			[삭제]</a>&nbsp;&nbsp;
-			
+			</c:if>
 			<a href="./BoardList.bo?page=${page}">[목록]</a>&nbsp;&nbsp;			
 			</font>
 		</td>
 	</tr>
 </table>
+</div>
 <!-- 게시판 수정 -->
 </body>
 </html>

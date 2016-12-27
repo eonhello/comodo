@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="db.board.fac.*" %>
@@ -17,13 +18,22 @@
 
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>시설 안내</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 
 <body>
+<!-- 메뉴  -->
+	<%@include file="/nav.jsp" %>
 <!-- 게시판 리스트 -->
 
-<table align=center width=800 border="1" cellpadding="0" cellspacing="0">
+<div class="container">
+<br><br>
+<table class="table table-bordered table-hover table-condensed" align=center width=800 border="1" cellpadding="0" cellspacing="0">
 <%
 //if(listcount > 0){
 %>
@@ -38,23 +48,23 @@
 		</td>
 	</tr>
 	
-	<tr align="center" valign="middle" bordercolor="#333333">
-		<td style="font-family:Tahoma;font-size:8pt;" width="5%" height="26">
+	<tr class="info" align="center" valign="middle" bordercolor="#333333">
+		<td style="font-family:Tahoma;font-size:8pt;font-weight:bold;" width="5%" height="26">
 			<div align="center">번호</div>
 		</td>
-		<td style="font-family:Tahoma;font-size:8pt;" width="13%">
+		<td style="font-family:Tahoma;font-size:8pt;font-weight:bold;" width="13%">
 			<div align="center">이미지</div>
 		</td>
-		<td style="font-family:Tahoma;font-size:8pt;" width="50%">
+		<td style="font-family:Tahoma;font-size:8pt;font-weight:bold;" width="50%">
 			<div align="center">제목</div>
 		</td>
-		<td style="font-family:Tahoma;font-size:8pt;" width="10%">
-			<div align="center">이름</div>
+		<td style="font-family:Tahoma;font-size:8pt;font-weight:bold;" width="10%">
+			<div align="center">작성자</div>
 		</td>
-		<td style="font-family:Tahoma;font-size:8pt;" width="13%">
+		<td style="font-family:Tahoma;font-size:8pt;font-weight:bold;" width="13%">
 			<div align="center">날짜</div>
 		</td>
-		<td style="font-family:Tahoma;font-size:8pt;" width="8%">
+		<td style="font-family:Tahoma;font-size:8pt;font-weight:bold;" width="8%">
 			<div align="center">조회수</div>
 		</td>
 	</tr>
@@ -80,7 +90,7 @@
 		<td style="font-family:Tahoma;font-size:10pt;">
 			<div align="center"></div>
 			 <c:if test="${b.fac_board_re_level eq 0}"> 
-				<img src="boardUpload/${b.fac_board_filename}" width=50 height=50>	
+				<img src="boardUpload/${b.fac_board_filename}" class="img-rounded" width=80 height=80>	
 			 </c:if> 		
 		</td>
 		<td style="font-family:Tahoma;font-size:10pt;">
@@ -140,9 +150,9 @@
 			<%--} --%>
 			
 			<c:if test="${page <= 1 }">
-				[이전]&nbsp;
+					[이전]&nbsp;
 			</c:if>
-			<c:if test="${page > 1 }">			
+			<c:if test="${page > 1 }">	
 				 <a href="./BoardList.bo?page=${page-1}">[이전]</a>&nbsp;
 			</c:if>
 			
@@ -211,6 +221,7 @@
 		</td>
 	</tr>
 </table>
+</div>
 
 </body>
 </html>

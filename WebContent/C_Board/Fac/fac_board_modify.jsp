@@ -9,7 +9,13 @@
 
 <html>
 <head>
+	<meta charset="UTF-8">
 	<title>시설 안내</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="./ckeditor/ckeditor.js"></script>
 	<script src="http://code.jquery.com/jquery-latest.js"></script>
 	
 	<script>
@@ -37,78 +43,42 @@
 
 <body>
 <!-- 게시판 수정 -->
-<form action="/GitTest_Fac/BoardModifyAction.bo" method="post" name="modifyform">
+<div class="container">
+<form action="/GitTest_Fac/BoardModifyAction.bo" method="post" name="modifyform" class="form-horizontal" role="form">
 <input type="hidden" name="FAC_BOARD_NUM" value="${boarddata.fac_board_num}">
 <input type="hidden" name=page value="${page}">
-<table cellpadding="0" cellspacing="0" align=center border=1>
-	<tr align="center" valign="middle">
-		<td colspan="5">시설 안내</td>
-	</tr>
-	<tr>
-		<td height="16" style="font-family:돋음; font-size:12">
-			<div align="center">제 목</div>
-		</td>
-		<td>
-			<input name="FAC_BOARD_SUBJECT" id="fac_board_subject" size="50" maxlength="100" 
-				value="${boarddata.fac_board_subject}">
-		</td>
-	</tr>
-	<tr>
-		<td style="font-family:돋음; font-size:12">
-			<div align="center">내 용</div>
-		</td>
-		<td>
-			<textarea name="FAC_BOARD_CONTENT" id="fac_board_content" cols="67" rows="15">${boarddata.fac_board_content}</textarea>
-		</td>
-	</tr>
-	<%-- <%if(!(board.getBOARD_FILE()==null)){ %>
-	<tr>
-		<td style="font-family:돋음; font-size:12">
-			<div align="center">파일 첨부</div>
-		</td>
-		<td>
-			&nbsp;&nbsp;<%=board.getBOARD_FILE() %>
-		</td>
-	</tr>
-	<%} %> --%>
-	
-	<c:if test="${!empty boarddata.fac_board_filename}">
-	<tr>
-		<td style="font-family:돋음; font-size:12">
-			<div align="center">파일 첨부</div>
-		</td>
-		<td>
-			&nbsp;&nbsp;${boarddata.fac_board_filename}
-		</td>
-	</tr>
-	</c:if>
-	
-	
-<!--  <tr>
-		<td height="16" style="font-family:돋음; font-size:12">
-			<div align="center">비밀번호</div>
-		</td>
-		<td>
-			<input name="BOARD_PASS" id="board_pass" type="password">
-		</td>
-	</tr> -->
-	
-	<tr bgcolor="cccccc">
-		<td colspan="2" style="height:1px;">
-		</td>
-	</tr>
-	<tr><td colspan="2">&nbsp;</td></tr>
-	
-	<tr align="center" valign="middle">
-		<td colspan="5">
-			<font size=2>
-			<input type=submit value="수정">
-			<input type=button value="취소" onClick="history.go(-1)">
-			</font>
-		</td>
-	</tr>
-</table>
+
+<fieldset>
+	<legend>시설 안내</legend>
+<div class="form-group">   
+            <label for="email" class="col-xs-2 col-lg-2 control-label">제목</label>
+            <div class="col-xs-10 col-lg-10">
+                <input name="FAC_BOARD_SUBJECT" id="fac_board_subject" type="text" class="form-control" placeholder="제목" value="${boarddata.fac_board_subject}"> 
+            </div>
+</div>
+<div class="form-group">   
+            <label for="email" class="col-xs-2 col-lg-2 control-label">내용</label>
+            <div class="col-xs-10 col-lg-10">
+                <textarea name="FAC_BOARD_CONTENT" id="fac_board_content" rows="5" class="form-control">${boarddata.fac_board_content}</textarea>
+            </div>
+</div>
+<c:if test="${!empty boarddata.fac_board_filename}">
+<div class="form-group">   
+            <label for="email" class="col-xs-2 col-lg-2 control-label">파일 첨부</label>
+            <div class="col-xs-10 col-lg-10">
+		&nbsp;&nbsp;${boarddata.fac_board_filename}
+            </div>
+</div>
+</c:if>
+<div class="form-group">     
+	<div class="col-xs-offset-2 col-xs-10 col-lg-offset-2 col-lg-10 "> 
+        <input type="submit" class="btn btn-info" value="등록">&nbsp;&nbsp;
+		<input type="button" class="btn btn-default" value="취소" onClick="history.go(-1)">
+	</div>
+</div>   
+</fieldset>
 </form>
+</div>
 <!-- 게시판 수정 -->
 </body>
 </html>
