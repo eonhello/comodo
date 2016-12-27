@@ -86,12 +86,7 @@
                     <c:set var="menuUrl" value="${pageContext.request.requestURL}"/>     
  					<c:choose>
 						<c:when test="${fn:contains(menuUrl,'Noti')}">
-	                        <!-- 공지사항 -->
-	                        <li class="active">
-	                            <a href="javascript:void(0);" >
-	                                	공지사항
-	                            </a>
-	                        </li>
+	                        
 	                        <!-- End 공지사항 -->
 	                        <!-- 공지사항 -->
 	                        <li>
@@ -124,11 +119,7 @@
 						</c:when> 
 						<c:when test="${fn:contains(menuUrl,'Sleep')}">
 	                        <!-- 공지사항 -->
-	                        <li>
-	                            <a href="javascript:void(0);" >
-	                                	공지사항
-	                            </a>
-	                        </li>
+	                       
 	                        <!-- End 공지사항 -->
 	                        <!-- 공지사항 -->
 	                        <li class="active">
@@ -161,11 +152,7 @@
 						</c:when>
 						<c:when test="${fn:contains(menuUrl,'Free')}">
 	                        <!-- 공지사항 -->
-	                        <li>
-	                            <a href="javascript:void(0);" >
-	                                	공지사항
-	                            </a>
-	                        </li>
+	                      
 	                        <!-- End 공지사항 -->
 	                        <!-- 공지사항 -->
 	                        <li>
@@ -198,11 +185,7 @@
 						</c:when>
 						<c:when test="${fn:contains(menuUrl,'QnA')}">
 	                        <!-- 공지사항 -->
-	                        <li>
-	                            <a href="javascript:void(0);" >
-	                                	공지사항
-	                            </a>
-	                        </li>
+	                        
 	                        <!-- End 공지사항 -->
 	                        <!-- 공지사항 -->
 	                        <li>
@@ -235,11 +218,7 @@
 						</c:when>
 						<c:when test="${fn:contains(menuUrl,'Fac')}">
 	                        <!-- 공지사항 -->
-	                        <li>
-	                            <a href="javascript:void(0);" >
-	                                	공지사항
-	                            </a>
-	                        </li>
+	                     
 	                        <!-- End 공지사항 -->
 	                        <!-- 공지사항 -->
 	                        <li>
@@ -273,11 +252,7 @@
 		
 						<c:otherwise>
 	                        <!-- 공지사항 -->
-	                        <li>
-	                            <a href="javascript:void(0);" >
-	                                	공지사항
-	                            </a>
-	                        </li>
+	                        
 	                        <!-- End 공지사항 -->
 	                        <!-- 공지사항 -->
 	                        <li>
