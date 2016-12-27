@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="db.board.fac.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -42,6 +43,7 @@
 </head>
 
 <body>
+<%@include file="/nav.jsp" %>
 <!-- 게시판 수정 -->
 <div class="container">
 <form action="/GitTest_Fac/BoardModifyAction.bo" method="post" name="modifyform" class="form-horizontal" role="form">

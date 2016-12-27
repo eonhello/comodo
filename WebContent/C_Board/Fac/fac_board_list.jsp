@@ -215,8 +215,8 @@
 	
 	<tr align="right">
 		<td colspan="6">
-	   		<c:if test="${sessionScope.sessionHaknum}">
-				<a href="./BoardWrite.bo">[글쓰기]</a>
+	   		<c:if test="${1==sessionScope.sessionPermission}">
+				<a href="/BoardWrite.bo">[글쓰기]</a>
 			</c:if>
 		</td>
 	</tr>

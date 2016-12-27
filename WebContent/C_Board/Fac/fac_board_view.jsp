@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ page import="db.board.fac.*" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -33,6 +34,7 @@
 </head>
 
 <body>
+<%@include file="/nav.jsp" %>
 <!-- 게시판 수정 -->
 <div class="container">
 <br><br>
@@ -106,15 +108,15 @@
 	<tr align="center" valign="middle">
 		<td colspan="5">
 			<font size=2>
-			<c:if test="${sessionScope.sessionHaknum}">
+			<c:if test="${1==sessionScope.sessionPermission}">
 				<a href="./BoardReplyView.bo?num=${boarddata.fac_board_num}&page=${page}">
 			[답변]</a>&nbsp;&nbsp;
 			</c:if>
-			<c:if test="${sessionScope.sessionHaknum}">
+			<c:if test="${1==sessionScope.sessionPermission}">
 				<a href="./BoardModify.bo?num=${boarddata.fac_board_num}&page=${page}">
 			[수정]</a>&nbsp;&nbsp;
 			</c:if>
-			<c:if test="${sessionScope.sessionHaknum}">
+			<c:if test="${1==sessionScope.sessionPermission}">
 				<a href="./BoardDelete.bo?num=${boarddata.fac_board_num}&page=${page}">
 			[삭제]</a>&nbsp;&nbsp;
 			</c:if>

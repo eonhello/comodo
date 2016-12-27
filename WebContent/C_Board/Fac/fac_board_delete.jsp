@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%
 //	int num=Integer.parseInt(request.getParameter("num"));
 //	String nowpage = request.getParameter("page");
@@ -22,6 +23,7 @@
 
 </head>
 <body>
+<%@include file="/nav.jsp" %>
 <form name="deleteForm" action="./BoardDeleteAction.bo?num=${param.num}" method="post">
 <input type=hidden name=page value="${param.page}">
 <table border=1 align=center>
