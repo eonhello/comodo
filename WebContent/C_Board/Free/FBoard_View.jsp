@@ -108,7 +108,7 @@ body {
 				<td align=center colspan=6>
 					<hr size=1>
 					<div align="center">
-						<c:if test="${sessionScope.sessionHaknum != null }">
+						<c:if test="${sessionScope.sessionHaknum == boarddata.haknum}">
 							<input class="btn btn-default" type="button" value="수정"
 								onclick="move('/free/FModify.fr?num=${boarddata.board_num}&page=${page}');"> &nbsp;&nbsp; 
 							<input class="btn btn-default" type="button" value="삭제"
