@@ -21,7 +21,7 @@
     <script src="../assets/bootstrap-3.3.2/js/bootstrap.min.js"></script>
 <!-- 	<script src="Effect.js"></script> -->
 	
-<%@include file="/nav.jsp" %>
+
 	<title>Comodo</title>
 	
 	

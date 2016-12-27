@@ -42,19 +42,11 @@ public class QnA_DeleteAction implements Action {
 //	   	}
 	   	
 	   	QBoardBean board = boarddao.getBoardCont(num);
-	   	if(!board.getQ_pass().equals(pass)){ //비번이 일치하지 않는 경우
-	   		out.println("<script>");
-			out.println("alert('비번이 다릅니다!')");
-			out.println("history.go(-1)");
-			out.println("</script>");
-	   		out.close();
-	   		return null;
-	   		
-	   	}else{   	
+ 	
 	   	
 //	   	    result=boarddao.boardDelete(num);
 	   		boarddao.boardDelete(num);
-	   	}// else end
+
 	   	
 //	   	if(result==false){
 //	   		System.out.println("게시판 삭제 실패");
