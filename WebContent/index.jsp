@@ -70,19 +70,19 @@
 	  <!-- Wrapper for slides -->
 	  <div class="carousel-inner" role="listbox">
 	    <div class="item active">
-	      <img src="https://twochairs.joins.com/_UI/_img/1305/11-01.jpg" alt="..."  style="width:100%; height: 500px;">
+	      <img src="http://image.chosun.com/sitedata/image/201111/09/2011110900272_1.jpg" alt="..."  style="width:100%; height: 500px;">
 	      <div class="carousel-caption">
 	        ...
 	      </div>
 	    </div>
 	    <div class="item">
-	      <img src="http://img.yonhapnews.co.kr/etc/inner/KR/2016/03/09/AKR20160309044800061_01_i.jpg" alt="..."  style="width:100%; height: 500px;">
+	      <img src="http://i.huffpost.com/gadgets/slideshows/375064/slide_375064_4380686_free.jpg" alt="..."  style="width:100%; height: 500px;">
 	      <div class="carousel-caption">
 	        ...
 	      </div>
 	    </div>
 	    <div class="item">
-	      <img src="http://www.sisapress.com/upload/journal/article/201608/thumb/156213-21866-sample.jpg" alt="..."  style="width:100%; height: 500px;">
+	      <img src="http://www.samasound.co.kr/data/file/recruit_en2/1846293908_kaqhy1uP_04EAB5ADEBA6BDED9884EB8C80EBAFB8EC88A0EAB480-2.jpg" alt="..."  style="width:100%; height: 500px;">
 	      <div class="carousel-caption">
 	        ...
 	      </div>
@@ -105,7 +105,7 @@
 	        <div class="container">
 	            <div class="row">
 	                <div class="col-md-9 animated fadeInLeft">
-	                    <span><font><font>COMODO는 **기숙사 홈페이지 입니다.</font></font></span>
+	                    <span><font><font>COMODO 생활관 홈페이지 입니다.</font></font></span>
 	                    <p><font><font>외출 외박 관련 문의 </font><font>자유 게시판과 시설관리 , QnA 게시판등을 이용할 수 있습니다.</font></font></p>
 	                </div>            
 	                <div class="col-md-3 btn-buy animated fadeInRight">
@@ -118,8 +118,8 @@
 <div class="container content">
         <!--Title Box-->        
         <div class="title-box">
-            <div class="title-box-text">We <span class="color-green">Do</span> Awesome Design</div>
-            <p>Creative freedom matters user experience, we minimize the gap between technology and its audience.</p>
+            <div class="title-box-text">마음으로 하나가 되는 <span class="color-green">COMODO</span> 생활관</div>
+            <p>Slow and steady win the game.</p>
         </div>
         <!-- End Promo Box&nbsp;-->    
 
@@ -128,24 +128,35 @@
             <div class="col-md-4">
                 <div class="promo-box">
                     <i class="fa fa-bullhorn color-blue"></i>
-                    <strong>Creative Freedom Experience</strong>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium qui officia deserunt mollitia anim</p>                
+                    <strong>2017학년도 <br>
+                    	생활관 모집안내</strong>
+                    <p>신청기간 : 2017.01.01 ~ 2017.01.02<br>
+                    	신청자격 : 2017년도 COMODO 재학생 및 입학예정자<br>
+                    	문의사항 : ☎ 02 - 730 - 5800
+                    	</p>                
                 </div>        
             </div>
 
             <div class="col-md-4">
                 <div class="promo-box">
                     <i class="fa fa-bolt color-orange"></i>
-                    <strong>Dedicated Advanced Team</strong>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium qui officia deserunt mollitia anim</p>
+                    <strong>경비실 택배 안내</strong>
+                    <p>200812** 신재* 학생<br>
+                    200817** 정호* 학생<br>
+                    201014** 이태* 학생<br>
+                    201016** 유래* 학생<br>
+                    200378** 정* 학생<br></p>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="promo-box">        
                     <i class="fa fa-rocket color-sea"></i>
-                    <strong>We Do Things With Love</strong>
-                    <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium qui officia deserunt mollitia anim</p>
+                    <strong>COMODO 연말파티 안내</strong>
+                   <p>축제날짜 : 2017.12.31 PM 7:00시<br>
+                    	축제장소 : 제 1기숙사 앞 주차장<br>
+                    	초대가수 : 빅뱅(가수), 트와이스(가수), 박근혜(꼭두각시), 최순실(인형사) 등등
+                    	</p>  
                 </div>
             </div>
         </div>
@@ -154,7 +165,7 @@
         <!-- Tag Box -->
         <div class="row tag-box tag-box-v5">
             <div class="col-md-12">
-                <span>Accusamus et odio ducimus quiatfus</span>
+                <span>구현예정</span>
             </div>
         </div>
         <!-- End Tag Box -->
