@@ -31,7 +31,7 @@ public class FDelete_action implements Action {
 	   	BoardDAOImpl boarddao=new BoardDAOImpl();
 
 	   	BoardBean board = boarddao.getBoardCont(num);	// ������ ��й�ȣ ��ȿ�� �˻� ����
-	   	if(!board.getBoard_pass().equals(pass)){ 
+/*	   	if(!board.getBoard_pass().equals(pass)){ 
 	   		out.println("<script>");
 			out.println("alert('비밀번호가 틀렸습니다.')");
 			out.println("history.go(-1)");
@@ -40,10 +40,10 @@ public class FDelete_action implements Action {
 	   		return null;
 	   		
 	   	}else{   	
-	   	
+	   	*/
 
 	   		boarddao.boardDelete(num);
-	   	}
+	   /*	}*/
 	   	
 	   	forward.setRedirect(true);
 	   	forward.setPath("/free/FList.fr?page="+page);
