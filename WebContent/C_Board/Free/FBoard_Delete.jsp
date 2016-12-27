@@ -71,8 +71,8 @@ body {
 										<td><hr size=1 color=#eeeeee></td>
 									</tr>
 									<tr>
-										<td align=center><input type="submit" value="삭제완료">
-											<input type=button value="취소" onClick="history.go(-1)">
+										<td align=center><input type="submit" value="삭제완료" class="btn btn-success">
+											<input type=button value="취소" class="btn btn-warning" onClick="history.go(-1)">
 										</td>
 									</tr>
 								</table>
