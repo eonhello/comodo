@@ -72,7 +72,7 @@
 			</tr>
 			<tr>
 				<td  class="active">학번</td>
-				<td><input class="form-control" style="width: 50%;"  type=text name=hak_num size=10 maxlength=8 value="<%=session.getAttribute("sessionHaknum") %>" readonly></td>
+				<td><input class="form-control" style="width: 50%;"  type=text name=haknum size=10 maxlength=8 value="<%=session.getAttribute("sessionHaknum") %>" readonly></td>
 			</tr>
     		<tr>
      			<td  class="active">제 목</td>

@@ -9,7 +9,7 @@
 	<insert id="board_insert" parameterType="db.board.free.BoardBean">
 		insert into	FBoard(BOARD_NUM,HAKNUM,BOARD_NAME,BOARD_PASS,board_subject,BOARD_CONTENT,
 		BOARD_RE_REF,BOARD_RE_LEV,BOARD_RE_SEQ,BOARD_READCOUNT,BOARD_DATE)
-		 values(FBoard_seq.nextval,#{hak_num},#{board_name,jdbcType=VARCHAR},#{board_pass},#{board_subject},
+		 values(FBoard_seq.nextval,#{haknum},#{board_name,jdbcType=VARCHAR},#{board_pass},#{board_subject},
 		#{board_content},FBoard_seq.nextval,0,0,0,sysdate)	
 	</insert>
 

@@ -140,12 +140,12 @@
             <div class="col-md-4">
                 <div class="promo-box">
                     <i class="fa fa-bolt color-orange"></i>
-                    <strong>경비실 택배 안내</strong>
+                    <strong>보관중 택배 안내</strong>
                     <p>200812** 신재* 학생<br>
                     200817** 정호* 학생<br>
                     201014** 이태* 학생<br>
                     201016** 유래* 학생<br>
-                    200378** 정* 학생<br></p>
+                    201678** 정* 학생<br></p>
                 </div>
             </div>
 

@@ -48,7 +48,7 @@ public class FWrite_action implements Action {
 			System.out.println("content="+boarddata.getFboard_content());*/
    			
    			
-   			boarddata.setHaknum(request.getParameter("hak_num").trim());
+   			boarddata.setHaknum(request.getParameter("haknum").trim());
    			boarddata.setBoard_name(request.getParameter("board_name"));
    			boarddata.setBoard_pass(request.getParameter("board_pass").trim());
 	   		boarddata.setBoard_subject(request.getParameter("board_subject").trim());
