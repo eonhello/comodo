@@ -39,7 +39,8 @@
 <body>
 
      <div class="container">
-		<%@include file="/main.html" %>
+		<%@ include file="/main.html"%>
+		
     </div> <!-- /container -->
     
 

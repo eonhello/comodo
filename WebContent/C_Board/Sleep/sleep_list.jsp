@@ -31,10 +31,10 @@
 	
 	<script>
 	function confirm_select(B_Num){
-		alert('B_Num = '+B_Num);
+		//alert('B_Num = '+B_Num);
 	
 		//승인버튼 눌렀을때
-		alert("데이터 요청!"); //서버로부터 데이터 요청 
+		//alert("데이터 요청!"); //서버로부터 데이터 요청 
 		$.ajax({ //ajax함수 안에 객체의 형태로 실행명령을 넣는다. 
 			url : '/sleep/Sleep_Confirm_Action.sl', 
 			type : 'post', 
@@ -55,8 +55,8 @@
 	function disapprove_select(B_Num){
 		alert('B_Num = '+B_Num);
 	
-		//승인버튼 눌렀을때
-		alert("데이터 요청!"); //서버로부터 데이터 요청 
+		//불허버튼 눌렀을때
+		//alert("데이터 요청!"); //서버로부터 데이터 요청 
 		$.ajax({ //ajax함수 안에 객체의 형태로 실행명령을 넣는다. 
 			url : '/sleep/Sleep_Disapprove_Action.sl', 
 			type : 'post', 
@@ -65,7 +65,7 @@
 				//alert('연결성공!'); //출력 되면 연결 성공을 알 수 있땅  
 				//alert($(t).text());  // 경고 창에 JSP파일의 내용이 떠야 한다.
 				//$("<h1></h1>").text($(t).text()).appendTo("body"); //<h1>태그 적용해서 출력!
-				alert(t);	
+				//alert(t);	
 				location.reload();
 			},
 			error : function() {
@@ -75,7 +75,7 @@
 	}
 	
 	function cancel_select(B_Num){
-		alert('B_Num = '+B_Num);
+		//alert('B_Num = '+B_Num);
 	
 		//승인버튼 눌렀을때
 		alert("데이터 요청!"); //서버로부터 데이터 요청 
@@ -87,7 +87,7 @@
 				//alert('연결성공!'); //출력 되면 연결 성공을 알 수 있땅  
 				//alert($(t).text());  // 경고 창에 JSP파일의 내용이 떠야 한다.
 				//$("<h1></h1>").text($(t).text()).appendTo("body"); //<h1>태그 적용해서 출력!
-				alert(t);	
+				//alert(t);	
 				location.reload();
 			},
 			error : function() {
@@ -145,7 +145,7 @@
 					<fmt:formatDate value="${b.s_board_date}" type="both"/></div>
 			</td>
 			<td><c:if test="${1==b.s_confirm }"><div style="font: bold 1.2em/1.0em 나눔고딕코딩;">승인됨</div><br></c:if>
-				<c:if test="${2==b.s_confirm }">불허됨<br></c:if>
+				<c:if test="${2==b.s_confirm }"><div style="font: bold 1.2em/1.0em 나눔고딕코딩;">불허됨</div><br></c:if>
 			일시 : ${b.s_confirm_date }</td>
 			<td width="10%"><c:if test="${1==b.s_cancel }"><div style="color:red;font: bold 1.2em/1.0em 나눔고딕코딩;">취소됨</div></c:if>
 				<c:if test="${0==b.s_cancel }"></c:if></td>

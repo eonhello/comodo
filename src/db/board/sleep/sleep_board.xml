@@ -9,7 +9,7 @@
 	<insert id="board_insert" parameterType="db.board.sleep.BoardBean"> 
  		insert into sleep_tab(s_board_num, haknum, s_name,s_major, s_subject,
  		s_sleep_type, s_content, s_start_date, s_end_date, s_board_date) values(sleep_board_seq.nextval,
- 		#{s_haknum}, #{s_name}, #{s_major}, #{s_subject}, #{s_sleep_type},
+ 		#{haknum}, #{s_name}, #{s_major}, #{s_subject}, #{s_sleep_type},
  		#{s_content}, #{s_start_date}, #{s_end_date}, sysdate)
  	</insert> 
 
