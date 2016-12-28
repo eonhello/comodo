@@ -42,6 +42,8 @@ public class Jinsert_action implements Action {
 		   		System.out.println("비밀번호 : " + boarddata.getPassword());
 		   		System.out.println("학과 : " + boarddata.getMajor());
 		   		System.out.println("이름 : " + boarddata.getName());
+		   		System.out.println("주소 : " + boarddata.getAddress());
+		   		System.out.println("메일 : " + boarddata.getMail());
 		   		System.out.println("");
 		   		
 		   		boarddao.joinInsert(boarddata);

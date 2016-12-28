@@ -193,7 +193,7 @@
 					회원가입 <small></small>
 				</h1>
 			</div>
-			<form class="form-horizontal">
+			<form class="form-horizontal" action="/joinInsert.mem">
 				<div class="form-group">
 					<label class="col-sm-3 control-label" for="inputNumberCheck">학번</label>
 					<div class="col-sm-6">
@@ -256,7 +256,7 @@
 				<div class="form-group">
 					<label class="col-sm-3 control-label" for="inputName">주소</label>
 					<div class="col-sm-6">
-						<input class="form-control" id="Address" name="Address" type="text"
+						<input class="form-control" id="address" name="address" type="text"
 							placeholder="주소">
 					</div>
 				</div>	
@@ -266,7 +266,7 @@
 				<div class="form-group">
 					<label class="col-sm-3 control-label" for="email">이메일</label>
 					<div class="col-sm-6">
-						<input class="form-control" id="email" name="email" type="text"
+						<input class="form-control" id="mail" name="mail" type="text"
 							placeholder="이메일">		
 						<p class="text-muted" id="emailText">이메일 형식에 맞게 입력해주세요.</p>						
 					</div>		
